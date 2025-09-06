@@ -14,7 +14,8 @@
     "@typescript-eslint/parser": "^8.42.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
-    "sass": "^1.92.1"
+    "sass": "^1.92.1",
+    "typed-scss-modules": "^8.1.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.33.0",

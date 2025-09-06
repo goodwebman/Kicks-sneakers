@@ -1,11 +1,13 @@
 import { useMemo, useState, type FC, type PropsWithChildren } from 'react';
-import { darkTheme, lightTheme, ThemeContext } from '../../6_shared/theme';
+import { darkTheme, lightTheme } from '../../6_shared/theme';
 import { ThemeNameEnum } from '../../6_shared/theme/types';
+import { ThemeContext } from '../../6_shared/theme/context/theme-context'
 
 export const ThemeProvider: FC<PropsWithChildren> = ({ children }) => {
-  const currentThemeData: ThemeNameEnum = ThemeNameEnum.LIGHT;
-  const [currentTheme, setCurrentTheme] =
-    useState<ThemeNameEnum>(currentThemeData);
+  const [currentTheme, setCurrentTheme] = useState<ThemeNameEnum>(
+    ThemeNameEnum.LIGHT,
+  );
+
   const selectedTheme = useMemo(() => {
     switch (currentTheme) {
       case ThemeNameEnum.LIGHT:
@@ -14,6 +16,11 @@ export const ThemeProvider: FC<PropsWithChildren> = ({ children }) => {
         return darkTheme;
     }
   }, [currentTheme]);
+
+  useMemo(() => {
+    document.body.setAttribute('data-theme', currentTheme);
+  }, [currentTheme]);
+
   return (
     <ThemeContext.Provider
       value={{ theme: selectedTheme, selectTheme: setCurrentTheme }}

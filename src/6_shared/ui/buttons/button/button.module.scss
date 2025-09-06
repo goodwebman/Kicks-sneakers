@@ -1,0 +1,59 @@
+$transition-duration: 0.2s;
+$radius: 8px;
+
+$colors: (
+  primary: #1e90ff,
+  primary-hover: #1c86ee,
+  text: #ffffff,
+);
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: $radius;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all $transition-duration ease-in-out;
+  background-color: map-get($colors, primary);
+  color: map-get($colors, text);
+
+  &:hover {
+    background-color: map-get($colors, primary-hover);
+  }
+
+  &__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    &--left {
+      margin-right: 0.5rem;
+    }
+    &--right {
+      margin-left: 0.5rem;
+    }
+  }
+
+  &--small {
+    font-size: 0.75rem; // 12px
+    padding: 0.25rem 0.5rem; // 4px 8px
+  }
+
+  &--medium {
+    font-size: 0.875rem; // 14px
+    padding: 0.5rem 1rem; // 8px 16px
+  }
+
+  &--large {
+    font-size: 1rem; // 16px
+    padding: 0.75rem 1.5rem; // 12px 24px
+  }
+
+  &--disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+}
