@@ -1,7 +1,8 @@
 import { useMemo, useState, type FC, type PropsWithChildren } from 'react';
-import { darkTheme, lightTheme } from '../../6_shared/theme';
-import { ThemeNameEnum } from '../../6_shared/theme/types';
-import { ThemeContext } from '../../6_shared/theme/context/theme-context'
+import { ThemeNameEnum } from '../../../6_shared/theme/types'
+import { darkTheme, lightTheme } from '../../../6_shared/theme'
+import { ThemeContext } from '../../../6_shared/theme/context/theme-context'
+
 
 export const ThemeProvider: FC<PropsWithChildren> = ({ children }) => {
   const [currentTheme, setCurrentTheme] = useState<ThemeNameEnum>(

@@ -1,0 +1,38 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background-color: transparent;
+  color: var(--color-dark);
+  transition:
+    color 0.2s ease,
+    transform 0.1s ease;
+
+  font-family: var(--font-family-rubik);
+  font-weight: 600;
+
+  &:hover {
+    color: var(--color-dark-hover);
+  }
+
+  &:active {
+    transform: scale(0.97);
+  }
+}
+
+/* Размеры */
+.small {
+  font-size: var(--b7);
+}
+
+.medium {
+     font-size: var(--b6);
+}
+
+.large {
+     font-size: var(--b5);
+}

@@ -1,0 +1,53 @@
+@use '../../styles/breakpoints/breakpoints.module' as *;
+
+
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 60%;
+  max-width: 320px;
+  background: var(--color-white);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 40px 20px;
+  padding-top: 100px;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.15);
+
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-in-out;
+  z-index: 1001;
+
+  @include media-min($breakpoint-mobile) {
+    display: none;
+  }
+}
+
+.menu_open {
+  transform: translateX(0);
+}
+
+/* Оверлей */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0);
+  pointer-events: none; 
+  transition: background 0.3s ease-in-out;
+  z-index: 1000;
+
+  @include media-min($breakpoint-mobile) {
+    display: none;
+  }
+}
+
+.overlay_show {
+  background: rgba(0, 0, 0, 0.3);
+  pointer-events: auto;
+}

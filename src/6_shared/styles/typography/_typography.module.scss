@@ -1,0 +1,158 @@
+/* Headline */
+@mixin h1 {
+  font-family: 'Rubik';
+  font-weight: 600;
+  font-size: 48px;
+}
+
+@mixin h2 {
+  font-family: 'Rubik';
+  font-weight: 600;
+  font-size: 36px;
+}
+
+@mixin h3 {
+  font-family: 'Rubik';
+  font-weight: 600;
+  font-size: 32px;
+}
+
+@mixin h4 {
+  font-family: 'Rubik';
+  font-weight: 600;
+  font-size: 24px;
+}
+
+@mixin h5 {
+  font-family: 'Rubik';
+  font-weight: 600;
+  font-size: 20px;
+}
+
+@mixin h6 {
+  font-family: 'Rubik';
+  font-weight: 600;
+  font-size: 16px;
+}
+
+@mixin h7 {
+  font-family: 'Rubik';
+  font-weight: 600;
+  font-size: 14px;
+}
+
+@mixin h8 {
+  font-family: 'Rubik';
+  font-weight: 600;
+  font-size: 12px;
+}
+
+/* Body Regular */
+@mixin b1-regular {
+  font-family: 'Open Sans';
+  font-weight: 400;
+  font-size: 40px;
+}
+
+@mixin b2-regular {
+  font-family: 'Open Sans';
+  font-weight: 400;
+  font-size: 36px;
+}
+
+@mixin b3-regular {
+  font-family: 'Open Sans';
+  font-weight: 400;
+  font-size: 32px;
+}
+
+@mixin b4-regular {
+  font-family: 'Open Sans';
+  font-weight: 400;
+  font-size: 24px;
+}
+
+@mixin b5-regular {
+  font-family: 'Open Sans';
+  font-weight: 400;
+  font-size: 20px;
+}
+
+@mixin b6-regular {
+  font-family: 'Open Sans';
+  font-weight: 400;
+  font-size: 16px;
+}
+
+@mixin b7-regular {
+  font-family: 'Open Sans';
+  font-weight: 400;
+  font-size: 14px;
+}
+
+@mixin b8-regular {
+  font-family: 'Open Sans';
+  font-weight: 400;
+  font-size: 12px;
+}
+
+@mixin b9-regular {
+  font-family: 'Open Sans';
+  font-weight: 400;
+  font-size: 10px;
+}
+
+/* Body Semibold */
+@mixin b1-semibold {
+  font-family: 'Open Sans';
+  font-weight: 600;
+  font-size: 40px;
+}
+
+@mixin b2-semibold {
+  font-family: 'Open Sans';
+  font-weight: 600;
+  font-size: 36px;
+}
+
+@mixin b3-semibold {
+  font-family: 'Open Sans';
+  font-weight: 600;
+  font-size: 32px;
+}
+
+@mixin b4-semibold {
+  font-family: 'Open Sans';
+  font-weight: 600;
+  font-size: 24px;
+}
+
+@mixin b5-semibold {
+  font-family: 'Open Sans';
+  font-weight: 600;
+  font-size: 20px;
+}
+
+@mixin b6-semibold {
+  font-family: 'Open Sans';
+  font-weight: 600;
+  font-size: 16px;
+}
+
+@mixin b7-semibold {
+  font-family: 'Open Sans';
+  font-weight: 600;
+  font-size: 14px;
+}
+
+@mixin b8-semibold {
+  font-family: 'Open Sans';
+  font-weight: 600;
+  font-size: 12px;
+}
+
+@mixin b9-semibold {
+  font-family: 'Open Sans';
+  font-weight: 600;
+  font-size: 10px;
+}

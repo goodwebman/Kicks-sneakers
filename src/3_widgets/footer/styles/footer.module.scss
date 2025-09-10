@@ -1,0 +1,59 @@
+@use './../../../6_shared/styles/typography/typography.module' as typo;
+
+.footer {
+  width: 100%;
+  background-color: var(--color-blue);
+  border-radius: 48px;
+}
+
+.top_section {
+  display: flex;
+  padding: 64px 72px;
+  justify-content: space-between;
+}
+
+.logo_footer {
+  max-width: 367px;
+  max-height: 112px;
+  margin-right: 200px;
+  margin-top: 50px;
+}
+
+.top_info {
+  display: flex;
+  flex-direction: column;
+  max-width: 510px;
+  gap: 16px;
+}
+
+.title {
+  text-transform: uppercase;
+  @include typo.h1;
+  color: var(--color-white);
+}
+
+.suptitle {
+  @include typo.b5-regular;
+  color: var(--color-grayscale-secondary);
+}
+
+.bottom_section {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  column-gap: 128px;
+  row-gap: 32px;
+  padding: 40px;
+  border-radius: 48px;
+  background-color: var(--color-dark);
+}
+
+.bottom_title {
+  color: var(--color-yellow);
+  @include typo.h2;
+  &_secondary {
+    @include typo.h4;
+    color: var(--color-yellow);
+    font-weight: 600;
+  }
+}

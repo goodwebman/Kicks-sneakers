@@ -20,6 +20,10 @@
   font-style: normal;
 }
 
+body {
+  background-color: var(--background);
+}
+
 /* Reset and base styles  */
 * {
   padding: 0px;
