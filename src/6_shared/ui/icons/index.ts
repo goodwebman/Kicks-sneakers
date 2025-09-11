@@ -1,6 +1,11 @@
 export { default as Cart } from './cart';
+export { default as Facebook } from './facebook';
 export { default as FooterLogo } from './footer-logo';
+export { default as Instagram } from './instagram';
+export { default as LogoHuge } from './logo-huge';
 export { default as Logo } from './logo';
 export { default as Plus } from './plus';
 export { default as Search } from './search';
+export { default as Toktok } from './toktok';
+export { default as Twitter } from './twitter';
 export { default as User } from './user';

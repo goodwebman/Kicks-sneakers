@@ -1,4 +1,4 @@
-@use '../../6_shared/styles/breakpoints/breakpoints.module' as *;
+@use '../../../6_shared/styles/breakpoints/breakpoints.module' as *;
 
 .header {
   background-color: var(--color-white);
@@ -25,7 +25,7 @@
     transform: scale(1.05);
   }
 
-  @include media-max($breakpoint-tablet) {
+  @include media-max($breakpoint-md) {
     width: 100px;
   }
 }
@@ -85,7 +85,7 @@
   transform: translateX(0);
 }
 
-@include media-max($breakpoint-tablet) {
+@include media-max($breakpoint-laptop) {
   .header {
     padding: 20px;
     margin: 16px 0px;
@@ -97,7 +97,7 @@
   }
 }
 
-@include media-max($breakpoint-mobile) {
+@include media-max($breakpoint-md) {
   .header {
     flex-direction: row;
     gap: 12px;

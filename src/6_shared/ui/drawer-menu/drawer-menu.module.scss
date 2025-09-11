@@ -21,7 +21,7 @@
   transition: transform 0.3s ease-in-out;
   z-index: 1001;
 
-  @include media-min($breakpoint-mobile) {
+  @include media-min($breakpoint-md) {
     display: none;
   }
 }
@@ -42,7 +42,7 @@
   transition: background 0.3s ease-in-out;
   z-index: 1000;
 
-  @include media-min($breakpoint-mobile) {
+  @include media-min($breakpoint-md) {
     display: none;
   }
 }
