@@ -3,14 +3,14 @@ import { queryOptions } from '@tanstack/react-query';
 import { jsonApiInstance } from '../../../6_shared/api/json-api-instance';
 import type { PaginatedResult, SneakerDto } from '../model/types';
 
-export const sneakerApi = {
+export const sneakersApi = {
   baseKey: 'sneakers',
 
   getPreview: () =>
     queryOptions({
-      queryKey: [sneakerApi.baseKey, 'preview'],
+      queryKey: [sneakersApi.baseKey, 'preview'],
       queryFn: meta =>
-        jsonApiInstance<SneakerDto[]>(`/sneakers?_limit=3`, {
+        jsonApiInstance<SneakerDto[]>(`/sneakers?_limit=4`, {
           signal: meta.signal,
         }),
     }),
@@ -20,7 +20,7 @@ export const sneakerApi = {
     filters: Record<string, string | number | undefined>,
   ) =>
     queryOptions({
-      queryKey: [sneakerApi.baseKey, 'list', page, filters],
+      queryKey: [sneakersApi.baseKey, 'list', page, filters],
       queryFn: meta => {
         const params = new URLSearchParams({
           _page: String(page),
@@ -38,7 +38,7 @@ export const sneakerApi = {
 
   getSneakerById: (id: number) => {
     queryOptions({
-      queryKey: [sneakerApi.baseKey, id],
+      queryKey: [sneakersApi.baseKey, id],
       queryFn: meta =>
         jsonApiInstance<SneakerDto>(`/sneakers/${id}`, {
           signal: meta.signal,

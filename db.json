@@ -3,61 +3,151 @@
     {
       "id": 1,
       "name": "Nike Air Max 90",
-      "price": 12000,
-      "gender": "men",
-      "color": "white",
+      "gender": "male",
+      "colors": ["white", "red"],
       "sizes": [40, 41, 42, 43],
-      "type": "lifestyle",
+      "type": "running",
+      "price": 120,
       "images": [
-        "https://example.com/nike90-1.jpg",
-        "https://example.com/nike90-2.jpg",
-        "https://example.com/nike90-3.jpg",
-        "https://example.com/nike90-4.jpg"
+        "/images/nike_air_max_90_1.jpg",
+        "/images/nike_air_max_90_2.jpg",
+        "/images/nike_air_max_90_3.jpg",
+        "/images/nike_air_max_90_4.jpg"
       ]
     },
     {
       "id": 2,
       "name": "Adidas Ultraboost",
-      "price": 15000,
-      "gender": "unisex",
-      "color": "black",
-      "sizes": [39, 40, 41, 42, 43, 44],
+      "gender": "female",
+      "colors": ["black", "pink"],
+      "sizes": [37, 38, 39, 40],
       "type": "running",
+      "price": 150,
       "images": [
-        "https://example.com/ultraboost-1.jpg",
-        "https://example.com/ultraboost-2.jpg",
-        "https://example.com/ultraboost-3.jpg",
-        "https://example.com/ultraboost-4.jpg"
+        "/images/adidas_ultraboost_1.jpg",
+        "/images/adidas_ultraboost_2.jpg",
+        "/images/adidas_ultraboost_3.jpg",
+        "/images/adidas_ultraboost_4.jpg"
       ]
     },
     {
       "id": 3,
       "name": "Puma RS-X",
-      "price": 10000,
-      "gender": "women",
-      "color": "red",
-      "sizes": [36, 37, 38, 39, 40],
-      "type": "lifestyle",
+      "gender": "unisex",
+      "colors": ["blue", "yellow"],
+      "sizes": [39, 40, 41, 42],
+      "type": "casual",
+      "price": 110,
       "images": [
-        "https://example.com/puma-rsx-1.jpg",
-        "https://example.com/puma-rsx-2.jpg",
-        "https://example.com/puma-rsx-3.jpg",
-        "https://example.com/puma-rsx-4.jpg"
+        "/images/puma_rsx_1.jpg",
+        "/images/puma_rsx_2.jpg",
+        "/images/puma_rsx_3.jpg",
+        "/images/puma_rsx_4.jpg"
       ]
     },
     {
       "id": 4,
-      "name": "Jordan 1 Retro",
-      "price": 20000,
-      "gender": "men",
-      "color": "black",
+      "name": "New Balance 574",
+      "gender": "male",
+      "colors": ["grey", "white"],
+      "sizes": [41, 42, 43, 44],
+      "type": "casual",
+      "price": 130,
+      "images": [
+        "/images/nb_574_1.jpg",
+        "/images/nb_574_2.jpg",
+        "/images/nb_574_3.jpg",
+        "/images/nb_574_4.jpg"
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Reebok Classic Leather",
+      "gender": "female",
+      "colors": ["white"],
+      "sizes": [36, 37, 38, 39],
+      "type": "casual",
+      "price": 90,
+      "images": [
+        "/images/reebok_classic_1.jpg",
+        "/images/reebok_classic_2.jpg",
+        "/images/reebok_classic_3.jpg",
+        "/images/reebok_classic_4.jpg"
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Nike Dunk Low",
+      "gender": "unisex",
+      "colors": ["green", "white"],
+      "sizes": [38, 39, 40, 41],
+      "type": "basketball",
+      "price": 140,
+      "images": [
+        "/images/nike_dunk_1.jpg",
+        "/images/nike_dunk_2.jpg",
+        "/images/nike_dunk_3.jpg",
+        "/images/nike_dunk_4.jpg"
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Adidas Forum Low",
+      "gender": "male",
+      "colors": ["white", "blue"],
+      "sizes": [40, 41, 42, 43],
+      "type": "basketball",
+      "price": 135,
+      "images": [
+        "/images/adidas_forum_1.jpg",
+        "/images/adidas_forum_2.jpg",
+        "/images/adidas_forum_3.jpg",
+        "/images/adidas_forum_4.jpg"
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Nike Air Jordan 1",
+      "gender": "unisex",
+      "colors": ["black", "red"],
       "sizes": [41, 42, 43, 44],
       "type": "basketball",
+      "price": 200,
       "images": [
-        "https://example.com/jordan1-1.jpg",
-        "https://example.com/jordan1-2.jpg",
-        "https://example.com/jordan1-3.jpg",
-        "https://example.com/jordan1-4.jpg"
+        "/images/air_jordan1_1.jpg",
+        "/images/air_jordan1_2.jpg",
+        "/images/air_jordan1_3.jpg",
+        "/images/air_jordan1_4.jpg"
+      ]
+    },
+    {
+      "id": 9,
+      "name": "Asics Gel-Kayano",
+      "gender": "female",
+      "colors": ["purple", "grey"],
+      "sizes": [37, 38, 39, 40],
+      "type": "running",
+      "price": 160,
+      "images": [
+        "/images/asics_kayano_1.jpg",
+        "/images/asics_kayano_2.jpg",
+        "/images/asics_kayano_3.jpg",
+        "/images/asics_kayano_4.jpg"
+      ]
+    },
+    {
+      "id": 10,
+      "name": "Converse Chuck Taylor",
+      "gender": "unisex",
+      "colors": ["black", "white"],
+      "sizes": [36, 37, 38, 39, 40, 41, 42, 43],
+      "type": "casual",
+      "price": 70,
+      "images": [
+        "/images/converse_chuck_1.jpg",
+        "/images/converse_chuck_2.jpg",
+        "/images/converse_chuck_3.jpg",
+        "/images/converse_chuck_4.jpg"
       ]
     }
   ]

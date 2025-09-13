@@ -90,12 +90,10 @@ export const Footer: FC<FooterProps> = ({ className }) => {
               </a>
             </div>
           </li>
-
-          
         </ul>
         <div className={cnBottomLogoWrapper}>
-            <SvgLogoHuge className={cnBottomLogo} />
-          </div>
+          <SvgLogoHuge className={cnBottomLogo} />
+        </div>
       </div>
     </footer>
   );
