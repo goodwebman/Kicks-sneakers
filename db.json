@@ -1,0 +1,64 @@
+{
+  "sneakers": [
+    {
+      "id": 1,
+      "name": "Nike Air Max 90",
+      "price": 12000,
+      "gender": "men",
+      "color": "white",
+      "sizes": [40, 41, 42, 43],
+      "type": "lifestyle",
+      "images": [
+        "https://example.com/nike90-1.jpg",
+        "https://example.com/nike90-2.jpg",
+        "https://example.com/nike90-3.jpg",
+        "https://example.com/nike90-4.jpg"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Adidas Ultraboost",
+      "price": 15000,
+      "gender": "unisex",
+      "color": "black",
+      "sizes": [39, 40, 41, 42, 43, 44],
+      "type": "running",
+      "images": [
+        "https://example.com/ultraboost-1.jpg",
+        "https://example.com/ultraboost-2.jpg",
+        "https://example.com/ultraboost-3.jpg",
+        "https://example.com/ultraboost-4.jpg"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Puma RS-X",
+      "price": 10000,
+      "gender": "women",
+      "color": "red",
+      "sizes": [36, 37, 38, 39, 40],
+      "type": "lifestyle",
+      "images": [
+        "https://example.com/puma-rsx-1.jpg",
+        "https://example.com/puma-rsx-2.jpg",
+        "https://example.com/puma-rsx-3.jpg",
+        "https://example.com/puma-rsx-4.jpg"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Jordan 1 Retro",
+      "price": 20000,
+      "gender": "men",
+      "color": "black",
+      "sizes": [41, 42, 43, 44],
+      "type": "basketball",
+      "images": [
+        "https://example.com/jordan1-1.jpg",
+        "https://example.com/jordan1-2.jpg",
+        "https://example.com/jordan1-3.jpg",
+        "https://example.com/jordan1-4.jpg"
+      ]
+    }
+  ]
+}
