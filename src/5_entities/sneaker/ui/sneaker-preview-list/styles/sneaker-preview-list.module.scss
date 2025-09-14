@@ -1,0 +1,18 @@
+@use '@shared/styles/breakpoints/breakpoints.module' as *;
+
+.previewList {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  justify-content: center;
+  align-items: stretch;
+  grid-auto-rows: 1fr;
+
+  @include media-max($breakpoint-laptop) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include media-max($breakpoint-sm) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

@@ -9,7 +9,7 @@
       "type": "running",
       "price": 120,
       "images": [
-        "/images/nike_air_max_90_1.jpg",
+        "/assets/1.png",
         "/images/nike_air_max_90_2.jpg",
         "/images/nike_air_max_90_3.jpg",
         "/images/nike_air_max_90_4.jpg"
@@ -24,7 +24,7 @@
       "type": "running",
       "price": 150,
       "images": [
-        "/images/adidas_ultraboost_1.jpg",
+        "/assets/2.png",
         "/images/adidas_ultraboost_2.jpg",
         "/images/adidas_ultraboost_3.jpg",
         "/images/adidas_ultraboost_4.jpg"
@@ -39,7 +39,7 @@
       "type": "casual",
       "price": 110,
       "images": [
-        "/images/puma_rsx_1.jpg",
+        "/assets/3.png",
         "/images/puma_rsx_2.jpg",
         "/images/puma_rsx_3.jpg",
         "/images/puma_rsx_4.jpg"
@@ -54,7 +54,7 @@
       "type": "casual",
       "price": 130,
       "images": [
-        "/images/nb_574_1.jpg",
+        "/assets/4.png",
         "/images/nb_574_2.jpg",
         "/images/nb_574_3.jpg",
         "/images/nb_574_4.jpg"
@@ -69,7 +69,7 @@
       "type": "casual",
       "price": 90,
       "images": [
-        "/images/reebok_classic_1.jpg",
+        "/assets/6.png",
         "/images/reebok_classic_2.jpg",
         "/images/reebok_classic_3.jpg",
         "/images/reebok_classic_4.jpg"
@@ -84,7 +84,7 @@
       "type": "basketball",
       "price": 140,
       "images": [
-        "/images/nike_dunk_1.jpg",
+        "/assets/7.png",
         "/images/nike_dunk_2.jpg",
         "/images/nike_dunk_3.jpg",
         "/images/nike_dunk_4.jpg"
@@ -99,7 +99,7 @@
       "type": "basketball",
       "price": 135,
       "images": [
-        "/images/adidas_forum_1.jpg",
+        "/assets/8.png",
         "/images/adidas_forum_2.jpg",
         "/images/adidas_forum_3.jpg",
         "/images/adidas_forum_4.jpg"
@@ -114,7 +114,7 @@
       "type": "basketball",
       "price": 200,
       "images": [
-        "/images/air_jordan1_1.jpg",
+        "/assets/9.png",
         "/images/air_jordan1_2.jpg",
         "/images/air_jordan1_3.jpg",
         "/images/air_jordan1_4.jpg"
@@ -129,7 +129,7 @@
       "type": "running",
       "price": 160,
       "images": [
-        "/images/asics_kayano_1.jpg",
+        "/assets/10.png",
         "/images/asics_kayano_2.jpg",
         "/images/asics_kayano_3.jpg",
         "/images/asics_kayano_4.jpg"
@@ -144,7 +144,7 @@
       "type": "casual",
       "price": 70,
       "images": [
-        "/images/converse_chuck_1.jpg",
+        "/assets/11.png",
         "/images/converse_chuck_2.jpg",
         "/images/converse_chuck_3.jpg",
         "/images/converse_chuck_4.jpg"

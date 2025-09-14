@@ -1,37 +1,42 @@
-import clsx from 'clsx';
 import type { FC, ReactNode } from 'react';
 import type { ButtonSize, ButtonVariant } from '../types';
-import styles from './Button.module.scss';
+import { getClasses } from './styles/get-classes';
 
 interface ButtonProps {
-  children: ReactNode;
+  title: string | ReactNode;
   size?: ButtonSize;
   variant?: ButtonVariant;
   leftIcon?: ReactNode;
   rightIcon?: ReactNode;
   onClick?: () => void;
+  className?: string;
+  style?: React.CSSProperties;
+  fullWidth?: boolean;
 }
 
 export const Button: FC<ButtonProps> = ({
-  children,
+  title,
   size = 'medium',
   variant = 'primary',
   leftIcon,
   rightIcon,
   onClick,
+  className,
+  style,
+  fullWidth = false,
 }) => {
+  const { cnRoot, cnTitle, cnLeftIcon, cnRightIcon } = getClasses({
+    className,
+    size,
+    variant,
+    fullWidth,
+  });
+
   return (
-    <button
-      className={clsx(styles.button, styles[size], styles[variant])}
-      onClick={onClick}
-    >
-      {leftIcon && (
-        <span className={clsx(styles.icon, styles.left)}>{leftIcon}</span>
-      )}
-      {children}
-      {rightIcon && (
-        <span className={clsx(styles.icon, styles.right)}>{rightIcon}</span>
-      )}
+    <button className={cnRoot} style={style} onClick={onClick}>
+      {leftIcon && <span className={cnLeftIcon}>{leftIcon}</span>}
+      <p className={cnTitle}>{title}</p>
+      {rightIcon && <span className={cnRightIcon}>{rightIcon}</span>}
     </button>
   );
 };

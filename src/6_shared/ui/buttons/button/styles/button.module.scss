@@ -1,21 +1,21 @@
+@use './../../../../../6_shared/styles/typography/typography.module' as typo;
+
 .button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-
+white-space: nowrap;
   border: none;
   border-radius: 8px;
+  max-height: 48px;
   cursor: pointer;
   transition:
     background-color 0.2s ease,
     transform 0.1s ease;
 
-  font-family: var(--font-family-open-sans);
-  font-weight: 600;
-
   &:hover {
-    background-color: var(--color-dark-hover);
+    background-color: var(--color-blue-hover);
   }
 
   &:active {
@@ -23,31 +23,55 @@
   }
 }
 
+.title {
+  @include typo.h8;
+  color: var(--color-white);
+}
+
 /* Размеры */
 .small {
   padding: 8px 16px;
-  font-size: var(--font-b7);
+
+  .title {
+    @include typo.h8;
+  }
 }
 
 .medium {
-  padding: 12px 16px;
-  font-size: var(--font-b7);
+  padding: 16px 16px;
+
+  .title {
+    @include typo.h8;
+  }
 }
 
 .large {
-  padding: 16px;
-  font-size: var(--font-b7);
+  padding: 22px 32px;
+
+  .title {
+    @include typo.h7;
+  }
+}
+
+.fullWidth {
+  width: 100%;
+  display: flex;
+  align-items: center;
 }
 
 /* Вариант по цвету (например, primary) */
 .primary {
-  background-color: var(--color-dark);
+  background-color: var(--color-blue);
   color: var(--color-white);
 }
 
 .secondary {
-  background-color: var(--color-yellow);
-  color: var(--color-dark);
+  background-color: var(--color-dark);
+  color: var(--color-white);
+
+  &:hover {
+    background-color: var(--color-dark-hover);
+  }
 }
 
 /* Иконки */

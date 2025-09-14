@@ -1,0 +1,64 @@
+@use '@shared/styles/typography/typography.module' as typo;
+@use '@shared/styles/breakpoints/breakpoints.module' as *;
+
+.root {
+  padding: 0 10px;
+}
+
+.title {
+  @include typo.h1;
+  font-size: 64px;
+  text-transform: uppercase;
+  max-width: 510px;
+  @include media-max($breakpoint-tablet) {
+    text-transform: uppercase;
+    max-width: 360px;
+  }
+
+  @include media-max($breakpoint-md) {
+    max-width: 260px;
+    font-size: 44px;
+  }
+
+  @include media-max($breakpoint-sm) {
+    max-width: 400px;
+    
+  }
+
+  @include media-max($breakpoint-xs) {
+    font-size: 34px;
+  }
+}
+
+.info {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 32px;
+
+  @include media-max($breakpoint-sm) {
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
+  }
+}
+
+.gridContainer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  justify-content: center;
+  align-items: stretch;
+  grid-auto-rows: 1fr;
+
+  @include media-max($breakpoint-laptop) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include media-max($breakpoint-sm) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

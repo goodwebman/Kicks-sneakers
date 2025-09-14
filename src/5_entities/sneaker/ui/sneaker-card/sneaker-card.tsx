@@ -1,25 +1,61 @@
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import { Routes } from '../../../../6_shared/constants/routes';
+import { Button } from '../../../../6_shared/ui/buttons/button';
 import type { SneakerDto } from '../../model/types';
-import { getClasses } from './style/get-classes';
+import { getClasses } from './styles/get-classes';
 
 export const SneakerCard = ({
   sneaker,
   className,
 }: {
   sneaker: SneakerDto;
-  className: string;
+  className?: string;
 }) => {
-  const { cnRoot, cnImage, cnInfo, cnTitle, cnPrice, cnColors, cnSizes } =
-    getClasses({ className });
+  const navigate = useNavigate();
+  const handleClick = () => {
+    navigate(`${Routes.sneakers.root}/${sneaker.id}`);
+  };
+  const {
+    cnRoot,
+    cnImageWrapper,
+    cnImage,
+    cnTitle,
+    cnBadge,
+    cnPrice,
+    cnButtonWrapper,
+    cnButtonInner,
+  } = getClasses({
+    className,
+  });
+
   return (
-    <Link to={`/sneakers/${sneaker.id}`} className={cnRoot}>
-      <img src={sneaker.images[0]} alt={sneaker.name} className={cnImage} />
-      <div className={cnInfo}>
-        <h3 className={cnTitle}>{sneaker.name}</h3>
-        <p className={cnPrice}>${sneaker.price}</p>
-        <p className={cnColors}>Цвета: {sneaker.colors.join(', ')}</p>
-        <p className={cnSizes}>Размеры: {sneaker.sizes.join(', ')}</p>
+    <div className={cnRoot}>
+      <div className={cnImageWrapper}>
+        <span className={cnBadge}>New</span>
+        <img
+          draggable="false"
+          className={cnImage}
+          src={sneaker.images[0]}
+          alt={sneaker.name}
+        />
       </div>
-    </Link>
+
+      <h1 className={cnTitle}>
+        {sneaker.name} {sneaker.type}
+      </h1>
+      <div style={cnButtonWrapper}>
+        <Button
+          onClick={handleClick}
+          variant="secondary"
+          size="large"
+          fullWidth
+          title={
+            <div className={cnButtonInner}>
+              VIEW PRODUCT - <span className={cnPrice}>${sneaker.price}</span>
+            </div>
+          }
+        />
+      </div>
+    </div>
   );
 };
