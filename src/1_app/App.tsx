@@ -9,12 +9,12 @@ import { ThemeProvider } from './providers/theme/theme-provider.tsx';
 
 export const App = () => {
   return (
-    <QueryClientProvider client={queryClient}>
-      <ErrorBoundary>
+    <ErrorBoundary>
+      <QueryClientProvider client={queryClient}>
         <ThemeProvider>
           <RouterProvider />
         </ThemeProvider>
-      </ErrorBoundary>
-    </QueryClientProvider>
+      </QueryClientProvider>
+    </ErrorBoundary>
   );
 };

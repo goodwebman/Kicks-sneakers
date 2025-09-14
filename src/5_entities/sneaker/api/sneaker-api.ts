@@ -5,7 +5,6 @@ import type { PaginatedResult, SneakerDto } from '../model/types';
 
 export const sneakersApi = {
   baseKey: 'sneakers',
-
   getPreview: () =>
     queryOptions({
       queryKey: [sneakersApi.baseKey, 'preview'],

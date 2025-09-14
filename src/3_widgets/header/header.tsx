@@ -1,4 +1,6 @@
 import { type FC, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { Routes } from '../../6_shared/constants/routes';
 import { TextButton } from '../../6_shared/ui/buttons/text-button/text-button';
 import { DrawerMenu } from '../../6_shared/ui/drawer-menu/drawer-menu';
 import SvgCart from '../../6_shared/ui/icons/cart';
@@ -11,11 +13,15 @@ export const Header: FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { cnRoot, cnAllSneakers, cnBurger, cnBurgerOpen, cnLogo, cnRightSide } =
     getClasses();
+  const navigate = useNavigate();
 
   return (
     <header className={cnRoot}>
       <div className={cnAllSneakers}>
-        <TextButton label="All sneakers 🔥" />
+        <TextButton
+          onClick={() => navigate(Routes.sneakers.root)}
+          label="All sneakers 🔥"
+        />
       </div>
 
       <button

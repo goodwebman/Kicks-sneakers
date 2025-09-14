@@ -1,0 +1,64 @@
+@use '@shared/styles/typography/typography.module' as typo;
+@use '@shared/styles/breakpoints/breakpoints.module' as *;
+
+.root {
+  border-radius: 64px;
+  padding: 102px 40px;
+  background-image: url('@shared/assets/imgs/limited-discount.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+ background-position: left -180px; 
+
+  @include media-max($breakpoint-lg) {
+    background-position: left calc(40%);
+  }
+
+  @include media-max($breakpoint-md) {
+    padding: 60px 35px;
+  }
+
+  @include media-max($breakpoint-sm) {
+    padding: 50px 35px;
+  }
+}
+
+.headline {
+  @include typo.b4-semibold;
+  color: var(--color-grayscale-secondary);
+  margin-bottom: 10px;
+
+  @include media-max($breakpoint-lg) {
+    @include typo.b5-semibold;
+  }
+}
+
+.discount {
+  @include typo.h1;
+  font-size: 74px;
+  color: var(--color-white);
+  margin-bottom: 10px;
+
+  @include media-max($breakpoint-lg) {
+    font-size: 34px;
+  }
+
+  @include media-max($breakpoint-md) {
+    font-size: 30px;
+  }
+}
+
+.suptitle {
+  @include typo.b4-semibold;
+  max-width: 590px;
+  color: var(--color-grayscale-secondary);
+
+  @include media-max($breakpoint-lg) {
+    max-width: 390px;
+    @include typo.b5-semibold;
+  }
+
+  @include media-max($breakpoint-md) {
+    
+    @include typo.b6-semibold;
+  }
+}
