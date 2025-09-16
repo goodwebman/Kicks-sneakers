@@ -1,0 +1,30 @@
+@use '@shared/styles/typography/typography.module' as typo;
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 320px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.label {
+  @include typo.h6;
+  color: var(--color-dark);
+}
+
+.chevron {
+  transition: transform 0.3s ease;
+  width: 24px;
+  height: 24px;
+
+  &--open {
+    transform: rotate(180deg);
+  }
+}

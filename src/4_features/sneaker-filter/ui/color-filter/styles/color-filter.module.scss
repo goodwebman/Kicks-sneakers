@@ -1,0 +1,68 @@
+@use '@shared/styles/typography/typography.module' as typo;
+@use '@shared/styles/breakpoints/breakpoints.module' as *;
+@use '@shared/styles/shadows/shadows.module.scss' as shadows;
+
+.color {
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 48px);
+    gap: 20px;
+  }
+
+  &__item {
+    width: 48px;
+    height: 48px;
+    border-radius: 8px;
+    border: 2px solid transparent;
+    cursor: pointer;
+
+    transition: border-color 0.2s ease;
+
+    &:hover {
+      @include shadows.shadow(intense-glow);
+    }
+    &--selected {
+      border: 2px solid var(--color-white);
+    }
+
+    &--blue {
+      background-color: var(--color-blue);
+    }
+
+    &--yellow {
+      background-color: var(--color-yellow);
+    }
+
+    &--dark {
+      background-color: var(--color-dark);
+    }
+
+    &--green {
+      background-color: var(--color-green);
+    }
+
+    &--light_dark {
+      background-color: var(--color-light-dark);
+    }
+
+    &--carrot {
+      background-color: var(--color-carrot);
+    }
+
+    &--light_gray {
+      background-color: var(--color-light-gray);
+    }
+
+    &--concrete {
+      background-color: var(--color-concrete);
+    }
+
+    &--brown {
+      background-color: var(--color-brown);
+    }
+
+    &--light_brown {
+      background-color: var(--color-light-brown);
+    }
+  }
+}

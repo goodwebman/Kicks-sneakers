@@ -1,4 +1,5 @@
 export { default as Cart } from './cart';
+export { default as ChevronUp } from './chevron-up';
 export { default as Facebook } from './facebook';
 export { default as FooterLogo } from './footer-logo';
 export { default as Instagram } from './instagram';

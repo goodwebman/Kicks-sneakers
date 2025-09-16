@@ -1,0 +1,35 @@
+@use '@shared/styles/typography/typography.module' as typo;
+
+.size {
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(5, 48px);
+    gap: 20px;
+  }
+
+  &__item {
+    @include typo.h7;
+    width: 48px;
+    height: 48px;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-white);
+    transition:
+      border-color 0.2s ease,
+      background-color 0.2s ease;
+
+    &--selected {
+      background-color: var(--color-dark);
+      color: var(--color-white);
+    }
+
+    &--disabled {
+      background-color: var(--color-grayscale-bg);
+      cursor: not-allowed;
+      color: var(--color-grayscale-primary);
+    }
+  }
+}

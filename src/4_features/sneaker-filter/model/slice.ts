@@ -16,7 +16,7 @@ export const sneakerFiltersSlice = createSlice({
   reducers: {
     toggleGender: (state, action: PayloadAction<string>) => {
       if (state.genders.includes(action.payload)) {
-        state.genders.filter(g => g !== action.payload);
+        state.genders = state.genders.filter(g => g !== action.payload);
       } else {
         state.genders.push(action.payload);
       }
@@ -24,21 +24,21 @@ export const sneakerFiltersSlice = createSlice({
 
     toggleColor: (state, action: PayloadAction<string>) => {
       if (state.colors.includes(action.payload)) {
-        state.colors.filter(c => c !== action.payload);
+        state.colors = state.colors.filter(c => c !== action.payload);
       } else {
         state.colors.push(action.payload);
       }
     },
     toggleSize: (state, action: PayloadAction<number>) => {
       if (state.sizes.includes(action.payload)) {
-        state.sizes.filter(s => s !== action.payload);
+        state.sizes = state.sizes.filter(s => s !== action.payload);
       } else {
         state.sizes.push(action.payload);
       }
     },
     toggleTypes: (state, action: PayloadAction<string>) => {
       if (state.types.includes(action.payload)) {
-        state.types.filter(t => t !== action.payload);
+        state.types = state.types.filter(t => t !== action.payload);
       } else {
         state.types.push(action.payload);
       }
@@ -50,5 +50,12 @@ export const sneakerFiltersSlice = createSlice({
     ) => {
       state.priceRange = action.payload;
     },
+  },
+  selectors: {
+    selectGenders: state => state.genders,
+    selectColors: state => state.colors,
+    selectSizes: state => state.sizes,
+    selectTypes: state => state.types,
+    selectPriceRange: state => state.priceRange,
   },
 }).injectInto(rootReducer);

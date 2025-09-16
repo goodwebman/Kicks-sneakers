@@ -7,7 +7,7 @@
   background-image: url('@shared/assets/imgs/limited-discount.png');
   background-repeat: no-repeat;
   background-size: cover;
- background-position: left -180px; 
+ background-position: left calc(60%); 
 
   @include media-max($breakpoint-lg) {
     background-position: left calc(40%);
