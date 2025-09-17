@@ -1,47 +1,59 @@
-import type {
-  ThunkAction,
-  UnknownAction
-} from '@reduxjs/toolkit'
+import type { ThunkAction, UnknownAction } from '@reduxjs/toolkit';
+import { combineSlices, configureStore } from '@reduxjs/toolkit';
+import type { TypedUseSelectorHook } from 'react-redux';
+import { useDispatch, useSelector, useStore } from 'react-redux';
 import {
-  combineSlices,
-  configureStore,
-  createSelector,
-} from "@reduxjs/toolkit"
-import type { TypedUseSelectorHook } from 'react-redux'
-import {
-  useDispatch,
-  useSelector,
-  useStore,
-} from "react-redux"
+  FLUSH,
+  PAUSE,
+  PERSIST,
+  persistReducer,
+  persistStore,
+  PURGE,
+  REGISTER,
+  REHYDRATE,
+} from 'redux-persist';
+import storage from 'redux-persist/lib/storage';
 
 // Корректно объединяем слайсы
 export const rootReducer = combineSlices();
 
-// Получаем тип состояния из rootReducer
-export type AppState = ReturnType<typeof rootReducer>;
+// Конфигурация persistor
+const persistConfig = {
+  key: 'root',
+  storage,
+  whitelist: ['sneakerFilter'],
+};
 
-// Создаём store
+const persistedReducer = persistReducer(persistConfig, rootReducer);
+
+
 export const store = configureStore({
-  reducer: rootReducer,
-  middleware: getDefaultMiddleware => getDefaultMiddleware()
+  reducer: persistedReducer,
+  middleware: getDefaultMiddleware =>
+    getDefaultMiddleware({
+      serializableCheck: {
+        ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+      },
+    }),
 });
 
 // Типизированный dispatch
 export type AppDispatch = typeof store.dispatch;
 
 // Типизированный thunk
-export type AppThunk<R = void> = ThunkAction<R, AppState, unknown, UnknownAction>;
+export type AppThunk<R = void> = ThunkAction<
+  R,
+  ReturnType<typeof rootReducer>,
+  unknown,
+  UnknownAction
+>;
 
-// Хуки с типами:
-
-// useSelector с типом состояния приложения
-export const useAppSelector: TypedUseSelectorHook<AppState> = useSelector;
-
-// useDispatch с типом dispatch
+// Хуки с типами
+export const useAppSelector: TypedUseSelectorHook<
+  ReturnType<typeof rootReducer>
+> = useSelector;
 export const useAppDispatch = () => useDispatch<AppDispatch>();
-
-// useStore с типами
 export const useAppStore = () => useStore<typeof store>();
 
-// createSelector уже типизирован сам по себе, но можно указать тип состояния, если нужно (обычно не обязательно)
-export const createAppSelector = createSelector;
+// Создаём persistor
+export const persistor = persistStore(store);

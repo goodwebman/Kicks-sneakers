@@ -1,8 +1,14 @@
+import * as React from 'react';
 import type { SVGProps } from 'react';
 const SvgChevronUp = (props: SVGProps<SVGSVGElement>) => (
-  <svg fill="none" viewBox="0 0 25 24" {...props}>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    viewBox="0 0 25 24"
+    {...props}
+  >
     <path
-      stroke={props.color || '#232321'}
+      stroke="#232321"
       strokeLinecap="round"
       strokeLinejoin="round"
       strokeWidth={1.5}
