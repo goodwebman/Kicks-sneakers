@@ -33,3 +33,5 @@ export const SNEAKER_COLORS: SneakerColor[] = [
 ];
 
 export const AVAILABLE_SIZES = [38, 41, 42, 44, 45, 47];
+
+export const GENDERS = ['Male', 'Female'];

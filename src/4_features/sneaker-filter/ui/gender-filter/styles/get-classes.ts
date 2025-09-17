@@ -1,12 +1,9 @@
 import classNames from 'classnames/bind';
-import classes from './footer.module.scss';
+import classes from './gender-filter.module.scss';
 
 const cn = classNames.bind(classes);
 
-type Args = {
-  className?: string;
-};
-
-export const getClasses = ({ className }: Args) => {
-  return {};
+export const getClasses = () => {
+  const cnRoot = cn('container');
+  return { cnRoot };
 };
