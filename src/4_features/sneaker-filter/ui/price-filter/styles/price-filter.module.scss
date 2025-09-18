@@ -1,0 +1,41 @@
+@use '@shared/styles/typography/typography.module' as typo;
+
+.container {
+  padding-right: 10px;
+  padding-left: 6px;
+}
+
+.values {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 -10px;
+  margin-top: 8px;
+  @include typo.h7;
+  color: var(--color-light-dark);
+}
+
+.slider {
+  :global(.rc-slider-rail) {
+    background-color: var(--color-dark);
+    height: 6px;
+  }
+
+  :global(.rc-slider-track) {
+    background-color: var(--color-blue);
+    height: 6px;
+  }
+
+  :global(.rc-slider-handle) {
+    border: 2px solid var(--color-blue);
+    background-color: var(--color-blue);
+    width: 16px;
+    height: 16px;
+    opacity: 1;
+    cursor: grab;
+
+    &:focus {
+      box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.3);
+      border: none;
+    }
+  }
+}
