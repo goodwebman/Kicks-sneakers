@@ -3,7 +3,7 @@ export enum FILTER_LABELS {
   GENDER = 'gender',
   SIZES = 'sizes',
   PRICE = 'price',
-  TYPE = 'type',
+  CATEGORY = 'category',
 }
 
 export enum SneakerColor {
@@ -34,4 +34,5 @@ export const SNEAKER_COLORS: SneakerColor[] = [
 
 export const AVAILABLE_SIZES = [38, 41, 42, 44, 45, 47];
 
-export const GENDERS = ['Male', 'Female'];
+export const GENDERS = ['Male', 'Female', 'Unisex'];
+export const CATEGORIES = ['Basketball', 'Casual'];

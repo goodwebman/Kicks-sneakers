@@ -1,5 +1,5 @@
 import type { ThunkAction, UnknownAction } from '@reduxjs/toolkit';
-import { combineSlices, configureStore } from '@reduxjs/toolkit';
+import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import type { TypedUseSelectorHook } from 'react-redux';
 import { useDispatch, useSelector, useStore } from 'react-redux';
 import {
@@ -13,9 +13,13 @@ import {
   REHYDRATE,
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
+import { sneakerFiltersSlice } from '../../4_features/sneaker-filter/model/slice';
 
 // Корректно объединяем слайсы
-export const rootReducer = combineSlices();
+const rootReducer = combineReducers({
+  sneakerFilter: sneakerFiltersSlice.reducer,
+  // другие слайсы можно добавить здесь
+});
 
 // Конфигурация persistor
 const persistConfig = {
@@ -25,7 +29,6 @@ const persistConfig = {
 };
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
-
 
 export const store = configureStore({
   reducer: persistedReducer,

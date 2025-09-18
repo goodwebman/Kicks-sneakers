@@ -1,12 +1,11 @@
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit';
-import { rootReducer } from '../../../6_shared/redux/store';
 import type { SneakerFilterState } from './types';
 
 const initialState: SneakerFilterState = {
   genders: [],
   colors: [],
   sizes: [],
-  types: [],
+  categories: [],
   priceRange: {},
 };
 
@@ -15,35 +14,27 @@ export const sneakerFiltersSlice = createSlice({
   initialState,
   reducers: {
     toggleGender: (state, action: PayloadAction<string>) => {
-      if (state.genders.includes(action.payload)) {
-        state.genders = state.genders.filter(g => g !== action.payload);
-      } else {
-        state.genders.push(action.payload);
-      }
+      state.genders.includes(action.payload)
+        ? (state.genders = state.genders.filter(g => g !== action.payload))
+        : state.genders.push(action.payload);
     },
-
     toggleColor: (state, action: PayloadAction<string>) => {
-      if (state.colors.includes(action.payload)) {
-        state.colors = state.colors.filter(c => c !== action.payload);
-      } else {
-        state.colors.push(action.payload);
-      }
+      state.colors.includes(action.payload)
+        ? (state.colors = state.colors.filter(c => c !== action.payload))
+        : state.colors.push(action.payload);
     },
     toggleSize: (state, action: PayloadAction<number>) => {
-      if (state.sizes.includes(action.payload)) {
-        state.sizes = state.sizes.filter(s => s !== action.payload);
-      } else {
-        state.sizes.push(action.payload);
-      }
+      state.sizes.includes(action.payload)
+        ? (state.sizes = state.sizes.filter(s => s !== action.payload))
+        : state.sizes.push(action.payload);
     },
-    toggleTypes: (state, action: PayloadAction<string>) => {
-      if (state.types.includes(action.payload)) {
-        state.types = state.types.filter(t => t !== action.payload);
-      } else {
-        state.types.push(action.payload);
-      }
+    toggleCategories: (state, action: PayloadAction<string>) => {
+      state.categories.includes(action.payload)
+        ? (state.categories = state.categories.filter(
+            c => c !== action.payload,
+          ))
+        : state.categories.push(action.payload);
     },
-
     setPriceRange: (
       state,
       action: PayloadAction<{ from?: number; to?: number }>,
@@ -55,7 +46,15 @@ export const sneakerFiltersSlice = createSlice({
     selectGenders: state => state.genders,
     selectColors: state => state.colors,
     selectSizes: state => state.sizes,
-    selectTypes: state => state.types,
+    selectCategories: state => state.categories,
     selectPriceRange: state => state.priceRange,
   },
-}).injectInto(rootReducer);
+});
+
+export const {
+  toggleGender,
+  toggleColor,
+  toggleSize,
+  toggleCategories,
+  setPriceRange,
+} = sneakerFiltersSlice.actions;

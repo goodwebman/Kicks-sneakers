@@ -1,3 +1,4 @@
+import { CategoriesFilter } from '../../4_features/sneaker-filter/ui/categories-filter/type-filter'
 import { ColorFilter } from '../../4_features/sneaker-filter/ui/color-filter/color-filter';
 import { GenderFilter } from '../../4_features/sneaker-filter/ui/gender-filter/gender-filter'
 import PriceFilter from '../../4_features/sneaker-filter/ui/price-filter/price-filter'
@@ -12,6 +13,7 @@ export const Products = () => {
       <SizeFilter />
       <GenderFilter />
       <PriceFilter />
+      <CategoriesFilter />
     </>
   );
 };

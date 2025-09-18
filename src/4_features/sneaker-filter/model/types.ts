@@ -2,6 +2,6 @@ export type SneakerFilterState = {
   genders: string[];
   colors: string[];
   sizes: number[];
-  types: string[];
+  categories: string[];
   priceRange: { from?: number; to?: number };
 };
