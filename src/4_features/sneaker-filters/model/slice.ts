@@ -41,6 +41,7 @@ export const sneakerFiltersSlice = createSlice({
     ) => {
       state.priceRange = action.payload;
     },
+    resetFilters: () => initialState,
   },
   selectors: {
     selectGenders: state => state.genders,
@@ -57,4 +58,5 @@ export const {
   toggleSize,
   toggleCategories,
   setPriceRange,
+  resetFilters,
 } = sneakerFiltersSlice.actions;

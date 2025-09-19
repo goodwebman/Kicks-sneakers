@@ -1,0 +1,38 @@
+@use '@shared/styles/typography/typography.module' as typo;
+
+.root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 32px;
+  border-radius: 12px;
+  background: var(--color-gray-light, #f8f8f8);
+  border: 2px dashed var(--color-gray, #ccc);
+  text-align: center;
+  gap: 12px;
+  max-width: 400px;
+  margin: 40px auto;
+  transition: all 0.3s ease;
+
+  &:hover {
+    border-color: var(--color-dark, #333);
+    background: var(--color-white, #fff);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  }
+}
+
+.icon {
+  font-size: 48px;
+  line-height: 1;
+  color: var(--color-dark, #222);
+}
+
+.title {
+  @include typo.h5;
+  color: var(--color-dark, #222);
+}
+
+.text {
+  color: var(--color-gray-dark, #555);
+}

@@ -1,19 +1,13 @@
-import { CategoriesFilter } from '../../4_features/sneaker-filter/ui/categories-filter/type-filter'
-import { ColorFilter } from '../../4_features/sneaker-filter/ui/color-filter/color-filter';
-import { GenderFilter } from '../../4_features/sneaker-filter/ui/gender-filter/gender-filter'
-import PriceFilter from '../../4_features/sneaker-filter/ui/price-filter/price-filter'
-import { SizeFilter } from '../../4_features/sneaker-filter/ui/size-filter/size-filter';
-import { LimitedDiscount } from '../../6_shared/ui/products/limited-discount/limited-discount';
+import { ProductsFilter } from '../../3_widgets/products-filter/desktop/products-filter';
+import { SneakersListWithPagination } from '../../3_widgets/sneakers-list/sneaker-list-with-pagination';
 
 export const Products = () => {
   return (
-    <>
-      <LimitedDiscount />
-      <ColorFilter />
-      <SizeFilter />
-      <GenderFilter />
-      <PriceFilter />
-      <CategoriesFilter />
-    </>
+    <div>
+      <div style={{ display: 'flex' }}>
+        <ProductsFilter />
+        <SneakersListWithPagination />
+      </div>
+    </div>
   );
 };

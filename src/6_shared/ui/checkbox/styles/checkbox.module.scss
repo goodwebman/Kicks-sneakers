@@ -39,6 +39,7 @@
 
 
 .label {
-  @include typo.h8;
+  @include typo.h6;
   color: var(--color-dark);
+  text-transform: capitalize;
 }

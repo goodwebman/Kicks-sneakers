@@ -13,7 +13,7 @@ import {
   REHYDRATE,
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
-import { sneakerFiltersSlice } from '../../4_features/sneaker-filter/model/slice';
+import { sneakerFiltersSlice } from '../../4_features/sneaker-filters/model/slice';
 
 // Корректно объединяем слайсы
 const rootReducer = combineReducers({

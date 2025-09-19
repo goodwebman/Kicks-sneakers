@@ -1,0 +1,47 @@
+@use '@shared/styles/shadows/shadows.module.scss' as shadows;
+@use '@shared/styles/typography/typography.module' as typo;
+.reset-button {
+  margin-top: 30px;
+  display: inline-flex;
+  margin-right: 20px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  @include typo.h5;
+  padding: 14px 28px;
+  border-radius: 12px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  border: none;
+
+  background: linear-gradient(
+    135deg,
+    var(--color-blue) 0%,
+    var(--color-blue) 100%
+  );
+  color: var(--color-white);
+
+  transition: all 0.3s ease;
+  @include shadows.shadow(glow);
+
+  &:hover {
+    background: linear-gradient(
+      135deg,
+      var(--color-blue-hover) 0%,
+      var(--color-blue) 100%
+    );
+    transform: translateY(-2px) scale(1.02);
+    @include shadows.shadow(intense-glow);
+  }
+
+  &:active {
+    transform: scale(0.98);
+    opacity: 0.9;
+  }
+
+  &__icon {
+    font-size: 18px;
+    line-height: 1;
+  }
+}

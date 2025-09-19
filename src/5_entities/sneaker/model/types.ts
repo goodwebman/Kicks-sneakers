@@ -5,16 +5,8 @@ export type SneakerDto = {
   gender: 'men' | 'women' | 'unisex';
   colors: string[];
   sizes: number[];
-  type: string;
+  categories: string[];
   images: string[];
 };
 
-export type PaginatedResult<T> = {
-  data: T[];
-  prev: number | null;
-  next: number | null;
-  pages: number;
-  last: number;
-  first: number;
-  items: number;
-};
+

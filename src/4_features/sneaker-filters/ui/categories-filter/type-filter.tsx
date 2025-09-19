@@ -1,5 +1,5 @@
 import { FilterSection } from '../../../../6_shared/ui/filter-section/filter-section';
-import { CATEGORIES, FILTER_LABELS, GENDERS } from '../../model/constants';
+import { CATEGORIES, FILTER_LABELS } from '../../model/constants';
 
 import {
   useAppDispatch,
