@@ -1,0 +1,61 @@
+@use '@shared/styles/typography/typography.module' as typo;
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 32px;
+  gap: 8px;
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+
+  min-width: 40px;
+  height: 40px;
+  padding: 0 14px;
+
+  border: 1px solid var(--color-dark);
+  border-radius: 8px;
+
+  background-color: var(--color-white);
+  color: var(--color-dark);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+
+  @include typo.b7-regular;
+
+  &--active {
+    background-color: var(--color-dark);
+    color: var(--color-white);
+  }
+
+  &--disabled {
+    background-color: var(--color-light-gray);
+    border-color: var(--color-light-gray);
+    cursor: not-allowed;
+    color: var(--color-dark);
+  }
+
+  &--prev,
+  &--next {
+    padding: 0 16px; 
+  }
+
+  p {
+    margin: 0;
+    @include typo.b7-regular;
+  }
+}
+
+.ellipsis {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  height: 40px;
+  color: var(--color-dark);
+  @include typo.b7-regular;
+}

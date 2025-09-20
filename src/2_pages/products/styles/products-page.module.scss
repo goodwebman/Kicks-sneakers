@@ -1,0 +1,29 @@
+.container {
+  display: flex;
+  gap: 40px;
+}
+
+/* Десктоп */
+.filterDesktop {
+  display: block;
+}
+
+/* Мобилка */
+.filterMobile {
+  display: none;
+}
+
+/* Если меньше 1200px → прячем desktop и показываем mobile */
+@media (max-width: 1200px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .filterDesktop {
+    display: none;
+  }
+
+  .filterMobile {
+    display: block;
+  }
+}

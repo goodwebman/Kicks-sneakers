@@ -41,7 +41,7 @@ export const SneakerCard = ({
       </div>
 
       <h1 className={cnTitle}>
-        {sneaker.name} {sneaker.type}
+        {sneaker.name} {sneaker.categories}
       </h1>
       <div style={cnButtonWrapper}>
         <Button

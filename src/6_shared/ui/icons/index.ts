@@ -1,5 +1,7 @@
 export { default as Cart } from './cart';
 export { default as Check } from './check';
+export { default as ChevronBack } from './chevron-back';
+export { default as ChevronNext } from './chevron-next';
 export { default as ChevronUp } from './chevron-up';
 export { default as Facebook } from './facebook';
 export { default as FooterLogo } from './footer-logo';

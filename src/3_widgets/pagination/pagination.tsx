@@ -1,10 +1,14 @@
+import SvgChevronBack from '../../6_shared/ui/icons/chevron-back';
+import SvgChevronNext from '../../6_shared/ui/icons/chevron-next';
+import { getClasses } from './styles/get-classes';
+
 type PaginationProps = {
   currentPage: number;
   totalPages: number;
   onChange: (page: number) => void;
 };
 
-export const PaginationWidget = ({
+export const Pagination = ({
   currentPage,
   totalPages,
   onChange,
@@ -12,57 +16,61 @@ export const PaginationWidget = ({
   const pages = Array.from({ length: totalPages }, (_, i) => i + 1);
 
   return (
-    <div
-      style={{
-        display: 'flex',
-        justifyContent: 'center',
-        marginTop: 32,
-        gap: 8,
-      }}
-    >
+    <div className={getClasses().cnWrapper}>
       <button
         onClick={() => onChange(currentPage - 1)}
         disabled={currentPage === 1}
-        style={{
-          padding: '8px 12px',
-          border: '1px solid #ccc',
-          borderRadius: 4,
-          backgroundColor: currentPage === 1 ? '#f5f5f5' : 'white',
-          cursor: currentPage === 1 ? 'not-allowed' : 'pointer',
-        }}
+        className={
+          getClasses({
+            isDisabled: currentPage === 1,
+            isPrev: true,
+          }).cnButton
+        }
       >
-        Prev
+        <SvgChevronBack width={20} height={20} />
+        <p>Prev</p>
       </button>
 
-      {pages.map(p => (
-        <button
-          key={p}
-          onClick={() => onChange(p)}
-          style={{
-            padding: '8px 12px',
-            border: '1px solid #ccc',
-            borderRadius: 4,
-            backgroundColor: p === currentPage ? '#000' : 'white',
-            color: p === currentPage ? 'white' : 'black',
-            cursor: 'pointer',
-          }}
-        >
-          {p}
-        </button>
-      ))}
+      {pages.map(p => {
+        if (p === 1 || p === totalPages || Math.abs(p - currentPage) <= 1) {
+          return (
+            <button
+              key={p}
+              onClick={() => onChange(p)}
+              className={
+                getClasses({
+                  isActive: p === currentPage,
+                }).cnButton
+              }
+            >
+              {p}
+            </button>
+          );
+        }
+
+        if (p === currentPage - 2 || p === currentPage + 2) {
+          return (
+            <span key={`ellipsis-${p}`} className={getClasses().cnEllipsis}>
+              ...
+            </span>
+          );
+        }
+
+        return null;
+      })}
 
       <button
         onClick={() => onChange(currentPage + 1)}
         disabled={currentPage === totalPages}
-        style={{
-          padding: '8px 12px',
-          border: '1px solid #ccc',
-          borderRadius: 4,
-          backgroundColor: currentPage === totalPages ? '#f5f5f5' : 'white',
-          cursor: currentPage === totalPages ? 'not-allowed' : 'pointer',
-        }}
+        className={
+          getClasses({
+            isDisabled: currentPage === totalPages,
+            isNext: true,
+          }).cnButton
+        }
       >
-        Next
+        <p>Next</p>
+        <SvgChevronNext width={20} height={15} />
       </button>
     </div>
   );

@@ -1,55 +1,50 @@
-import { Suspense, useState } from 'react';
+import { Suspense, useEffect, useRef, useState } from 'react';
 import { useFilteredSneakers } from '../../4_features/sneaker-filters/model/use-sneakers-filter';
 import { SneakerCardSkeleton } from '../../5_entities/sneaker/ui/sneaker-card-skeleton/sneaker-card-skeleton';
 import { SneakerCard } from '../../5_entities/sneaker/ui/sneaker-card/sneaker-card';
 import { NoSneakersCard } from '../../6_shared/ui/products/no-sneakers-card/no-sneakers-card';
-import { PaginationWidget } from '../pagination/pagination';
+
+import { Pagination } from '../pagination/pagination';
+import { getClasses } from './styles/get-styles';
 
 export const SneakersListWithPagination = () => {
   const [page, setPage] = useState(1);
   const { data: filteredSneakers, pages } = useFilteredSneakers(page);
+  const ListEmpty = filteredSneakers.length === 0;
+
+  const topRef = useRef<HTMLDivElement | null>(null);
+  useEffect(() => {
+    if (topRef.current) {
+      topRef.current.scrollIntoView({ behavior: 'auto' });
+    }
+  }, [page]);
+
+  const { cnWrapper, cnGrid } = getClasses();
 
   return (
-    <div style={{ maxWidth: 1500, margin: '0 auto', padding: 20 }}>
+    <div ref={topRef} className={cnWrapper}>
       <Suspense
         fallback={
-          <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(3, 1fr)',
-              gap: '24px',
-              marginTop: 20,
-            }}
-          >
+          <div className={cnGrid}>
             {Array.from({ length: 9 }).map((_, i) => (
               <SneakerCardSkeleton key={i} />
             ))}
           </div>
         }
       >
-        {filteredSneakers.length === 0 ? (
+        {ListEmpty ? (
           <NoSneakersCard />
         ) : (
-          <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(3, 1fr)',
-              gap: '24px',
-              marginTop: 20,
-            }}
-          >
+          <div className={cnGrid}>
             {filteredSneakers.map(sneaker => (
               <SneakerCard key={sneaker.id} sneaker={sneaker} />
             ))}
           </div>
         )}
       </Suspense>
-
-      <PaginationWidget
-        currentPage={page}
-        totalPages={pages}
-        onChange={setPage}
-      />
+      {!ListEmpty && (
+        <Pagination currentPage={page} totalPages={pages} onChange={setPage} />
+      )}
     </div>
   );
 };

@@ -5,7 +5,6 @@ import { TextButton } from '../../6_shared/ui/buttons/text-button/text-button';
 import { DrawerMenu } from '../../6_shared/ui/drawer-menu/drawer-menu';
 import SvgCart from '../../6_shared/ui/icons/cart';
 import SvgLogo from '../../6_shared/ui/icons/logo';
-import SvgSearch from '../../6_shared/ui/icons/search';
 import SvgUser from '../../6_shared/ui/icons/user';
 import { getClasses } from './styles/get-classes';
 
@@ -39,9 +38,6 @@ export const Header: FC = () => {
       </a>
 
       <div className={cnRightSide}>
-        <a href="">
-          <SvgSearch width={25} height={25} />
-        </a>
         <a href="">
           <SvgUser width={25} height={25} />
         </a>
