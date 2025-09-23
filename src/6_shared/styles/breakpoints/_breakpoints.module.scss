@@ -7,6 +7,7 @@ $breakpoint-laptop: 1024px;
 $breakpoint-xl: 1200px;   
 $breakpoint-desktop: 1280px; 
 $breakpoint-xxl: 1440px;  
+$breakpoint-hds: 1560px;
 $breakpoint-uhd: 1920px;  
 
 @mixin media-max($breakpoint) {

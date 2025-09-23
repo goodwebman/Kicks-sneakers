@@ -23,7 +23,7 @@
   color: var(--color-white);
 
   transition: all 0.3s ease;
-  @include shadows.shadow(glow);
+  @include shadows.shadow(medium-glow);
 
   &:hover {
     background: linear-gradient(
@@ -45,3 +45,4 @@
     line-height: 1;
   }
 }
+

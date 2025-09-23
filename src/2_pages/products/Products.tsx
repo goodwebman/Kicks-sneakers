@@ -1,6 +1,6 @@
 import { ProductsFilter } from '../../3_widgets/products-filter/desktop/products-filter';
 import { ProductsFilterMobile } from '../../3_widgets/products-filter/mobile/products-filter-mobile';
-import { SneakersListWithPagination } from '../../3_widgets/sneakers-list/sneaker-list-with-pagination';
+import { SneakersListWithPagination } from '../../3_widgets/sneaker-list-with-pagination/sneaker-list-with-pagination';
 import { getClasses } from './styles/get-classes';
 
 export const ProductsPage = () => {

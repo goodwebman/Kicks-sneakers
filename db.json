@@ -4,30 +4,30 @@
       "id": 1,
       "name": "Nike Air Max 90",
       "gender": "male",
-      "colors": ["light_gray", "carrot"],
+      "colors": ["light-gray", "carrot"],
       "sizes": [40, 41, 42, 43],
       "categories": ["running"],
       "price": 120,
       "images": [
         "/assets/1.png",
-        "/images/nike_air_max_90_2.jpg",
-        "/images/nike_air_max_90_3.jpg",
-        "/images/nike_air_max_90_4.jpg"
+        "/assets/preview1.png",
+        "/assets/preview2.png",
+        "/assets/preview3.png"
       ]
     },
     {
       "id": 2,
       "name": "Adidas Ultraboost",
       "gender": "female",
-      "colors": ["dark", "light_brown"],
+      "colors": ["dark", "light-brown"],
       "sizes": [37, 38, 39, 40],
       "categories": ["running"],
       "price": 150,
       "images": [
         "/assets/2.png",
-        "/images/adidas_ultraboost_2.jpg",
-        "/images/adidas_ultraboost_3.jpg",
-        "/images/adidas_ultraboost_4.jpg"
+        "/assets/preview1.png",
+        "/assets/preview2.png",
+        "/assets/preview3.png"
       ]
     },
     {
@@ -40,69 +40,69 @@
       "price": 110,
       "images": [
         "/assets/3.png",
-        "/images/puma_rsx_2.jpg",
-        "/images/puma_rsx_3.jpg",
-        "/images/puma_rsx_4.jpg"
+        "/assets/preview1.png",
+        "/assets/preview2.png",
+        "/assets/preview3.png"
       ]
     },
     {
       "id": 4,
       "name": "New Balance 574",
       "gender": "male",
-      "colors": ["concrete", "light_gray"],
+      "colors": ["concrete", "light-gray"],
       "sizes": [41, 42, 43, 44],
       "categories": ["casual"],
       "price": 130,
       "images": [
         "/assets/4.png",
-        "/images/nb_574_2.jpg",
-        "/images/nb_574_3.jpg",
-        "/images/nb_574_4.jpg"
+        "/assets/preview1.png",
+        "/assets/preview2.png",
+        "/assets/preview3.png"
       ]
     },
     {
       "id": 5,
       "name": "Reebok Classic Leather",
       "gender": "female",
-      "colors": ["light_gray"],
+      "colors": ["light-gray"],
       "sizes": [36, 37, 38, 39],
       "categories": ["casual"],
       "price": 90,
       "images": [
         "/assets/6.png",
-        "/images/reebok_classic_2.jpg",
-        "/images/reebok_classic_3.jpg",
-        "/images/reebok_classic_4.jpg"
+        "/assets/preview1.png",
+        "/assets/preview2.png",
+        "/assets/preview3.png"
       ]
     },
     {
       "id": 6,
       "name": "Nike Dunk Low",
       "gender": "unisex",
-      "colors": ["green", "light_gray"],
+      "colors": ["green", "light-gray"],
       "sizes": [38, 39, 40, 41],
       "categories": ["basketball"],
       "price": 140,
       "images": [
         "/assets/7.png",
-        "/images/nike_dunk_2.jpg",
-        "/images/nike_dunk_3.jpg",
-        "/images/nike_dunk_4.jpg"
+        "/assets/preview1.png",
+        "/assets/preview2.png",
+        "/assets/preview3.png"
       ]
     },
     {
       "id": 7,
       "name": "Adidas Forum Low",
       "gender": "male",
-      "colors": ["light_gray", "blue"],
+      "colors": ["light-gray", "blue"],
       "sizes": [40, 41, 42, 43, 47],
       "categories": ["basketball"],
       "price": 135,
       "images": [
         "/assets/8.png",
-        "/images/adidas_forum_2.jpg",
-        "/images/adidas_forum_3.jpg",
-        "/images/adidas_forum_4.jpg"
+        "/assets/preview1.png",
+        "/assets/preview2.png",
+        "/assets/preview3.png"
       ]
     },
     {
@@ -115,9 +115,9 @@
       "price": 200,
       "images": [
         "/assets/9.png",
-        "/images/air_jordan1_2.jpg",
-        "/images/air_jordan1_3.jpg",
-        "/images/air_jordan1_4.jpg"
+        "/assets/preview1.png",
+        "/assets/preview2.png",
+        "/assets/preview3.png"
       ]
     },
     {
@@ -130,24 +130,24 @@
       "price": 160,
       "images": [
         "/assets/10.png",
-        "/images/asics_kayano_2.jpg",
-        "/images/asics_kayano_3.jpg",
-        "/images/asics_kayano_4.jpg"
+        "/assets/preview1.png",
+        "/assets/preview2.png",
+        "/assets/preview3.png"
       ]
     },
     {
       "id": 10,
       "name": "Converse Chuck Taylor",
       "gender": "unisex",
-      "colors": ["dark", "light_gray"],
+      "colors": ["dark", "light-gray"],
       "sizes": [36, 37, 38, 39, 40, 41, 42, 43],
       "categories": ["casual"],
       "price": 70,
       "images": [
         "/assets/1.png",
-        "/images/converse_chuck_2.jpg",
-        "/images/converse_chuck_3.jpg",
-        "/images/converse_chuck_4.jpg"
+        "/assets/preview1.png",
+        "/assets/preview2.png",
+        "/assets/preview3.png"
       ]
     },
 
@@ -161,9 +161,9 @@
       "price": 85,
       "images": [
         "/assets/2.png",
-        "/images/vans_old_skool_2.jpg",
-        "/images/vans_old_skool_3.jpg",
-        "/images/vans_old_skool_4.jpg"
+        "/assets/preview1.png",
+        "/assets/preview2.png",
+        "/assets/preview3.png"
       ]
     },
     {
@@ -176,24 +176,24 @@
       "price": 100,
       "images": [
         "/assets/9.png",
-        "/images/air_force1_2.jpg",
-        "/images/air_force1_3.jpg",
-        "/images/air_force1_4.jpg"
+        "/assets/preview1.png",
+        "/assets/preview2.png",
+        "/assets/preview3.png"
       ]
     },
     {
       "id": 13,
       "name": "Adidas Yeezy Boost 350",
       "gender": "unisex",
-      "colors": ["beige", "light_gray"],
+      "colors": ["beige", "light-gray"],
       "sizes": [40, 41, 42, 43, 44],
       "categories": ["running"],
       "price": 220,
       "images": [
         "/assets/5.png",
-        "/images/yeezy_2.jpg",
-        "/images/yeezy_3.jpg",
-        "/images/yeezy_4.jpg"
+        "/assets/preview1.png",
+        "/assets/preview2.png",
+        "/assets/preview3.png"
       ]
     },
     {
@@ -206,9 +206,9 @@
       "price": 125,
       "images": [
         "/assets/4.png",
-        "/images/nano_x_2.jpg",
-        "/images/nano_x_3.jpg",
-        "/images/nano_x_4.jpg"
+        "/assets/preview1.png",
+        "/assets/preview2.png",
+        "/assets/preview3.png"
       ]
     },
     {
@@ -221,9 +221,9 @@
       "price": 150,
       "images": [
         "/assets/7.png",
-        "/images/curry8_2.jpg",
-        "/images/curry8_3.jpg",
-        "/images/curry8_4.jpg"
+        "/assets/preview1.png",
+        "/assets/preview2.png",
+        "/assets/preview3.png"
       ]
     },
     {
@@ -236,9 +236,9 @@
       "price": 95,
       "images": [
         "/assets/6.png",
-        "/images/fila_disruptor_2.jpg",
-        "/images/fila_disruptor_3.jpg",
-        "/images/fila_disruptor_4.jpg"
+        "/assets/preview1.png",
+        "/assets/preview2.png",
+        "/assets/preview3.png"
       ]
     },
     {
@@ -251,9 +251,9 @@
       "price": 105,
       "images": [
         "/assets/2.png",
-        "/images/saucony_jazz_2.jpg",
-        "/images/saucony_jazz_3.jpg",
-        "/images/saucony_jazz_4.jpg"
+        "/assets/preview1.png",
+        "/assets/preview2.png",
+        "/assets/preview3.png"
       ]
     },
     {
@@ -266,9 +266,9 @@
       "price": 140,
       "images": [
         "/assets/8.png",
-        "/images/mizuno_wave_2.jpg",
-        "/images/mizuno_wave_3.jpg",
-        "/images/mizuno_wave_4.jpg"
+        "/assets/preview1.png",
+        "/assets/preview2.png",
+        "/assets/preview3.png"
       ]
     },
     {
@@ -281,9 +281,9 @@
       "price": 250,
       "images": [
         "/assets/9.png",
-        "/images/jordan4_2.jpg",
-        "/images/jordan4_3.jpg",
-        "/images/jordan4_4.jpg"
+        "/assets/preview1.png",
+        "/assets/preview2.png",
+        "/assets/preview3.png"
       ]
     },
     {
@@ -296,9 +296,9 @@
       "price": 120,
       "images": [
         "/assets/2.png",
-        "/images/nb327_2.jpg",
-        "/images/nb327_3.jpg",
-        "/images/nb327_4.jpg"
+        "/assets/preview1.png",
+        "/assets/preview2.png",
+        "/assets/preview3.png"
       ]
     }
   ]

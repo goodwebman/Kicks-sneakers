@@ -7,6 +7,7 @@ import { ErrorBoundary } from './providers/error-boundary/errror-boundary.tsx';
 import { ReduxProvider } from './providers/redux/redux-provider.tsx';
 import { RouterProvider } from './providers/router/router-provider.tsx';
 import { ThemeProvider } from './providers/theme/theme-provider.tsx';
+import { Toaster } from '../6_shared/ui/toaster/toaster.tsx'
 
 export const App = () => {
   return (
@@ -15,6 +16,7 @@ export const App = () => {
         <ReduxProvider>
           <ThemeProvider>
             <RouterProvider />
+            <Toaster />
           </ThemeProvider>
         </ReduxProvider>
       </QueryClientProvider>

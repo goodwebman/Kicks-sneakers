@@ -1,10 +1,10 @@
 import { queryOptions } from '@tanstack/react-query';
-
 import { jsonApiInstance } from '../../../6_shared/api/json-api-instance';
 import type { SneakerDto } from '../model/types';
 
 export const sneakersApi = {
   baseKey: 'sneakers',
+
   getPreview: () =>
     queryOptions({
       queryKey: [sneakersApi.baseKey, 'preview'],
@@ -18,16 +18,17 @@ export const sneakersApi = {
     queryOptions({
       queryKey: [sneakersApi.baseKey, 'list'],
       queryFn: meta =>
-        jsonApiInstance<SneakerDto[]>(`/sneakers`, { signal: meta.signal }),
+        jsonApiInstance<SneakerDto[]>(`/sneakers`, {
+          signal: meta.signal,
+        }),
     }),
 
-  getSneakerById: (id: number) => {
+  getSneakerById: (id: number) =>
     queryOptions({
       queryKey: [sneakersApi.baseKey, id],
       queryFn: meta =>
         jsonApiInstance<SneakerDto>(`/sneakers/${id}`, {
           signal: meta.signal,
         }),
-    });
-  },
+    }),
 };

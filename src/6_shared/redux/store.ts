@@ -14,18 +14,19 @@ import {
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 import { sneakerFiltersSlice } from '../../4_features/sneaker-filters/model/slice';
+import { cartSlice } from '../../5_entities/cart/model/slice';
 
 // Корректно объединяем слайсы
 const rootReducer = combineReducers({
   sneakerFilter: sneakerFiltersSlice.reducer,
-  // другие слайсы можно добавить здесь
+  cart: cartSlice.reducer,
 });
 
 // Конфигурация persistor
 const persistConfig = {
   key: 'root',
   storage,
-  whitelist: ['sneakerFilter'],
+  whitelist: ['sneakerFilter', 'cart'],
 };
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

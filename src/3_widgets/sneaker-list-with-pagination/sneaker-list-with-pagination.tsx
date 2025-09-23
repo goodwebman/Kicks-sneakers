@@ -1,4 +1,4 @@
-import { Suspense, useEffect, useRef, useState } from 'react';
+import { Suspense, useEffect, useState } from 'react';
 import { useFilteredSneakers } from '../../4_features/sneaker-filters/model/use-sneakers-filter';
 import { SneakerCardSkeleton } from '../../5_entities/sneaker/ui/sneaker-card-skeleton/sneaker-card-skeleton';
 import { SneakerCard } from '../../5_entities/sneaker/ui/sneaker-card/sneaker-card';
@@ -12,17 +12,14 @@ export const SneakersListWithPagination = () => {
   const { data: filteredSneakers, pages } = useFilteredSneakers(page);
   const ListEmpty = filteredSneakers.length === 0;
 
-  const topRef = useRef<HTMLDivElement | null>(null);
   useEffect(() => {
-    if (topRef.current) {
-      topRef.current.scrollIntoView({ behavior: 'auto' });
-    }
+    window.scrollTo({ top: 0, behavior: 'auto' });
   }, [page]);
 
   const { cnWrapper, cnGrid } = getClasses();
 
   return (
-    <div ref={topRef} className={cnWrapper}>
+    <div className={cnWrapper}>
       <Suspense
         fallback={
           <div className={cnGrid}>
