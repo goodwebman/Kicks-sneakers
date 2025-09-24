@@ -138,3 +138,24 @@ legend {
 input[type='file'] {
   max-width: 100%;
 }
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  background-color: transparent;
+  outline: none;
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 1000px transparent inset !important;
+  box-shadow: 0 0 0 1000px transparent inset !important;
+  -webkit-text-fill-color: #000 !important;
+  caret-color: #000;
+
+  /* критично! */
+  -webkit-background-clip: text;
+  background-clip: text;
+}
