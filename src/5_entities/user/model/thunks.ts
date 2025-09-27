@@ -1,8 +1,8 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { jsonApiInstance } from '@shared/api/json-api-instance';
-import type { CreateUserDto, User } from './types';
+import type { AuthData, User } from './types';
 
-export const createUser = createAsyncThunk<User, CreateUserDto>(
+export const createUser = createAsyncThunk<User, AuthData>(
   'user/createUser',
   async newUser => {
     return await jsonApiInstance<User>('/users', {

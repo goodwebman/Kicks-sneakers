@@ -1,12 +1,13 @@
 import { type FC, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { Routes } from '../../6_shared/constants/routes';
+import { Link, useNavigate } from 'react-router-dom';
+
 import { TextButton } from '../../6_shared/ui/buttons/text-button/text-button';
 import { DrawerMenu } from '../../6_shared/ui/drawer-menu/drawer-menu';
 import SvgCart from '../../6_shared/ui/icons/cart';
 import SvgLogo from '../../6_shared/ui/icons/logo';
 import SvgUser from '../../6_shared/ui/icons/user';
 import { getClasses } from './styles/get-classes';
+import { Routes } from '@shared/constants/routes';
 
 export const Header: FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -33,17 +34,17 @@ export const Header: FC = () => {
         <span />
       </button>
 
-      <a className={cnLogo} href="/">
+      <Link className={cnLogo} to={Routes.root}>
         <SvgLogo width={132} height={32} />
-      </a>
+      </Link>
 
       <div className={cnRightSide}>
-        <a href="">
+        <Link to={Routes.auth}>
           <SvgUser width={25} height={25} />
-        </a>
-        <a href="">
+        </Link>
+        <Link to={Routes.cart}>
           <SvgCart width={25} height={25} />
-        </a>
+        </Link>
       </div>
 
       <DrawerMenu isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)} />

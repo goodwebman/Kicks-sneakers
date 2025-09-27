@@ -40,7 +40,7 @@ export const Input = ({
     cnInput,
     cnHelper,
     cnIconBtn,
-    cnEyeIcon, 
+    cnEyeIcon,
   } = getClasses({
     className,
     isSuccess,

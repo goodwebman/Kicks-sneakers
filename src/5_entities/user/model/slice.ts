@@ -24,7 +24,7 @@ export const userSlice = createSlice({
       });
 
     builder
-      .addCase(createUser.pending, (): AuthState => ({ type: 'pending' }))
+      .addCase(loginUser.pending, (): AuthState => ({ type: 'pending' }))
       .addCase(loginUser.fulfilled, (_, action: PayloadAction<User>) => {
         return { type: 'succeeded', user: action.payload };
       })

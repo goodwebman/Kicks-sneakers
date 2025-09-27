@@ -5,9 +5,8 @@ export type User = {
   password: string;
 };
 
-export type CreateUserDto = {
+export type AuthData = {
   email: string;
-  name: string;
   password: string;
 };
 
