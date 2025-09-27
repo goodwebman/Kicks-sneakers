@@ -26,14 +26,24 @@
   transition: background-color 0.2s ease;
 
   @include typo.b7-regular;
+  &:focus,
+  &:active {
+    outline: none;
+    background-color: inherit;
+    color: inherit;
+  }
 
   &--active {
     background-color: var(--color-dark);
     color: var(--color-white);
+    &:focus,
+    &:active {
+      background-color: var(--color-dark);
+      color: var(--color-white);
+    }
   }
 
   &--disabled {
-    background-color: var(--color-light-gray);
     border-color: var(--color-light-gray);
     cursor: not-allowed;
     color: var(--color-dark);
@@ -41,7 +51,7 @@
 
   &--prev,
   &--next {
-    padding: 0 16px; 
+    padding: 0 16px;
   }
 
   p {

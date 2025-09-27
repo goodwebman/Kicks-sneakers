@@ -12,15 +12,12 @@ export const Toaster = () => {
 
         success: {
           className: `${cnRoot} ${cnSuccess}`,
-          icon: '✅',
         },
         error: {
           className: `${cnRoot} ${cnError}`,
-          icon: '❌',
         },
         blank: {
           className: `${cnRoot} ${cnDefault}`,
-          icon: 'ℹ️',
         },
       }}
     />

@@ -5,7 +5,7 @@
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-white-space: nowrap;
+  white-space: nowrap;
   border: none;
   border-radius: 8px;
   max-height: 48px;
@@ -20,6 +20,9 @@ white-space: nowrap;
 
   &:active {
     transform: scale(0.97);
+  }
+  &:active {
+    transform: scale(0.97); // только пока зажата кнопка
   }
 }
 
@@ -63,12 +66,21 @@ white-space: nowrap;
 .primary {
   background-color: var(--color-blue);
   color: var(--color-white);
+  &:focus {
+    background-color: var(--color-blue);
+    color: var(--color-white);
+    outline: none;
+  }
 }
 
 .secondary {
   background-color: var(--color-dark);
   color: var(--color-white);
-
+  &:focus {
+    background-color: var(--color-dark);
+    color: var(--color-white);
+    outline: none;
+  }
   &:hover {
     background-color: var(--color-dark-hover);
   }

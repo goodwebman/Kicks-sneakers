@@ -1,5 +1,5 @@
+import { useScrollTop } from '@shared/hooks/use-scroll-top';
 import { useSuspenseQuery } from '@tanstack/react-query';
-import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { SneakerOwnInfo } from '../../4_features/sneaker-own-info/ui/sneaker-own-info';
 import { sneakersApi } from '../../5_entities/sneaker/api/sneaker-api';
@@ -12,9 +12,7 @@ export const SneakerDetails = () => {
 
   const { data } = useSuspenseQuery(sneakersApi.getSneakerById(sneakerId));
 
-  useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'auto' });
-  }, []);
+  useScrollTop();
 
   const { cnRoot } = getClasses();
   return (

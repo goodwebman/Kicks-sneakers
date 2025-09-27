@@ -7,3 +7,7 @@ export type CartItem = {
   size: number;
   quantity: number;
 };
+
+export type CartState = {
+  items: CartItem[];
+};

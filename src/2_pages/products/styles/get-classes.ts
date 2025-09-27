@@ -8,5 +8,6 @@ export const getClasses = () => {
     cnRoot: cn('container'),
     cnFilterDesktop: cn('filterDesktop'),
     cnFilterMobile: cn('filterMobile'),
+    cnDiscountWrapper: cn('discountWrapper'),
   };
 };
