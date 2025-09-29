@@ -1,12 +1,21 @@
+type UserPermission = 'regular' | 'admin';
+
 export type User = {
   id: number;
   email: string;
   name: string;
   password: string;
+  permission: UserPermission;
 };
 
-export type AuthData = {
+export type LoginData = {
   email: string;
+  password: string;
+};
+
+export type RegisterData = {
+  email: string;
+  name: string;
   password: string;
 };
 

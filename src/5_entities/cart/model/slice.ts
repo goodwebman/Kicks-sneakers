@@ -9,7 +9,7 @@ export const cartSlice = createSlice({
   name: 'cart',
   initialState,
   reducers: {
-    addItem: (state, action: PayloadAction<CartItem>) => {
+    addSneaker: (state, action: PayloadAction<CartItem>) => {
       const item = action.payload;
 
       const existing = state.items.find(
@@ -25,7 +25,7 @@ export const cartSlice = createSlice({
         state.items.push(item);
       }
     },
-    removeItem: (
+    removeSneaker: (
       state,
       action: PayloadAction<{ sneakerId: number; color: string; size: number }>,
     ) => {
@@ -42,7 +42,17 @@ export const cartSlice = createSlice({
       state.items = [];
     },
   },
+  selectors: {
+    getSneakers: state => state.items,
+    cartItemsQuantity: state =>
+      state.items.reduce((total, item) => total + item.quantity, 0),
+    totalPrice: state =>
+      state.items.reduce(
+        (total, item) => total + item.price * item.quantity,
+        0,
+      ),
+  },
 });
 
-export const { addItem, removeItem, clearCart } = cartSlice.actions;
+export const { addSneaker, removeSneaker, clearCart } = cartSlice.actions;
 export const cartReducer = cartSlice.reducer;

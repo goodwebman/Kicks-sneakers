@@ -15,7 +15,7 @@ type InputProps = {
   isSuccess?: boolean;
   isError?: boolean;
   disabled?: boolean;
-  error?: FieldError;
+  error?: FieldError | string;
 };
 
 export const Input = ({
@@ -47,6 +47,8 @@ export const Input = ({
     isError: !!error || isError,
     disabled,
   });
+
+  const errorMessage = typeof error === 'string' ? error : error?.message;
 
   return (
     <div className={cnWrapper}>
@@ -81,8 +83,8 @@ export const Input = ({
         )}
       />
 
-      {(error?.message || helperText) && (
-        <p className={cnHelper}>{error?.message || helperText}</p>
+      {(errorMessage || helperText) && (
+        <p className={cnHelper}>{errorMessage || helperText}</p>
       )}
     </div>
   );

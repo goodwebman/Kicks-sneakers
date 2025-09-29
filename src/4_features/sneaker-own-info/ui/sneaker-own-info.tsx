@@ -2,11 +2,10 @@ import cn from 'classnames';
 import { useEffect, useState, type FC } from 'react';
 import type { CartItem } from '../../../5_entities/cart/model/types';
 import type { SneakerDto } from '../../../5_entities/sneaker/model/types';
-import { useAppDispatch } from '../../../6_shared/redux/store';
 import { Button } from '../../../6_shared/ui/buttons/button';
 import { RadioButton } from '../../../6_shared/ui/radio-button/radio-button';
 
-import { addItem } from '../../../5_entities/cart/model/slice';
+import { useAddToCart } from '../model/use-add-to-cart';
 import { getClasses } from './styles/get-classes';
 
 export const SneakerOwnInfo: FC<SneakerDto> = ({
@@ -17,6 +16,7 @@ export const SneakerOwnInfo: FC<SneakerDto> = ({
   name,
   images,
   categories,
+  gender,
 }) => {
   const [selectedColor, setSelectedColor] = useState(colors[0]);
   const [selectedSize, setSelectedSize] = useState<number | null>(null);
@@ -39,7 +39,7 @@ export const SneakerOwnInfo: FC<SneakerDto> = ({
   } = getClasses();
 
   const allSizes = Array.from({ length: 10 }, (_, i) => 38 + i);
-  const dispatch = useAppDispatch();
+  const { handleAddSneaker } = useAddToCart();
 
   const handleAddToCart = () => {
     if (!selectedSize) return;
@@ -49,12 +49,14 @@ export const SneakerOwnInfo: FC<SneakerDto> = ({
       images,
       name,
       price,
+      gender,
+      categories,
       color: selectedColor,
       size: selectedSize,
       quantity: 1,
     };
 
-    dispatch(addItem(item));
+    handleAddSneaker(item);
   };
 
   useEffect(() => {

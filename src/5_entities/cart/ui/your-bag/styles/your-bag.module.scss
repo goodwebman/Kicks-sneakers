@@ -1,0 +1,97 @@
+@use '@shared/styles/typography/typography.module' as typo;
+.root {
+  background-color: var(--color-white);
+  border-radius: 16px;
+  padding: 24px;
+  max-width: 780px;
+}
+
+.title {
+  color: var(--color-dark);
+  @include typo.h3;
+}
+
+.suptitle {
+  @include typo.b6-regular;
+  color: var(--color-grayscale-primary);
+}
+
+.infoWrapper {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 48px;
+  gap: 10px;
+}
+
+.imageWrapper {
+  max-width: 200px;
+  max-height: 225px;
+  border-radius: 24px;
+}
+
+.detailsWrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+}
+
+.sneakers {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.details {
+  display: flex;
+  gap: 8px;
+  flex-direction: column;
+  flex-grow: 1;
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+
+    &__name {
+      color: var(--color-dark);
+      @include typo.h4;
+      text-transform: uppercase;
+    }
+
+    &__price {
+      color: var(--color-blue);
+      @include typo.h4;
+    }
+  }
+
+  &__midle {
+    text-transform: capitalize;
+
+    @include typo.b5-regular;
+    color: var(--color-light-dark);
+  }
+
+  &__footer {
+    display: flex;
+    gap: 80px;
+    text-transform: capitalize;
+    @include typo.b5-regular;
+    color: var(--color-light-dark);
+  }
+}
+
+.actions {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  transition: scale 0.2s ease-in-out;
+  &:hover {
+    scale: 1.2;
+  }
+  &__wrapper {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+    margin-top: 20px;
+  }
+}

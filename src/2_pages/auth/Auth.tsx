@@ -1,5 +1,42 @@
+import { userSlice } from '@entities/user/model/slice';
+import UserInfo from '@entities/user/ui/user-info/user-info';
+import { useLogout } from '@features/auth/model/use-logout';
+import { useAppSelector } from '@shared/redux/store';
+import { Button } from '@shared/ui/buttons/button';
 import { AuthSwitcher } from '@widgets/auth-switcher/auth-switcher';
+import toast from 'react-hot-toast';
+import { getClasses } from './styles/get-classes';
 
 export const Auth = () => {
-  return <AuthSwitcher />;
+  const user = useAppSelector(userSlice.selectors.selectUser);
+  const { handleLogout } = useLogout();
+
+  const logoutAction = () => {
+    handleLogout();
+    toast('Вы успешно вышли из аккаунта', {
+      position: 'top-center',
+    });
+  };
+  const { cnRoot } = getClasses();
+  return (
+    <section className={cnRoot}>
+      {!user && <AuthSwitcher />}
+
+      {user && (
+        <>
+          <UserInfo
+            name={user?.name}
+            email={user?.email}
+            permisson={user?.permission}
+          />
+          <Button
+            fullWidth
+            onClick={logoutAction}
+            variant={'secondary'}
+            title={'Выйти'}
+          />
+        </>
+      )}
+    </section>
+  );
 };

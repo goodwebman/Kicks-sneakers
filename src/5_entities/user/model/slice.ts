@@ -5,7 +5,7 @@ import type { AuthState, User } from './types';
 const initialState: AuthState = { type: 'idle' };
 
 export const userSlice = createSlice({
-  name: 'auth',
+  name: 'user',
   initialState: initialState as AuthState,
   reducers: {},
   extraReducers: builder => {
@@ -36,6 +36,12 @@ export const userSlice = createSlice({
       });
 
     builder.addCase(logoutUser.fulfilled, () => ({ type: 'idle' }));
+  },
+  selectors: {
+    selectUser: state => (state.type === 'succeeded' ? state.user : undefined),
+    selectAuthStatus: state => state.type,
+    selectAuthError: state =>
+      state.type === 'failed' ? state.error : undefined,
   },
 });
 

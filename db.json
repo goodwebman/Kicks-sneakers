@@ -3,17 +3,33 @@
     {
       "id": "1",
       "email": "test@example.com",
-      "password": "123456"
+      "password": "123456",
+      "permission": "regular"
     },
     {
-      "id": "f726",
+      "id": "37fe",
       "email": "admin@purrweb.com",
-      "password": "Qwerty123!"
+      "password": "Qwerty123!",
+      "name": "Данил",
+      "permission": "admin"
     },
     {
-      "id": "9eae",
-      "email": "admin@purrweb.com",
-      "password": "Qwerty123!"
+      "id": "3e6b",
+      "email": "admin@purrweb.com21",
+      "password": "Qwerty123!21",
+      "name": "121"
+    },
+    {
+      "id": "89b2",
+      "email": "фвфв",
+      "password": "123123",
+      "name": "12312"
+    },
+    {
+      "id": "e885",
+      "email": "vasya@gmail.com",
+      "password": "1488",
+      "name": "Васян"
     }
   ],
   "sneakers": [

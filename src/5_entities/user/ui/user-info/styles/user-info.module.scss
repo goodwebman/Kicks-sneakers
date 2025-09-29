@@ -1,0 +1,36 @@
+@use '@shared/styles/typography/typography.module' as typo;
+
+.root {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.imageWrapper {
+  width: 300px;
+  max-height: 300px;
+}
+
+.textWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.name {
+  color: var(--color-dark);
+  @include typo.h2;
+}
+
+.email {
+  color: var(--color-dark);
+  @include typo.h4;
+}
+
+.permission {
+  color: var(--color-dark);
+  @include typo.h4;
+}
