@@ -1,21 +1,25 @@
-import clsx from 'clsx';
 import type { FC } from 'react';
 import type { ButtonSize } from '../types';
-import styles from './text-button.module.scss';
+import { getClasses } from './styles/get-classes'
+
 
 interface TextButtonProps {
   size?: ButtonSize;
   label: string;
   onClick?: () => void;
+  className?: string;
 }
 
 export const TextButton: FC<TextButtonProps> = ({
   size = 'medium',
   label,
   onClick,
+  className,
 }) => {
+  const { cnRoot } = getClasses({ className, size });
+
   return (
-    <button className={clsx(styles.button, styles[size])} onClick={onClick}>
+    <button className={cnRoot} onClick={onClick}>
       {label}
     </button>
   );

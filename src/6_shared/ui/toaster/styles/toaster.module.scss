@@ -1,23 +1,19 @@
 @use '@shared/styles/typography/typography.module' as typo;
 
 .root {
- 
-
   border-radius: 12px;
   padding: 12px 16px;
   @include typo.h6;
-  
 }
 
-/* Разные состояния */
 .success {
-  background-color: #4caf50; // зелёный
+  background-color: var(--color-success);
 }
 
 .error {
-  background-color: #f44336; // красный
+  background-color: var(--color-error);
 }
 
 .default {
-  background-color: #333; // тёмный
+  background-color: var(--color-white);
 }

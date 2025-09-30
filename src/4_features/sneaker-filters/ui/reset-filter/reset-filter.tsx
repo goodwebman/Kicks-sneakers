@@ -7,8 +7,8 @@ export const ResetFilter = () => {
   const dispatch = useAppDispatch();
   const handleResetFilters = () => {
     dispatch(sneakerFiltersSlice.actions.resetFilters());
-    toast('Filters reset.', {
-      position: 'top-center'
+    toast('Filters reset', {
+      position: 'top-center',
     });
   };
 

@@ -4,6 +4,8 @@ import SvgTrash from '@shared/ui/icons/trash';
 import type { FC } from 'react';
 import { formatPrice } from './../../lib/format-price';
 import { getClasses } from './styles/get-classes';
+import { useNavigate } from 'react-router-dom'
+import { Routes } from '@shared/constants/routes'
 
 type YourBagProps = {
   sneakers: CartItem[];
@@ -29,6 +31,10 @@ export const YourBag: FC<YourBagProps> = ({ sneakers }) => {
   } = getClasses();
 
   const { handleRemove } = useRemoveSneaker();
+  const navigate = useNavigate();
+  const handleClick = (id: number) => {
+    navigate(`${Routes.sneakers.root}/${id}`);
+  };
 
   return (
     <div className={cnRoot}>
@@ -41,7 +47,11 @@ export const YourBag: FC<YourBagProps> = ({ sneakers }) => {
       <div className={cnSneakers}>
         {sneakers.map(sneaker => (
           <div className={cnDetailsWrapper}>
-            <img className={cnImageWrapper} src={sneaker.images[0]} />
+            <img
+              onClick={() => handleClick(sneaker.sneakerId)}
+              className={cnImageWrapper}
+              src={sneaker.images[0]}
+            />
             <div className={cnDetails}>
               <div className={cnDetailsTop}>
                 <h1 className={cnDetailsName}>{sneaker.name}</h1>

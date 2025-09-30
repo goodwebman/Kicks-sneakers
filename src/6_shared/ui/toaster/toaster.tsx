@@ -8,8 +8,6 @@ export const Toaster = () => {
     <HotToaster
       position="top-right"
       toastOptions={{
-        className: cnRoot,
-
         success: {
           className: `${cnRoot} ${cnSuccess}`,
         },

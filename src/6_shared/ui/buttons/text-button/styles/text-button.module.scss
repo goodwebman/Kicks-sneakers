@@ -1,3 +1,5 @@
+@use '@shared/styles/typography/typography.module' as typo;
+
 .button {
   display: inline-flex;
   align-items: center;
@@ -12,8 +14,7 @@
     color 0.2s ease,
     transform 0.1s ease;
 
-  font-family: var(--font-family-rubik);
-  font-weight: 600;
+  @include typo.h6;
 
   &:hover {
     color: var(--color-dark-hover);
@@ -26,13 +27,13 @@
 
 /* Размеры */
 .small {
-  font-size: var(--b7);
+  @include typo.h7;
 }
 
 .medium {
-     font-size: var(--b6);
+  @include typo.h6;
 }
 
 .large {
-     font-size: var(--b5);
+  @include typo.h5;
 }

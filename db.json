@@ -30,6 +30,12 @@
       "email": "vasya@gmail.com",
       "password": "1488",
       "name": "Васян"
+    },
+    {
+      "id": "639d",
+      "email": "danya@mail.ru",
+      "password": "1234",
+      "name": "Даня"
     }
   ],
   "sneakers": [
