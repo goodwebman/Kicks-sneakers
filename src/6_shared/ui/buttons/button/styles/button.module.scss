@@ -21,9 +21,6 @@
   &:active {
     transform: scale(0.97);
   }
-  &:active {
-    transform: scale(0.97); // только пока зажата кнопка
-  }
 }
 
 .title {
@@ -31,7 +28,6 @@
   color: var(--color-white);
 }
 
-/* Размеры */
 .small {
   padding: 8px 16px;
 
@@ -62,7 +58,6 @@
   align-items: center;
 }
 
-/* Вариант по цвету (например, primary) */
 .primary {
   background-color: var(--color-blue);
   color: var(--color-white);

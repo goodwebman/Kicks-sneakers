@@ -22,9 +22,14 @@
   &:active {
     transform: scale(0.97);
   }
+
+  &:focus {
+    background-color: var(--color-dark);
+    color: var(--color-white);
+    outline: none;
+  }
 }
 
-/* Размеры */
 .small {
   padding: 12px;
 }
@@ -37,7 +42,6 @@
   padding: 20px;
 }
 
-/* Иконки */
 .icon {
   display: inline-flex;
   align-items: center;

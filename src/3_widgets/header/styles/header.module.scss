@@ -124,7 +124,7 @@
   position: relative;
   display: inline-flex;
 
-  &::after {
+  &--has-items::after {
     content: attr(data-count);
     position: absolute;
     top: -8px;

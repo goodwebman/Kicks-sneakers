@@ -1,7 +1,9 @@
 export { default as Cart } from './cart';
 export { default as Check } from './check';
 export { default as ChevronBack } from './chevron-back';
+export { default as ChevronLeft } from './chevron-left';
 export { default as ChevronNext } from './chevron-next';
+export { default as ChevronRight } from './chevron-right';
 export { default as ChevronUp } from './chevron-up';
 export { default as CloseEye } from './close-eye';
 export { default as Facebook } from './facebook';

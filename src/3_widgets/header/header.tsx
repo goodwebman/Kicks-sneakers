@@ -22,7 +22,7 @@ export const Header: FC = () => {
     cnLogo,
     cnRightSide,
     cnCart,
-  } = getClasses();
+  } = getClasses({ cartSneakers });
   const navigate = useNavigate();
 
   return (
