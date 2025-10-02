@@ -16,6 +16,7 @@ export const getClasses = ({ className }: Args = {}) => {
   const cnRightSide = cn('right_side');
   const cnMenu = cn('menu');
   const cnMenuOpen = cn('menu_open');
+  const cnCart = cn('cart');
 
   return {
     cnRoot,
@@ -26,5 +27,6 @@ export const getClasses = ({ className }: Args = {}) => {
     cnRightSide,
     cnMenu,
     cnMenuOpen,
+    cnCart
   };
 };

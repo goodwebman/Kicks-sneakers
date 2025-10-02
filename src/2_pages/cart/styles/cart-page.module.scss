@@ -1,0 +1,13 @@
+.cart {
+  display: flex;
+  align-items: flex-start; 
+
+  &--empty {
+    justify-content: center;
+    align-items: center;
+  }
+
+  &--filled {
+    justify-content: space-between;
+  }
+}

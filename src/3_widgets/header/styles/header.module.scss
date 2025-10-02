@@ -1,4 +1,5 @@
-@use '../../../6_shared/styles/breakpoints/breakpoints.module' as *;
+@use '@shared/styles/breakpoints/breakpoints.module' as *;
+@use '@shared/styles/typography/typography.module' as typo;
 
 .header {
   background-color: var(--color-white);
@@ -116,5 +117,25 @@
 
   .allSneakers {
     display: none;
+  }
+}
+
+.cart {
+  position: relative;
+  display: inline-flex;
+
+  &::after {
+    content: attr(data-count);
+    position: absolute;
+    top: -8px;
+    right: -10px;
+    background: var(--color-blue);
+    @include typo.h8;
+    color: var(--color-white);
+    padding: 5px 5px;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    text-align: center;
   }
 }

@@ -1,18 +1,28 @@
 import { type FC, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
+import { cartSlice } from '@entities/cart/model/slice';
+import { Routes } from '@shared/constants/routes';
+import { useAppSelector } from '@shared/redux/store';
 import { TextButton } from '../../6_shared/ui/buttons/text-button/text-button';
 import { DrawerMenu } from '../../6_shared/ui/drawer-menu/drawer-menu';
 import SvgCart from '../../6_shared/ui/icons/cart';
 import SvgLogo from '../../6_shared/ui/icons/logo';
 import SvgUser from '../../6_shared/ui/icons/user';
 import { getClasses } from './styles/get-classes';
-import { Routes } from '@shared/constants/routes';
 
 export const Header: FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const { cnRoot, cnAllSneakers, cnBurger, cnBurgerOpen, cnLogo, cnRightSide } =
-    getClasses();
+  const cartSneakers = useAppSelector(cartSlice.selectors.cartItemsQuantity);
+  const {
+    cnRoot,
+    cnAllSneakers,
+    cnBurger,
+    cnBurgerOpen,
+    cnLogo,
+    cnRightSide,
+    cnCart,
+  } = getClasses();
   const navigate = useNavigate();
 
   return (
@@ -42,7 +52,7 @@ export const Header: FC = () => {
         <Link to={Routes.auth}>
           <SvgUser width={25} height={25} />
         </Link>
-        <Link to={Routes.cart}>
+        <Link to={Routes.cart} className={cnCart} data-count={cartSneakers}>
           <SvgCart width={25} height={25} />
         </Link>
       </div>

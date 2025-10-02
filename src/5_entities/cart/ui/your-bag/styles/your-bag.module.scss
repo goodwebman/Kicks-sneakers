@@ -49,7 +49,7 @@
   flex-direction: column;
   gap: 40px;
   max-height: 460px;
-  overflow-y: scroll;
+  overflow-y: auto;
   padding-right: 100px;
   @include scroll.custom-scroll;
 }
@@ -107,4 +107,37 @@
     align-items: center;
     margin-top: 20px;
   }
+}
+
+.emptyWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0px 50px;
+  text-align: center;
+  background-color: var(--color-white);
+  border-radius: 16px;
+  min-height: 500px;
+  max-width: 800px;
+  flex-grow: 1;
+}
+
+.emptyImage {
+  width: 200px;
+  height: auto;
+  margin-bottom: 24px;
+  opacity: 0.9;
+}
+
+.emptyTitle {
+  color: var(--color-dark);
+  @include typo.h3;
+  margin-bottom: 12px;
+}
+
+.emptySubtitle {
+  color: var(--color-grayscale-primary);
+  @include typo.b5-regular;
+  margin-bottom: 62px;
 }

@@ -4,13 +4,15 @@ import { useAppSelector } from '@shared/redux/store';
 import { Button } from '@shared/ui/buttons/button';
 import type { FC } from 'react';
 import { formatPrice } from './../../lib/format-price';
-import { getClasses } from './styles/get-classes'
+import { getClasses } from './styles/get-classes';
 
 type OrderSummaryProps = {
   sneakers: CartItem[];
+  isEmpty: boolean;
 };
 
-export const OrderSummary: FC<OrderSummaryProps> = ({ sneakers }) => {
+export const OrderSummary: FC<OrderSummaryProps> = ({ sneakers, isEmpty }) => {
+  if (isEmpty) return;
   const { cnRoot, cnMainInfo, cnItems, cnTitle } = getClasses();
   const totalPrice = useAppSelector(cartSlice.selectors.totalPrice);
   const deliveryPrice = 6.99;
@@ -35,7 +37,7 @@ export const OrderSummary: FC<OrderSummaryProps> = ({ sneakers }) => {
           <span>${totalPrice + deliveryPrice}</span>
         </li>
       </ul>
-      <Button variant='secondary' title="CHECKOUT" fullWidth />
+      <Button variant="secondary" title="CHECKOUT" fullWidth />
     </div>
   );
 };
