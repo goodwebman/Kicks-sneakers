@@ -37,7 +37,9 @@ export const OrderSummary: FC<OrderSummaryProps> = ({ sneakers, isEmpty }) => {
           <span>${totalPrice + deliveryPrice}</span>
         </li>
       </ul>
-      <Button variant="secondary" title="CHECKOUT" fullWidth />
+      <Button variant="secondary" fullWidth>
+        CHECKOUT
+      </Button>
     </div>
   );
 };

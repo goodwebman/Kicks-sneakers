@@ -21,11 +21,9 @@ export const NewDrops: FC<NewDropsProps> = ({ className }) => {
     <section className={cnRoot}>
       <div className={cnRootInfo}>
         <p className={cnTitle}>Don't miss out new drops</p>
-        <Button
-          onClick={() => navigate(Routes.sneakers.root)}
-          size="large"
-          title="SHOP NEW DROPS"
-        />
+        <Button onClick={() => navigate(Routes.sneakers.root)} size="large">
+          SHOP NEW DROPS
+        </Button>
       </div>
       <Suspense
         fallback={

@@ -1,3 +1,4 @@
+import { useScrollTop } from '@shared/hooks/use-scroll-top';
 import { useNavigate } from 'react-router-dom';
 import { Routes } from '../../../../6_shared/constants/routes';
 import { Button } from '../../../../6_shared/ui/buttons/button';
@@ -28,6 +29,7 @@ export const SneakerCard = ({
     className,
   });
 
+
   return (
     <div className={cnRoot}>
       <div className={cnImageWrapper}>
@@ -49,12 +51,11 @@ export const SneakerCard = ({
           variant="secondary"
           size="large"
           fullWidth
-          title={
-            <div className={cnButtonInner}>
-              VIEW PRODUCT - <span className={cnPrice}>${sneaker.price}</span>
-            </div>
-          }
-        />
+        >
+          <div className={cnButtonInner}>
+            VIEW PRODUCT - <span className={cnPrice}>${sneaker.price}</span>
+          </div>
+        </Button>
       </div>
     </div>
   );

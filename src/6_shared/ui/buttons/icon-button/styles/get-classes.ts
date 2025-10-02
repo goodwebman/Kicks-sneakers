@@ -7,10 +7,15 @@ const cn = classNames.bind(classes);
 type Args = {
   className?: string;
   size?: ButtonSize;
+  disabled?: boolean;
 };
 
-export const getClasses = ({ className, size = 'medium' }: Args = {}) => {
-  const cnRoot = cn('button', size, className);
+export const getClasses = ({
+  className,
+  size = 'medium',
+  disabled,
+}: Args = {}) => {
+  const cnRoot = cn('button', size, { disabled }, className);
   const cnIcon = cn('icon');
 
   return {

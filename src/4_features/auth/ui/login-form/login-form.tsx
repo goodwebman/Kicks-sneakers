@@ -70,11 +70,9 @@ export const LoginForm = () => {
         isSuccess={touchedFields.password && !errors.password && !authError}
       />
 
-      <Button
-        type="submit"
-        disabled={isSubmitting || authStatus === 'pending'}
-        title={authStatus === 'pending' ? 'Входим...' : 'Войти в аккаунт'}
-      />
+      <Button type="submit" disabled={isSubmitting || authStatus === 'pending'}>
+        {authStatus === 'pending' ? <p>Входим...</p> : <p>Войти в аккаунт</p>}
+      </Button>
     </form>
   );
 };

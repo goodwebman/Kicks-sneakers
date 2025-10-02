@@ -1,12 +1,13 @@
 import type { FC, ReactNode } from 'react';
+import type { ButtonSize } from '../types';
 import { getClasses } from './styles/get-classes';
-import type { ButtonSize } from '../types'
 
 interface IconButtonProps {
   size?: ButtonSize;
   icon: ReactNode;
   onClick?: () => void;
   className?: string;
+  disabled?: boolean;
 }
 
 export const IconButton: FC<IconButtonProps> = ({
@@ -14,12 +15,14 @@ export const IconButton: FC<IconButtonProps> = ({
   icon,
   onClick,
   className,
+  disabled = false,
 }) => {
-  const { cnRoot, cnIcon } = getClasses({ size, className });
+  const { cnRoot, cnIcon } = getClasses({ size, className, disabled });
 
   return (
-    <button className={cnRoot} onClick={onClick}>
+    <button className={cnRoot} onClick={onClick} disabled={disabled}>
       <span className={cnIcon}>{icon}</span>
     </button>
   );
 };
+

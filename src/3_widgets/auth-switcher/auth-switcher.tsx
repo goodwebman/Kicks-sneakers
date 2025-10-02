@@ -13,13 +13,10 @@ export const AuthSwitcher = () => {
       <Button
         variant="secondary"
         fullWidth
-        title={
-          mode === 'login'
-            ? 'Нет аккаунта?'
-            : 'Есть аккаунт?'
-        }
         onClick={() => setMode(mode === 'login' ? 'register' : 'login')}
-      />
+      >
+        {mode === 'login' ? 'Нет аккаунта?' : 'Есть аккаунт?'}
+      </Button>
     </div>
   );
 };

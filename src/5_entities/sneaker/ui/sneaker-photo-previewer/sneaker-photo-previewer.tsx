@@ -22,14 +22,12 @@ export const SneakerPhotoPreviewer = ({
 
   return (
     <div className={cnRoot}>
-      {/* Desktop версия */}
       <div className={cnDesktopGrid}>
         {images.slice(0, 4).map((src, i) => (
           <img draggable={false} key={i} src={src} alt={`Sneaker ${i}`} />
         ))}
       </div>
 
-      {/* Mobile версия */}
       <div className={cnMobileSlider}>
         <img
           className={cnBigImage}

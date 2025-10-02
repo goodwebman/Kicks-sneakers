@@ -36,6 +36,18 @@
       "email": "danya@mail.ru",
       "password": "1234",
       "name": "Даня"
+    },
+    {
+      "id": "907a",
+      "email": "123",
+      "password": "12312",
+      "name": "21321"
+    },
+    {
+      "id": "e754",
+      "email": "1231",
+      "password": "123123",
+      "name": "123123"
     }
   ],
   "sneakers": [

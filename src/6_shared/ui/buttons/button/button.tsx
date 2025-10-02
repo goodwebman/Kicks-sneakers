@@ -3,7 +3,7 @@ import type { ButtonSize, ButtonVariant } from '../types';
 import { getClasses } from './styles/get-classes';
 
 type CustomButtonProps = {
-  title: string | ReactNode;
+  children: ReactNode;
   size?: ButtonSize;
   variant?: ButtonVariant;
   leftIcon?: ReactNode;
@@ -17,7 +17,7 @@ type CustomButtonProps = {
 type ButtonProps = CustomButtonProps & ComponentPropsWithoutRef<'button'>;
 
 export const Button: FC<ButtonProps> = ({
-  title,
+  children,
   size = 'medium',
   variant = 'primary',
   leftIcon,
@@ -38,7 +38,7 @@ export const Button: FC<ButtonProps> = ({
   return (
     <button className={cnRoot} style={style} onClick={onClick} {...props}>
       {leftIcon && <span className={cnLeftIcon}>{leftIcon}</span>}
-      <p className={cnTitle}>{title}</p>
+      <span className={cnTitle}>{children}</span>
       {rightIcon && <span className={cnRightIcon}>{rightIcon}</span>}
     </button>
   );

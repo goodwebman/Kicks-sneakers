@@ -29,12 +29,9 @@ export const Auth = () => {
             email={user?.email}
             permisson={user?.permission}
           />
-          <Button
-            fullWidth
-            onClick={logoutAction}
-            variant={'secondary'}
-            title={'Выйти'}
-          />
+          <Button fullWidth onClick={logoutAction} variant={'secondary'}>
+            Выйти
+          </Button>
         </>
       )}
     </section>

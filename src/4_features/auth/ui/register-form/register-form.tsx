@@ -10,8 +10,8 @@ import {
   registerSchema,
 } from '@shared/utils/validation/auth-schemas/register-schema';
 import { useForm } from 'react-hook-form';
+import toast from 'react-hot-toast';
 import { getClasses } from './styles/get-classes';
-import toast from 'react-hot-toast'
 export const RegisterForm = () => {
   const {
     handleSubmit,
@@ -31,11 +31,11 @@ export const RegisterForm = () => {
   const onSubmit = async (data: RegisterData) => {
     try {
       await handleRegister(data);
-       toast('Регистрация прошла успешно!', {
+      toast('Регистрация прошла успешно!', {
         position: 'top-center',
       });
-    } catch  {
-       toast('Ошибка регистрации', {
+    } catch {
+      toast('Ошибка регистрации', {
         position: 'top-center',
       });
     }
@@ -79,13 +79,9 @@ export const RegisterForm = () => {
         isSuccess={touchedFields.password && !errors.password && !authError}
       />
 
-      <Button
-        type="submit"
-        disabled={isSubmitting || authStatus === 'pending'}
-        title={
-          authStatus === 'pending' ? 'Регистрация...' : 'Зарегистрироваться'
-        }
-      />
+      <Button type="submit" disabled={isSubmitting || authStatus === 'pending'}>
+        {authStatus === 'pending' ? 'Регистрация...' : 'Зарегистрироваться'}
+      </Button>
     </form>
   );
 };

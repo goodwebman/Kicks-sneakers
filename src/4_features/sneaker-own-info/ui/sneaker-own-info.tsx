@@ -106,13 +106,10 @@ export const SneakerOwnInfo: FC<SneakerDto> = ({
         })}
       </div>
       <div className={cnActionsWrapper}>
-        <Button
-          fullWidth
-          variant="secondary"
-          title={'ADD TO CART'}
-          onClick={handleAddToCart}
-        />
-        <Button fullWidth title={'BUT IT NOW'} />
+        <Button fullWidth variant="secondary" onClick={handleAddToCart}>
+          ADD TO CART
+        </Button>
+        <Button fullWidth>BUT IT NOW</Button>
       </div>
 
       <div className={cnSubInfo}>

@@ -51,11 +51,9 @@ export const YourBag: FC<YourBagProps> = ({ sneakers, isEmpty }) => {
         <p className={cnEmptySubtitle}>
           Looks like you haven’t added anything yet. Let’s fix that!
         </p>
-        <Button
-          onClick={() => navigate(Routes.sneakers.root)}
-          fullWidth
-          title={'START SHOPPING'}
-        ></Button>
+        <Button onClick={() => navigate(Routes.sneakers.root)} fullWidth>
+          START SHOPPING
+        </Button>
       </div>
     );
   }
