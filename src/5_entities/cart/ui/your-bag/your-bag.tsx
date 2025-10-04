@@ -1,13 +1,17 @@
 import type { CartItem } from '@entities/cart/model/types';
 import { useRemoveSneaker } from '@entities/cart/model/use-remove-sneaker';
-import EmptyCart from '@shared/assets/imgs/shopping.png';
+
+import { useMinusQuantity } from '@entities/cart/model/use-minus-quantity';
+import { usePlusQuantity } from '@entities/cart/model/use-plus-quantity';
 import { Routes } from '@shared/constants/routes';
-import { Button } from '@shared/ui/buttons/button';
+import SvgDarkMinus from '@shared/ui/icons/dark-minus';
+import SvgDarkPlus from '@shared/ui/icons/dark-plus';
 import SvgTrash from '@shared/ui/icons/trash';
 import type { FC } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { formatPrice } from './../../lib/format-price';
 import { getClasses } from './styles/get-classes';
+import { YourBagEmpty } from './your-bag-empty';
 
 type YourBagProps = {
   sneakers: CartItem[];
@@ -31,31 +35,21 @@ export const YourBag: FC<YourBagProps> = ({ sneakers, isEmpty }) => {
     cnSneakers,
     cnActionsWrapper,
     cnActions,
-    cnEmptyWrapper,
-    cnEmptyTitle,
-    cnEmptySubtitle,
-    cnEmptyImage,
+    cnActionsSigns,
+    cnActionsSignsEmpty,
+    cnDetailsPriceMobile
   } = getClasses();
 
   const { handleRemove } = useRemoveSneaker();
+  const { handleMinus } = useMinusQuantity();
+  const { handlePlus } = usePlusQuantity();
   const navigate = useNavigate();
   const handleClick = (id: number) => {
     navigate(`${Routes.sneakers.root}/${id}`);
   };
 
   if (isEmpty) {
-    return (
-      <div className={cnEmptyWrapper}>
-        <img className={cnEmptyImage} src={EmptyCart} alt="Empty bag" />
-        <h2 className={cnEmptyTitle}>Your bag is empty</h2>
-        <p className={cnEmptySubtitle}>
-          Looks like you haven’t added anything yet. Let’s fix that!
-        </p>
-        <Button onClick={() => navigate(Routes.sneakers.root)} fullWidth>
-          START SHOPPING
-        </Button>
-      </div>
-    );
+    return <YourBagEmpty />;
   }
 
   return (
@@ -95,7 +89,25 @@ export const YourBag: FC<YourBagProps> = ({ sneakers, isEmpty }) => {
                 <h2>Size {sneaker.size}</h2>
                 <h2>Quantity {sneaker.quantity}</h2>
               </div>
+              <span className={cnDetailsPriceMobile}>
+                ${formatPrice(sneaker.price)}
+              </span>
               <div className={cnActionsWrapper}>
+                {sneaker.quantity >= 2 ? (
+                  <SvgDarkMinus
+                    onClick={() =>
+                      handleMinus({
+                        sneakerId: sneaker.sneakerId,
+                        color: sneaker.color,
+                        size: sneaker.size,
+                      })
+                    }
+                    className={cnActionsSigns}
+                  />
+                ) : (
+                  <div className={cnActionsSignsEmpty}></div>
+                )}
+
                 <SvgTrash
                   onClick={() =>
                     handleRemove({
@@ -105,6 +117,16 @@ export const YourBag: FC<YourBagProps> = ({ sneakers, isEmpty }) => {
                     })
                   }
                   className={cnActions}
+                />
+                <SvgDarkPlus
+                  onClick={() =>
+                    handlePlus({
+                      sneakerId: sneaker.sneakerId,
+                      color: sneaker.color,
+                      size: sneaker.size,
+                    })
+                  }
+                  className={cnActionsSigns}
                 />
               </div>
             </div>

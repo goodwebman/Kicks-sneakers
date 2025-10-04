@@ -41,6 +41,37 @@ export const cartSlice = createSlice({
     clearCart: state => {
       state.items = [];
     },
+
+    minusQuantity: (
+      state,
+      action: PayloadAction<{ sneakerId: number; color: string; size: number }>,
+    ) => {
+      const { sneakerId, color, size } = action.payload;
+
+      const existing = state.items.find(
+        i => i.sneakerId === sneakerId && i.color === color && i.size === size,
+      );
+
+      if (existing) {
+        if (existing.quantity > 1) {
+          existing.quantity -= 1;
+        }
+      }
+    },
+    plusQuantity: (
+      state,
+      action: PayloadAction<{ sneakerId: number; color: string; size: number }>,
+    ) => {
+      const { sneakerId, color, size } = action.payload;
+
+      const existing = state.items.find(
+        i => i.sneakerId === sneakerId && i.color === color && i.size === size,
+      );
+
+      if (existing) {
+        existing.quantity += 1;
+      }
+    },
   },
   selectors: {
     getSneakers: state => state.items,
@@ -54,5 +85,11 @@ export const cartSlice = createSlice({
   },
 });
 
-export const { addSneaker, removeSneaker, clearCart } = cartSlice.actions;
+export const {
+  addSneaker,
+  removeSneaker,
+  clearCart,
+  minusQuantity,
+  plusQuantity,
+} = cartSlice.actions;
 export const cartReducer = cartSlice.reducer;

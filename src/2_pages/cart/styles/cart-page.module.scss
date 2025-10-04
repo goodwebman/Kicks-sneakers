@@ -1,6 +1,11 @@
+@use '@shared/styles/breakpoints/breakpoints.module' as *;
 .cart {
   display: flex;
-  align-items: flex-start; 
+  gap: 40px;
+  margin-bottom: 40px;
+  @include media-max(1280px) {
+    flex-direction: column;
+  }
 
   &--empty {
     justify-content: center;

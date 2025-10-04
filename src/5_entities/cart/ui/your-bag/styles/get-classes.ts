@@ -15,9 +15,12 @@ export const getClasses = () => {
   const cnDetailsTop = cn('details__top');
   const cnDetailsName = cn('details__top__name');
   const cnDetailsPrice = cn('details__top__price');
+  const cnDetailsPriceMobile = cn('details__top__price-mobile')
   const cnDetailsMidle = cn('details__midle');
   const cnDetailsFooter = cn('details__footer');
   const cnActions = cn('actions');
+  const cnActionsSigns = cn('actions__signs');
+  const cnActionsSignsEmpty = cn('actions__signs-empty');
   const cnActionsWrapper = cn('actions__wrapper');
   const cnEmptyWrapper = cn('emptyWrapper');
   const cnEmptyImage = cn('emptyImage');
@@ -44,5 +47,8 @@ export const getClasses = () => {
     cnEmptyImage,
     cnEmptyTitle,
     cnEmptySubtitle,
+    cnActionsSigns,
+    cnActionsSignsEmpty,
+    cnDetailsPriceMobile
   };
 };

@@ -1,5 +1,5 @@
 @use '@shared/styles/typography/typography.module' as typo;
-@use '@shared/styles/scroll/scroll.module' as scroll;
+@use '@shared/styles/breakpoints/breakpoints.module' as *;
 
 .root {
   background-color: var(--color-white);
@@ -7,6 +7,13 @@
   padding: 24px;
   max-width: 780px;
   flex-grow: 1;
+
+  @include media-max(1280px) {
+    max-width: 100%;
+  }
+  @include media-max(420px) {
+    padding: 10px;
+  }
 }
 
 .title {
@@ -24,6 +31,10 @@
   flex-direction: column;
   margin-bottom: 48px;
   gap: 10px;
+  @include media-max(420px) {
+    padding: 20px;
+    padding-bottom: 0;
+  }
 }
 
 .imageWrapper {
@@ -36,12 +47,25 @@
   &:hover {
     scale: 0.95;
   }
+
+  @include media-max(600px) {
+    max-height: 255px;
+  }
+  @include media-max(450px) {
+    max-width: 160px;
+    max-height: 225px;
+  }
+  @include media-max(420px) {
+  }
 }
 
 .detailsWrapper {
   display: flex;
   flex-direction: row;
   gap: 24px;
+  @include media-max(500px) {
+    gap: 10px;
+  }
 }
 
 .sneakers {
@@ -50,8 +74,12 @@
   gap: 40px;
   max-height: 460px;
   overflow-y: auto;
-  padding-right: 100px;
-  @include scroll.custom-scroll;
+  overflow-x: hidden;
+  padding-right: 40px;
+
+  @include media-max(620px) {
+    padding-right: 0;
+  }
 }
 
 .details {
@@ -69,11 +97,28 @@
       color: var(--color-dark);
       @include typo.h4;
       text-transform: uppercase;
+      @include media-max(500px) {
+        @include typo.h5;
+      }
     }
 
     &__price {
       color: var(--color-blue);
       @include typo.h4;
+      @include media-max(740px) {
+        display: none;
+      }
+      &-mobile {
+        display: none;
+        @include media-max(740px) {
+          display: block;
+          color: var(--color-blue);
+          @include typo.h4;
+        }
+        @include media-max(500px) {
+          @include typo.h5;
+        }
+      }
     }
   }
 
@@ -82,6 +127,9 @@
 
     @include typo.b5-regular;
     color: var(--color-light-dark);
+    @include media-max(500px) {
+      @include typo.b6-regular;
+    }
   }
 
   &__footer {
@@ -90,6 +138,13 @@
     text-transform: capitalize;
     @include typo.b5-regular;
     color: var(--color-light-dark);
+
+    @include media-max(600px) {
+      gap: 10px;
+    }
+    @include media-max(500px) {
+      @include typo.b6-regular;
+    }
   }
 }
 
@@ -101,11 +156,31 @@
   &:hover {
     scale: 1.2;
   }
+  @include media-max(380px) {
+    width: 30px;
+    height: 30px;
+  }
   &__wrapper {
     display: flex;
-    gap: 24px;
+    gap: 12px;
     align-items: center;
     margin-top: 20px;
+    @include media-max(700px) {
+      margin-top: 0;
+    }
+  }
+  &__signs {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    transition: scale 0.2s ease-in-out;
+    &:hover {
+      scale: 1.2;
+    }
+  }
+  &__signs-empty {
+    width: 20px;
+    height: 20px;
   }
 }
 
@@ -141,3 +216,15 @@
   @include typo.b5-regular;
   margin-bottom: 62px;
 }
+
+.sneakers::-webkit-scrollbar {
+  width: 6px;
+  @include media-max(400px) {
+    width: 2px;
+  }
+}
+.sneakers::-webkit-scrollbar-thumb {
+  background: var(--color-blue);
+  border-radius: 12px;
+}
+

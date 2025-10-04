@@ -6,6 +6,8 @@ export { default as ChevronNext } from './chevron-next';
 export { default as ChevronRight } from './chevron-right';
 export { default as ChevronUp } from './chevron-up';
 export { default as CloseEye } from './close-eye';
+export { default as DarkMinus } from './dark-minus';
+export { default as DarkPlus } from './dark-plus';
 export { default as Facebook } from './facebook';
 export { default as FooterLogo } from './footer-logo';
 export { default as Instagram } from './instagram';
