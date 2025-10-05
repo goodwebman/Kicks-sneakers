@@ -7,4 +7,5 @@ export const Routes = {
   cart: '/cart',
   checkout: '/checkout',
   auth: '/auth',
+  orders: '/orders'
 } as const;

@@ -1,21 +1,18 @@
-import { useScrollTop } from '@shared/hooks/use-scroll-top';
-import { useNavigate } from 'react-router-dom';
-import { Routes } from '../../../../6_shared/constants/routes';
-import { Button } from '../../../../6_shared/ui/buttons/button';
+import { Button } from '@shared/ui/buttons/button';
 import type { SneakerDto } from '../../model/types';
 import { getClasses } from './styles/get-classes';
+
+type SneakerCardProps = {
+  sneaker: SneakerDto;
+  className?: string;
+  onClick: () => void;
+};
 
 export const SneakerCard = ({
   sneaker,
   className,
-}: {
-  sneaker: SneakerDto;
-  className?: string;
-}) => {
-  const navigate = useNavigate();
-  const handleClick = () => {
-    navigate(`${Routes.sneakers.root}/${sneaker.id}`);
-  };
+  onClick,
+}: SneakerCardProps) => {
   const {
     cnRoot,
     cnImageWrapper,
@@ -25,10 +22,7 @@ export const SneakerCard = ({
     cnPrice,
     cnButtonWrapper,
     cnButtonInner,
-  } = getClasses({
-    className,
-  });
-
+  } = getClasses({ className });
 
   return (
     <div className={cnRoot}>
@@ -46,12 +40,7 @@ export const SneakerCard = ({
         {sneaker.name} {sneaker.categories}
       </h1>
       <div style={cnButtonWrapper}>
-        <Button
-          onClick={handleClick}
-          variant="secondary"
-          size="large"
-          fullWidth
-        >
+        <Button onClick={onClick} variant="secondary" size="large" fullWidth>
           <div className={cnButtonInner}>
             VIEW PRODUCT - <span className={cnPrice}>${sneaker.price}</span>
           </div>

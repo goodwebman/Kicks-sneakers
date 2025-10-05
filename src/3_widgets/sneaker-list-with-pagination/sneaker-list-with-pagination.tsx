@@ -4,7 +4,9 @@ import { SneakerCardSkeleton } from '../../5_entities/sneaker/ui/sneaker-card-sk
 import { SneakerCard } from '../../5_entities/sneaker/ui/sneaker-card/sneaker-card';
 import { NoSneakersCard } from '../../6_shared/ui/products/no-sneakers-card/no-sneakers-card';
 
+import { Routes } from '@shared/constants/routes';
 import { useScrollTop } from '@shared/hooks/use-scroll-top';
+import { useNavigate } from 'react-router-dom';
 import { Pagination } from '../pagination/pagination';
 import { getClasses } from './styles/get-styles';
 
@@ -14,9 +16,12 @@ export const SneakersListWithPagination = () => {
   const { data: filteredSneakers, pages } = useFilteredSneakers(page);
   const ListEmpty = filteredSneakers.length === 0;
 
-  useScrollTop(280, [page]);
-
+  const navigate = useNavigate();
+  const handleClick = (sneakerId: number) => {
+    navigate(`${Routes.sneakers.root}/${sneakerId}`);
+  };
   const { cnWrapper, cnGrid } = getClasses();
+  useScrollTop(280, [page]);
 
   return (
     <div className={cnWrapper}>
@@ -34,7 +39,11 @@ export const SneakersListWithPagination = () => {
         ) : (
           <div className={cnGrid}>
             {filteredSneakers.map(sneaker => (
-              <SneakerCard key={sneaker.id} sneaker={sneaker} />
+              <SneakerCard
+                onClick={() => handleClick(sneaker.id)}
+                key={sneaker.id}
+                sneaker={sneaker}
+              />
             ))}
           </div>
         )}

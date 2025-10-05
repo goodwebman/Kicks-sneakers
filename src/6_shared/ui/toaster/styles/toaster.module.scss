@@ -8,12 +8,15 @@
 
 .success {
   background-color: var(--color-success);
+  color: var(--color-white)
 }
 
 .error {
   background-color: var(--color-error);
+  color: var(--color-white)
 }
 
 .default {
   background-color: var(--color-white);
+  color: var(--color-dark)
 }

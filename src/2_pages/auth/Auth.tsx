@@ -1,6 +1,6 @@
 import { userSlice } from '@entities/user/model/slice';
 import UserInfo from '@entities/user/ui/user-info/user-info';
-import { useLogout } from '@features/auth/model/use-logout';
+import { useLogout } from '@features/auth-form/model/use-logout';
 import { useAppSelector } from '@shared/redux/store';
 import { Button } from '@shared/ui/buttons/button';
 import { AuthSwitcher } from '@widgets/auth-switcher/auth-switcher';

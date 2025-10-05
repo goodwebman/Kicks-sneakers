@@ -1,6 +1,7 @@
+import { plusQuantity } from '@entities/cart/model/slice'
 import { useCallback } from 'react';
 import { useDispatch } from 'react-redux';
-import { plusQuantity } from './slice';
+
 
 interface PlusQuantityPayload {
   sneakerId: number;

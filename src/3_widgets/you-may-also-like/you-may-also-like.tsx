@@ -6,6 +6,8 @@ import SvgChevronRight from '@shared/ui/icons/chevron-right';
 import { useSuspenseQuery } from '@tanstack/react-query';
 import { usePagination } from './model/use-pagination';
 import { getClasses } from './styles/get-classes';
+import { useNavigate } from 'react-router-dom'
+import { Routes } from '@shared/constants/routes'
 
 export const YouMayAlsoLike = () => {
   const { cnHeadeTitle, cnHeader, cnHeaderButtons, cnSneakersWrapper } =
@@ -15,6 +17,11 @@ export const YouMayAlsoLike = () => {
 
   const { visibleItems, canPrev, canNext, handlePrev, handleNext } =
     usePagination(sneakers, 4);
+
+  const navigate = useNavigate();
+  const handleClick = (sneakerId: number) => {
+    navigate(`${Routes.sneakers.root}/${sneakerId}`);
+  };
 
   return (
     <div>
@@ -38,7 +45,7 @@ export const YouMayAlsoLike = () => {
 
       <div className={cnSneakersWrapper}>
         {visibleItems.map(sneaker => (
-          <SneakerCard sneaker={sneaker} key={sneaker.id} />
+          <SneakerCard onClick={() => handleClick(sneaker.id)} sneaker={sneaker} key={sneaker.id} />
         ))}
       </div>
     </div>

@@ -2,8 +2,8 @@ import { Routes } from '@shared/constants/routes';
 import { Suspense, type FC } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { SneakerCardSkeleton } from '../../../5_entities/sneaker/ui/sneaker-card-skeleton/sneaker-card-skeleton';
-import { SneakerPreviewList } from '../../../5_entities/sneaker/ui/sneaker-preview-list/sneaker-preview-list';
 import { Button } from '../../../6_shared/ui/buttons/button';
+import { SneakerPreviewList } from '../../sneaker-preview-list/sneaker-preview-list';
 import { getClasses } from './styles/get-classes';
 
 type NewDropsProps = {

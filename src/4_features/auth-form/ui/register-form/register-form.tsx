@@ -1,6 +1,6 @@
 import { userSlice } from '@entities/user/model/slice';
 import type { RegisterData } from '@entities/user/model/types';
-import { useRegister } from '@features/auth/model/use-register';
+import { useRegister } from '@features/auth-form/model/use-register';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useAppSelector } from '@shared/redux/store';
 import { Button } from '@shared/ui/buttons/button';

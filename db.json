@@ -48,6 +48,30 @@
       "email": "1231",
       "password": "123123",
       "name": "123123"
+    },
+    {
+      "id": "a294",
+      "email": "Danil-super",
+      "password": "Danil-super!1",
+      "name": "Danil"
+    },
+    {
+      "id": "e662",
+      "email": "super0kesha@mail.ru",
+      "password": "123132",
+      "name": "Арбузник"
+    },
+    {
+      "id": "2690",
+      "email": "super0kesha1@mail.ru",
+      "password": "123123123",
+      "name": "Арбузник"
+    },
+    {
+      "id": "dedc",
+      "email": "jojo@gmail.ru",
+      "password": "5436",
+      "name": "Danil"
     }
   ],
   "sneakers": [

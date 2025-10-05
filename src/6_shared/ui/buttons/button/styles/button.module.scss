@@ -80,6 +80,14 @@
     background-color: var(--color-dark-hover);
   }
 }
+.button:disabled {
+  cursor: not-allowed;
+  opacity: 0.8;
+  background-color: var(--color-grayscale-primary);
+  color: var(--color-white);
+  transform: none;
+  
+}
 
 /* Иконки */
 .icon {

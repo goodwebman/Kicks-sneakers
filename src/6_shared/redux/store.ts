@@ -1,3 +1,6 @@
+import { checkoutSlice } from '@entities/checkout/model/slice';
+import { ordersSlice } from '@entities/orders/module/slice';
+import { userSlice } from '@entities/user/model/slice';
 import type { ThunkAction, UnknownAction } from '@reduxjs/toolkit';
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import type { TypedUseSelectorHook } from 'react-redux';
@@ -15,20 +18,21 @@ import {
 import storage from 'redux-persist/lib/storage';
 import { sneakerFiltersSlice } from '../../4_features/sneaker-filters/model/slice';
 import { cartSlice } from '../../5_entities/cart/model/slice';
-import { userSlice } from '@entities/user/model/slice'
 
 // Корректно объединяем слайсы
 const rootReducer = combineReducers({
   sneakerFilter: sneakerFiltersSlice.reducer,
   cart: cartSlice.reducer,
-  user: userSlice.reducer
+  user: userSlice.reducer,
+  checkout: checkoutSlice.reducer,
+  orders: ordersSlice.reducer,
 });
 
 // Конфигурация persistor
 const persistConfig = {
   key: 'root',
   storage,
-  whitelist: ['sneakerFilter', 'cart', 'user'],
+  whitelist: ['sneakerFilter', 'cart', 'user', 'checkout', 'orders'],
 };
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

@@ -1,5 +1,5 @@
-import { LoginForm } from '@features/auth/ui/login-form/login-form';
-import { RegisterForm } from '@features/auth/ui/register-form/register-form';
+import { LoginForm } from '@features/auth-form/ui/login-form/login-form';
+import { RegisterForm } from '@features/auth-form/ui/register-form/register-form';
 import { Button } from '@shared/ui/buttons/button';
 import { useState } from 'react';
 import { getClasses } from './styles/get-classes';

@@ -10,6 +10,7 @@ import SvgCart from '../../6_shared/ui/icons/cart';
 import SvgLogo from '../../6_shared/ui/icons/logo';
 import SvgUser from '../../6_shared/ui/icons/user';
 import { getClasses } from './styles/get-classes';
+import SvgOrders from '@shared/ui/icons/orders'
 
 export const Header: FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -49,6 +50,9 @@ export const Header: FC = () => {
       </Link>
 
       <div className={cnRightSide}>
+        <Link to={Routes.orders}>
+          <SvgOrders width={25} height={25} />
+        </Link>
         <Link to={Routes.auth}>
           <SvgUser width={25} height={25} />
         </Link>

@@ -1,0 +1,53 @@
+@use '@shared/styles/typography/typography.module' as typo;
+.root {
+  max-width: 800px;
+}
+
+.title {
+  text-decoration: underline;
+  @include typo.h5;
+  color: var(--color-dark);
+  margin-bottom: 32px;
+}
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  &__title {
+    @include typo.h3;
+    color: var(--color-dark);
+  }
+  &__suptitle {
+    @include typo.b6-regular;
+    color: var(--color-grayscale-primary);
+  }
+  &__input {
+    margin-top: 26px;
+    width: 48%;
+  }
+}
+
+.shipping {
+  margin-top: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  &__title {
+    @include typo.h3;
+    color: var(--color-dark);
+    margin-bottom: 32px;
+  }
+  &__names {
+    display: flex;
+
+    gap: 20px;
+    width: 100%;
+    & > * {
+      flex: 1;
+    }
+  }
+  &__input__number {
+    width: 48%;
+  }
+}

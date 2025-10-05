@@ -2,7 +2,7 @@ import EmptyCart from '@shared/assets/imgs/shopping.png';
 import { Routes } from '@shared/constants/routes';
 import { Button } from '@shared/ui/buttons/button';
 import { useNavigate } from 'react-router-dom';
-import { getClasses } from './styles/get-classes';
+import { getClasses } from './ui/styles/get-classes';
 
 export const YourBagEmpty = () => {
   const { cnEmptyWrapper, cnEmptyTitle, cnEmptySubtitle, cnEmptyImage } =

@@ -1,6 +1,7 @@
+import { removeSneaker } from '@entities/cart/model/slice'
 import { useCallback } from 'react';
 import { useDispatch } from 'react-redux';
-import { removeSneaker } from './slice';
+
 
 interface RemoveSneakerPayload {
   sneakerId: number;

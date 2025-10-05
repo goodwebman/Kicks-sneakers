@@ -14,6 +14,7 @@ export { default as Instagram } from './instagram';
 export { default as LogoHuge } from './logo-huge';
 export { default as Logo } from './logo';
 export { default as OpenEye } from './open-eye';
+export { default as Orders } from './orders';
 export { default as Plus } from './plus';
 export { default as Search } from './search';
 export { default as Toktok } from './toktok';

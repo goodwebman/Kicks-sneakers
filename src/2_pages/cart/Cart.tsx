@@ -1,8 +1,8 @@
 import { cartSlice } from '@entities/cart/model/slice';
-import { OrderSummary } from '@entities/cart/ui/order-summary/order-summary';
-import { YourBag } from '@entities/cart/ui/your-bag/your-bag';
 import { useAppSelector } from '@shared/redux/store';
+import { OrderSummary } from '@widgets/order-summary/ui/order-summary';
 import { YouMayAlsoLike } from '@widgets/you-may-also-like/you-may-also-like';
+import { YourBag } from '@widgets/your-bag/your-bag';
 import { getClasses } from './styles/get-classes';
 
 export const Cart = () => {

@@ -1,6 +1,6 @@
 import { userSlice } from '@entities/user/model/slice';
 import type { LoginData } from '@entities/user/model/types';
-import { useLogin } from '@features/auth/model/use-login';
+import { useLogin } from '@features/auth-form/model/use-login';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useAppSelector } from '@shared/redux/store';
 import { Button } from '@shared/ui/buttons/button';

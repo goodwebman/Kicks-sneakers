@@ -1,16 +1,16 @@
 import type { CartItem } from '@entities/cart/model/types';
-import { useRemoveSneaker } from '@entities/cart/model/use-remove-sneaker';
+import { useRemoveSneaker } from '@widgets/your-bag/model/use-remove-sneaker';
 
-import { useMinusQuantity } from '@entities/cart/model/use-minus-quantity';
-import { usePlusQuantity } from '@entities/cart/model/use-plus-quantity';
 import { Routes } from '@shared/constants/routes';
 import SvgDarkMinus from '@shared/ui/icons/dark-minus';
 import SvgDarkPlus from '@shared/ui/icons/dark-plus';
 import SvgTrash from '@shared/ui/icons/trash';
+import { useMinusQuantity } from '@widgets/your-bag/model/use-minus-quantity';
+import { usePlusQuantity } from '@widgets/your-bag/model/use-plus-quantity';
 import type { FC } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { formatPrice } from './../../lib/format-price';
-import { getClasses } from './styles/get-classes';
+import { formatPrice } from '../../5_entities/cart/lib/format-price';
+import { getClasses } from './ui/styles/get-classes';
 import { YourBagEmpty } from './your-bag-empty';
 
 type YourBagProps = {
@@ -37,7 +37,7 @@ export const YourBag: FC<YourBagProps> = ({ sneakers, isEmpty }) => {
     cnActions,
     cnActionsSigns,
     cnActionsSignsEmpty,
-    cnDetailsPriceMobile
+    cnDetailsPriceMobile,
   } = getClasses();
 
   const { handleRemove } = useRemoveSneaker();
