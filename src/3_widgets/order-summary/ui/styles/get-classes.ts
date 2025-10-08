@@ -3,8 +3,8 @@ import classes from './order-summary.module.scss';
 
 const cn = classNames.bind(classes);
 
-export const getClasses = () => {
-  const cnRoot = cn('root');
+export const getClasses = ({ isCheckout = false }: { isCheckout?: boolean }) => {
+  const cnRoot = cn('root', { 'root--checkout': isCheckout });
   const cnMainInfo = cn('main-info');
   const cnTitle = cn('title');
   const cnItems = cn('items');

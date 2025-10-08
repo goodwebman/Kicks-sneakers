@@ -17,12 +17,14 @@ import {
 } from '@shared/utils/validation/order-schema/order-schema';
 import { FormProvider, useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
 import { CheckoutForm } from '../checkout-form/checkout-form';
 import { DeliveryOptions } from '../delivery-options/delivery-options';
 
 export const CheckoutFormContainer = () => {
+  const location = useLocation();
+  const isBuyNow = location.state?.isBuyNow ?? false;
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
 
@@ -51,7 +53,9 @@ export const CheckoutFormContainer = () => {
     };
 
     dispatch(addOrder(newOrder));
-    dispatch(clearCart());
+    if (!isBuyNow) {
+      dispatch(clearCart());
+    }
     dispatch(clearCheckout());
     toast.success('Заказ успешно оформлен!');
 

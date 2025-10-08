@@ -37,7 +37,7 @@ export const SneakerCard = ({
       </div>
 
       <h1 className={cnTitle}>
-        {sneaker.name} {sneaker.categories}
+        {sneaker.name} 
       </h1>
       <div style={cnButtonWrapper}>
         <Button onClick={onClick} variant="secondary" size="large" fullWidth>

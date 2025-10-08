@@ -1,0 +1,39 @@
+@use '@shared/styles/breakpoints/breakpoints.module' as *;
+
+.root {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+  margin-top: 40px;
+
+  @include media-max(1200px) {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+.aside {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 24px;
+  min-width: 500px;
+
+  @include media-max(1200px) {
+    order: -1;
+    min-width: 100%;
+  }
+}
+
+.order-summary-wrapper {
+  background-color: var(--color-white);
+  padding: 25px;
+  padding-right: 0;
+  border-radius: 16px;
+
+  @include media-max(1200px) {
+    padding-right: 25px;
+  }
+}
+
+

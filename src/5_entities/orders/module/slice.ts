@@ -16,12 +16,6 @@ export const ordersSlice = createSlice({
       state.list = [];
     },
   },
-
-  selectors: {
-    selectAllOrders: state => state.list,
-    selectUserOrders: (state, userId: string) =>
-      state.list.filter(order => order.userId === userId),
-  },
 });
 
 export const { addOrder, clearOrders } = ordersSlice.actions;

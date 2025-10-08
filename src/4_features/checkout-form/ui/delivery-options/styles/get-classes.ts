@@ -4,6 +4,8 @@ import classes from './delivery-options.module.scss';
 const cn = classNames.bind(classes);
 
 export const getClasses = (activeOption?: string) => {
+  const cnRoot = cn('root');
+  const cnButton = cn('button');
   const cnTitle = cn('title');
   const cnOption = cn('option');
   const cnOptionItem = (value: string) =>
@@ -12,10 +14,12 @@ export const getClasses = (activeOption?: string) => {
   const cnOptionTitle = cn('option__title');
   const cnOptionDescription = cn('option__description');
   const cnOptionPrice = cn('option__price');
-  const cnOptionPriceFree = cn('option__price-free')
-   const cnCheckboxGroup = cn('checkbox-group');
+  const cnOptionPriceFree = cn('option__price-free');
+  const cnCheckboxGroup = cn('checkbox-group');
 
   return {
+    cnRoot,
+    cnButton,
     cnTitle,
     cnOption,
     cnOptionItem,
@@ -24,6 +28,6 @@ export const getClasses = (activeOption?: string) => {
     cnOptionDescription,
     cnOptionPrice,
     cnOptionPriceFree,
-    cnCheckboxGroup
+    cnCheckboxGroup,
   };
 };

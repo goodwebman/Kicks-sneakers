@@ -1,9 +1,22 @@
 @use '@shared/styles/typography/typography.module' as typo;
+@use '@shared/styles/breakpoints/breakpoints.module' as *;
+
+.root {
+  margin-top: 32px;
+}
+.button {
+  margin-top: 42px;
+  max-width: 360px;
+}
 
 .title {
   @include typo.h3;
   color: var(--color-dark);
   margin-bottom: 32px;
+  @include media-max(560px) {
+    @include typo.h2;
+    color: var(--color-dark);
+  }
 }
 
 .option {
@@ -23,10 +36,7 @@
     border-radius: 12px;
     padding: 16px;
     cursor: pointer;
-    transition:
-      background-color 0.2s ease,
-      border-color 0.2s ease,
-      box-shadow 0.2s ease;
+    transition: background-color 0.2s ease;
 
     display: flex;
     flex-direction: column;
@@ -43,12 +53,20 @@
     @include typo.h4;
     color: var(--color-dark);
     margin: 0;
+    @include media-max(560px) {
+      @include typo.h5;
+      color: var(--color-dark);
+    }
   }
 
   &__description {
     @include typo.b6-regular;
     color: var(--color-dark);
     margin: 0;
+    @include media-max(560px) {
+     @include typo.b7-regular;
+    color: var(--color-dark);
+  }
   }
 
   &__price {
@@ -56,8 +74,8 @@
     color: var(--color-blue);
 
     &-free {
-         @include typo.h6;
-        color: var(--color-dark);
+      @include typo.h6;
+      color: var(--color-dark);
     }
   }
 }

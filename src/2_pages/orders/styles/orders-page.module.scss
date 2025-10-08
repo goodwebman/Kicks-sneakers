@@ -1,0 +1,130 @@
+@use '@shared/styles/typography/typography.module' as typo;
+@use '@shared/styles/breakpoints/breakpoints.module' as *;
+
+.root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 20px;
+  min-height: 100vh;
+  border-radius: 32px;
+  overflow-y: auto;
+
+  @include media-max(400px) {
+    padding: 0;
+  }
+}
+
+.title {
+  @include typo.h2;
+  color: var(--color-dark);
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 32px;
+}
+
+.card {
+  background: var(--color-white);
+  border-radius: 24px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  }
+}
+
+.card-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @include typo.h5;
+  margin-bottom: 16px;
+  @include media-max(700px) {
+    flex-direction: column;
+    gap: 40px;
+    padding-bottom: 20px;
+  }
+}
+
+.status {
+  padding: 12px 20px;
+  border-radius: 12px;
+  @include typo.h7;
+
+  &--completed {
+    background-color: #d1f5d3;
+    color: var(--color-success);
+  }
+
+  &--pending {
+    background-color: #fff6c3;
+    color: var(--color-yellow);
+  }
+
+  &--cancelled {
+    background-color: #fcdcdc;
+    color: var(--color-error);
+  }
+}
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 12px;
+
+  @include typo.h6;
+  color: var(--color-light-dark);
+  margin-bottom: 20px;
+}
+.empty {
+  display: flex;
+  color: var(--color-dark);
+  height: 60vh;
+  @include typo.h1;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.sneaker {
+  max-width: 350px;
+  max-height: 300px;
+}
+
+.items {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  justify-content: start;
+  align-items: start;
+  gap: 6px;
+  width: 100%;
+  @include media-max(700px) {
+    grid-template-columns: repeat(auto-fit, minmax(280px, auto));
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.sneaker {
+  
+  max-width: 350px;
+  height: 100%;
+  max-height: 450px;
+  border-radius: 16px;
+
+  justify-self: start;
+}

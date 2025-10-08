@@ -81,7 +81,7 @@ export const YourBag: FC<YourBagProps> = ({ sneakers, isEmpty }) => {
               </div>
               <div className={cnDetailsMidle}>
                 <h2>
-                  {sneaker.gender} {sneaker.categories}
+                  {sneaker.gender} {sneaker.categories[0]}
                 </h2>
                 <h2>{sneaker.color}</h2>
               </div>

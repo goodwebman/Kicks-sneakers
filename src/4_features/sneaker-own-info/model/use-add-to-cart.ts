@@ -5,9 +5,9 @@ import { useAppDispatch } from '@shared/redux/store';
 export const useAddToCart = () => {
   const dispatch = useAppDispatch();
 
-  const handleAddSneaker = (item: CartItem) => {
+  const addSneakerToCart = (item: CartItem) => {
     dispatch(addSneaker(item));
   };
 
-  return { handleAddSneaker };
+  return { addSneakerToCart };
 };

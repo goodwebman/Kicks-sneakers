@@ -1,4 +1,5 @@
 @use '@shared/styles/typography/typography.module' as typo;
+@use '@shared/styles/breakpoints/breakpoints.module' as *;
 .root {
   max-width: 800px;
 }
@@ -25,6 +26,10 @@
   &__input {
     margin-top: 26px;
     width: 48%;
+
+    @include media-max(560px) {
+      width: auto;
+    }
   }
 }
 
@@ -43,11 +48,17 @@
 
     gap: 20px;
     width: 100%;
+     @include media-max(560px) {
+      flex-direction: column;
+    }
     & > * {
       flex: 1;
     }
   }
   &__input__number {
     width: 48%;
+    @include media-max(560px) {
+      width: auto;
+    }
   }
 }

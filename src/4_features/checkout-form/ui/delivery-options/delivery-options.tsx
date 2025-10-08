@@ -31,6 +31,8 @@ export const DeliveryOptions = () => {
     cnOptionPrice,
     cnOptionPriceFree,
     cnCheckboxGroup,
+    cnRoot,
+    cnButton
   } = getClasses(option);
 
   const handleSelect = (type: DeliveryOptionsType) => {
@@ -48,7 +50,7 @@ export const DeliveryOptions = () => {
   }, [isValid, billingSame, isTeen, isSubmitting]);
 
   return (
-    <div>
+    <div className={cnRoot}>
       <h1 className={cnTitle}>Delivery Options</h1>
 
       <div className={cnOption}>
@@ -95,7 +97,7 @@ export const DeliveryOptions = () => {
         />
       </div>
 
-      <Button type="submit" disabled={!canSubmit} fullWidth>
+      <Button className={cnButton} type="submit" disabled={!canSubmit} fullWidth>
         REVIEW AND PAY
       </Button>
     </div>

@@ -15,6 +15,14 @@
     width: auto;
   }
 }
+.root--checkout {
+  margin-right: 0;
+  margin-top: 0;
+  @include media-max(1280px) {
+    padding: 0;
+    padding-right: 20px;
+  }
+}
 
 .main-info {
   display: flex;

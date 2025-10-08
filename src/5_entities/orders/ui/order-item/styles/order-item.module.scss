@@ -1,0 +1,103 @@
+@use '@shared/styles/typography/typography.module' as typo;
+@use '@shared/styles/breakpoints/breakpoints.module' as *;
+
+.root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 10px;
+  padding-top: 20px;
+  cursor: pointer;
+  text-align: center;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+
+  &:hover {
+    transform: translateY(-3px);
+  }
+  background-color: var(--color-white-2);
+}
+
+.imageWrapper {
+  width: 100%;
+  max-width: 260px;
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  justify-content: start;
+  align-items: start;
+}
+
+.image {
+  width: 100%;
+
+  object-fit: contain;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+  width: 100%;
+}
+
+.name {
+  @include typo.h4;
+  color: var(--color-dark);
+  text-transform: uppercase;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+.meta {
+  display: flex;
+  flex-direction: column;
+  padding-left: 20px;
+  padding-right: 20px;
+  gap: 6px;
+  width: 100%;
+  max-width: 280px;
+  @include typo.h6;
+  color: var(--color-light-dark);
+}
+
+.metaRow {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.value {
+  color: var(--color-dark);
+
+  margin-left: 8px;
+}
+
+.price {
+  @include typo.h5;
+  color: var(--color-yellow);
+  margin-top: 8px;
+}
+
+@include media-max(600px) {
+  .imageWrapper {
+    height: 220px;
+  }
+
+  .name {
+    font-size: 16px;
+  }
+
+  .meta {
+    max-width: 100%;
+  }
+
+  .price {
+    margin-top: 4px;
+  }
+}

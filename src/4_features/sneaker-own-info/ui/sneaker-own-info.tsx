@@ -6,6 +6,7 @@ import { Button } from '../../../6_shared/ui/buttons/button';
 import { RadioButton } from '../../../6_shared/ui/radio-button/radio-button';
 
 import { useAddToCart } from '../model/use-add-to-cart';
+import { useBuyNow } from '../model/use-buy-now';
 import { getClasses } from './styles/get-classes';
 
 export const SneakerOwnInfo: FC<SneakerDto> = ({
@@ -39,7 +40,8 @@ export const SneakerOwnInfo: FC<SneakerDto> = ({
   } = getClasses();
 
   const allSizes = Array.from({ length: 10 }, (_, i) => 38 + i);
-  const { handleAddSneaker } = useAddToCart();
+  const { addSneakerToCart } = useAddToCart();
+  const { buySneakerNow } = useBuyNow();
 
   const handleAddToCart = () => {
     if (!selectedSize) return;
@@ -56,7 +58,25 @@ export const SneakerOwnInfo: FC<SneakerDto> = ({
       quantity: 1,
     };
 
-    handleAddSneaker(item);
+    addSneakerToCart(item);
+  };
+
+  const handleBuyItNow = () => {
+    if (!selectedSize) return;
+
+    const item: CartItem = {
+      sneakerId: id,
+      images,
+      name,
+      price,
+      gender,
+      categories,
+      color: selectedColor,
+      size: selectedSize,
+      quantity: 1,
+    };
+
+    buySneakerNow(item);
   };
 
   useEffect(() => {
@@ -109,7 +129,9 @@ export const SneakerOwnInfo: FC<SneakerDto> = ({
         <Button fullWidth variant="secondary" onClick={handleAddToCart}>
           ADD TO CART
         </Button>
-        <Button fullWidth>BUT IT NOW</Button>
+        <Button fullWidth onClick={handleBuyItNow}>
+          BUY IT NOW
+        </Button>
       </div>
 
       <div className={cnSubInfo}>

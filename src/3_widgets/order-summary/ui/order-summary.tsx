@@ -21,7 +21,7 @@ export const OrderSummary: FC<OrderSummaryProps> = ({
   isCheckout = false,
 }) => {
   if (isEmpty) return;
-  const { cnRoot, cnMainInfo, cnItems, cnTitle } = getClasses();
+  const { cnRoot, cnMainInfo, cnItems, cnTitle } = getClasses({ isCheckout });
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
   const totalPrice = useAppSelector(cartSlice.selectors.totalPrice);
