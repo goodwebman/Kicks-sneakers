@@ -44,7 +44,7 @@ export const YourBag: FC<YourBagProps> = ({ sneakers, isEmpty }) => {
   const { handleMinus } = useMinusQuantity();
   const { handlePlus } = usePlusQuantity();
   const navigate = useNavigate();
-  const handleClick = (id: number) => {
+  const handleClick = (id: string) => {
     navigate(`${Routes.sneakers.root}/${id}`);
   };
 

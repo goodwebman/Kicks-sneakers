@@ -1,22 +1,25 @@
-import { useState } from 'react';
-import { type Control, Controller, type FieldError } from 'react-hook-form';
+import { useState, type InputHTMLAttributes } from 'react';
+import { Controller, type Control, type FieldError } from 'react-hook-form';
 import SvgCloseEye from '../icons/close-eye';
 import SvgOpenEye from '../icons/open-eye';
 import { getClasses } from './styles/get-classes';
 
-type InputProps = {
+type BaseInputProps = {
   name: string;
   control: Control<any>;
-  className?: string;
   title?: string;
-  placeholder?: string;
   helperText?: string;
   security?: boolean;
   isSuccess?: boolean;
   isError?: boolean;
-  disabled?: boolean;
   error?: FieldError | string;
 };
+
+export type InputProps = BaseInputProps &
+  Omit<
+    InputHTMLAttributes<HTMLInputElement>,
+    'name' | 'defaultValue' | 'security'
+  >;
 
 export const Input = ({
   name,
@@ -30,6 +33,7 @@ export const Input = ({
   isError,
   disabled,
   error,
+  ...props
 }: InputProps) => {
   const [showPassword, setShowPassword] = useState(false);
 
@@ -61,10 +65,25 @@ export const Input = ({
           <div className={cnRoot}>
             <input
               {...field}
+              {...props}
               type={security && !showPassword ? 'password' : 'text'}
               placeholder={placeholder}
               className={cnInput}
               disabled={disabled}
+              onChange={e => {
+                let value: string | number = e.target.value;
+
+                if (props.type === 'number') {
+                  if (/^\d*$/.test(value)) {
+                    value = value === '' ? '' : Number(value);
+                    field.onChange(value);
+                  }
+                } else {
+                  field.onChange(value);
+                }
+
+                props.onChange?.(e);
+              }}
             />
             {security && (
               <button

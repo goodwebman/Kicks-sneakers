@@ -85,9 +85,24 @@
       "id": "1",
       "name": "Nike Air Max 90",
       "gender": "male",
-      "colors": ["blue", "concrete", "light_brown", "light_gray"],
-      "sizes": [40, 41, 42, 43],
-      "categories": ["running", "sport", "classic", "fashion"],
+      "colors": [
+        "blue",
+        "concrete",
+        "light_brown",
+        "light_gray"
+      ],
+      "sizes": [
+        40,
+        41,
+        42,
+        43
+      ],
+      "categories": [
+        "running",
+        "sport",
+        "classic",
+        "fashion"
+      ],
       "price": 120,
       "images": [
         "/assets/1.png",
@@ -105,12 +120,19 @@
         "yellow",
         "dark",
         "green",
-
         "light_brown",
         "light_gray"
       ],
-      "sizes": [37, 38, 39, 40],
-      "categories": ["classic", "fashion"],
+      "sizes": [
+        37,
+        38,
+        39,
+        40
+      ],
+      "categories": [
+        "classic",
+        "fashion"
+      ],
       "price": 150,
       "images": [
         "/assets/2.png",
@@ -134,8 +156,18 @@
         "light_brown",
         "light_gray"
       ],
-      "sizes": [39, 40, 41, 42],
-      "categories": ["running", "sport", "classic", "fashion"],
+      "sizes": [
+        39,
+        40,
+        41,
+        42
+      ],
+      "categories": [
+        "running",
+        "sport",
+        "classic",
+        "fashion"
+      ],
       "price": 110,
       "images": [
         "/assets/3.png",
@@ -159,8 +191,16 @@
         "light_brown",
         "light_gray"
       ],
-      "sizes": [41, 42, 43, 44],
-      "categories": ["running", "fashion"],
+      "sizes": [
+        41,
+        42,
+        43,
+        44
+      ],
+      "categories": [
+        "running",
+        "fashion"
+      ],
       "price": 130,
       "images": [
         "/assets/4.png",
@@ -178,12 +218,19 @@
         "yellow",
         "dark",
         "green",
-
         "light_brown",
         "light_gray"
       ],
-      "sizes": [36, 37, 38, 39],
-      "categories": ["running", "fashion"],
+      "sizes": [
+        36,
+        37,
+        38,
+        39
+      ],
+      "categories": [
+        "running",
+        "fashion"
+      ],
       "price": 90,
       "images": [
         "/assets/6.png",
@@ -196,9 +243,23 @@
       "id": "6",
       "name": "Nike Dunk Low",
       "gender": "unisex",
-      "colors": ["blue", "yellow"],
-      "sizes": [38, 39, 40, 41],
-      "categories": ["running", "sport", "classic", "fashion", "basketball"],
+      "colors": [
+        "blue",
+        "yellow"
+      ],
+      "sizes": [
+        38,
+        39,
+        40,
+        41
+      ],
+      "categories": [
+        "running",
+        "sport",
+        "classic",
+        "fashion",
+        "basketball"
+      ],
       "price": 140,
       "images": [
         "/assets/7.png",
@@ -211,9 +272,26 @@
       "id": "7",
       "name": "Adidas Forum Low",
       "gender": "male",
-      "colors": ["blue", "yellow", "dark", "green", "brown", "light_gray"],
-      "sizes": [40, 41, 42, 43, 47],
-      "categories": ["basketball", "sport", "fashion"],
+      "colors": [
+        "blue",
+        "yellow",
+        "dark",
+        "green",
+        "brown",
+        "light_gray"
+      ],
+      "sizes": [
+        40,
+        41,
+        42,
+        43,
+        47
+      ],
+      "categories": [
+        "basketball",
+        "sport",
+        "fashion"
+      ],
       "price": 135,
       "images": [
         "/assets/8.png",
@@ -226,9 +304,25 @@
       "id": "8",
       "name": "Nike Air Jordan 1",
       "gender": "unisex",
-      "colors": ["blue", "yellow", "dark", "green", "brown", "carrot"],
-      "sizes": [41, 42, 43, 44],
-      "categories": ["basketball", "casual", "sport"],
+      "colors": [
+        "blue",
+        "yellow",
+        "dark",
+        "green",
+        "brown",
+        "carrot"
+      ],
+      "sizes": [
+        41,
+        42,
+        43,
+        44
+      ],
+      "categories": [
+        "basketball",
+        "casual",
+        "sport"
+      ],
       "price": 200,
       "images": [
         "/assets/9.png",
@@ -241,9 +335,24 @@
       "id": "9",
       "name": "Asics Gel-Kayano",
       "gender": "female",
-      "colors": ["brown", "carrot", "concrete", "light_brown", "light_gray"],
-      "sizes": [37, 38, 39, 40],
-      "categories": ["running", "sport", "basketball"],
+      "colors": [
+        "brown",
+        "carrot",
+        "concrete",
+        "light_brown",
+        "light_gray"
+      ],
+      "sizes": [
+        37,
+        38,
+        39,
+        40
+      ],
+      "categories": [
+        "running",
+        "sport",
+        "basketball"
+      ],
       "price": 160,
       "images": [
         "/assets/10.png",
@@ -265,8 +374,21 @@
         "carrot",
         "concrete"
       ],
-      "sizes": [36, 37, 38, 39, 40, 41, 42, 43],
-      "categories": ["casual", "sport", "running"],
+      "sizes": [
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43
+      ],
+      "categories": [
+        "casual",
+        "sport",
+        "running"
+      ],
       "price": 70,
       "images": [
         "/assets/1.png",
@@ -281,7 +403,6 @@
       "gender": "unisex",
       "colors": [
         "blue",
-
         "dark",
         "green",
         "brown",
@@ -290,8 +411,18 @@
         "light_brown",
         "light_gray"
       ],
-      "sizes": [38, 39, 40, 41, 42, 43],
-      "categories": ["casual", "fashion"],
+      "sizes": [
+        38,
+        39,
+        40,
+        41,
+        42,
+        43
+      ],
+      "categories": [
+        "casual",
+        "fashion"
+      ],
       "price": 85,
       "images": [
         "/assets/2.png",
@@ -309,12 +440,20 @@
         "yellow",
         "dark",
         "green",
-
         "light_brown",
         "light_gray"
       ],
-      "sizes": [39, 40, 41, 42, 43, 44],
-      "categories": ["classic"],
+      "sizes": [
+        39,
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "categories": [
+        "classic"
+      ],
       "price": 100,
       "images": [
         "/assets/9.png",
@@ -327,9 +466,23 @@
       "id": "13",
       "name": "Adidas Yeezy Boost 350",
       "gender": "unisex",
-      "colors": ["blue", "yellow", "dark", "green"],
-      "sizes": [40, 41, 42, 43, 44],
-      "categories": ["running", "basketball"],
+      "colors": [
+        "blue",
+        "yellow",
+        "dark",
+        "green"
+      ],
+      "sizes": [
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "categories": [
+        "running",
+        "basketball"
+      ],
       "price": 220,
       "images": [
         "/assets/5.png",
@@ -342,9 +495,25 @@
       "id": "14",
       "name": "Reebok Nano X",
       "gender": "male",
-      "colors": ["blue", "yellow", "carrot", "light_brown", "light_gray"],
-      "sizes": [40, 41, 42, 43, 44, 45],
-      "categories": ["sport", "running"],
+      "colors": [
+        "blue",
+        "yellow",
+        "carrot",
+        "light_brown",
+        "light_gray"
+      ],
+      "sizes": [
+        40,
+        41,
+        42,
+        43,
+        44,
+        45
+      ],
+      "categories": [
+        "sport",
+        "running"
+      ],
       "price": 125,
       "images": [
         "/assets/4.png",
@@ -357,9 +526,24 @@
       "id": "15",
       "name": "Under Armour Curry 8",
       "gender": "male",
-      "colors": ["blue", "yellow", "dark", "green", "brown"],
-      "sizes": [41, 42, 43, 44, 45],
-     "categories": ["sport", "running"],
+      "colors": [
+        "blue",
+        "yellow",
+        "dark",
+        "green",
+        "brown"
+      ],
+      "sizes": [
+        41,
+        42,
+        43,
+        44,
+        45
+      ],
+      "categories": [
+        "sport",
+        "running"
+      ],
       "price": 150,
       "images": [
         "/assets/7.png",
@@ -372,9 +556,23 @@
       "id": "16",
       "name": "Fila Disruptor II",
       "gender": "female",
-      "colors": ["blue", "carrot", "concrete", "light_brown", "light_gray"],
-      "sizes": [36, 37, 38, 39, 40],
-      "categories": ["basketball"],
+      "colors": [
+        "blue",
+        "carrot",
+        "concrete",
+        "light_brown",
+        "light_gray"
+      ],
+      "sizes": [
+        36,
+        37,
+        38,
+        39,
+        40
+      ],
+      "categories": [
+        "basketball"
+      ],
       "price": 95,
       "images": [
         "/assets/6.png",
@@ -387,9 +585,22 @@
       "id": "17",
       "name": "Saucony Jazz Original",
       "gender": "unisex",
-      "colors": ["blue", "yellow"],
-      "sizes": [38, 39, 40, 41, 42, 43, 44],
-      "categories": ["fashion"],
+      "colors": [
+        "blue",
+        "yellow"
+      ],
+      "sizes": [
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "categories": [
+        "fashion"
+      ],
       "price": 105,
       "images": [
         "/assets/2.png",
@@ -402,9 +613,22 @@
       "id": "18",
       "name": "Mizuno Wave Rider",
       "gender": "male",
-      "colors": ["concrete", "light_brown", "light_gray"],
-      "sizes": [40, 41, 42, 43, 44, 45],
-      "categories": ["running"],
+      "colors": [
+        "concrete",
+        "light_brown",
+        "light_gray"
+      ],
+      "sizes": [
+        40,
+        41,
+        42,
+        43,
+        44,
+        45
+      ],
+      "categories": [
+        "running"
+      ],
       "price": 140,
       "images": [
         "/assets/8.png",
@@ -417,9 +641,22 @@
       "id": "19",
       "name": "Jordan Retro 4",
       "gender": "unisex",
-      "colors": ["blue", "yellow", "dark", "light_gray"],
-      "sizes": [40, 41, 42, 43, 44],
-      "categories": ["basketball"],
+      "colors": [
+        "blue",
+        "yellow",
+        "dark",
+        "light_gray"
+      ],
+      "sizes": [
+        40,
+        41,
+        42,
+        43,
+        44
+      ],
+      "categories": [
+        "basketball"
+      ],
       "price": 250,
       "images": [
         "/assets/9.png",
@@ -432,12 +669,52 @@
       "id": "20",
       "name": "New Balance 327",
       "gender": "female",
-      "colors": ["yellow", "dark", "green", "concrete", "light_gray"],
-      "sizes": [36, 37, 38, 39, 40, 41],
-      "categories": ["casual"],
+      "colors": [
+        "yellow",
+        "dark",
+        "green",
+        "concrete",
+        "light_gray"
+      ],
+      "sizes": [
+        36,
+        37,
+        38,
+        39,
+        40,
+        41
+      ],
+      "categories": [
+        "casual"
+      ],
       "price": 120,
       "images": [
         "/assets/2.png",
+        "/assets/preview1.png",
+        "/assets/preview2.png",
+        "/assets/preview3.png"
+      ]
+    },
+    {
+      "id": "f2d7",
+      "price": 2121,
+      "name": "AIR ANUS MAX",
+      "gender": "male",
+      "colors": [
+        "blue",
+        "carrot"
+      ],
+      "categories": [
+        "sport"
+      ],
+      "sizes": [
+        41,
+        42,
+        44,
+        45
+      ],
+      "images": [
+        "blob:http://localhost:5175/e20fd68b-8dcf-4bbb-b5b5-f6ddc1116581",
         "/assets/preview1.png",
         "/assets/preview2.png",
         "/assets/preview3.png"

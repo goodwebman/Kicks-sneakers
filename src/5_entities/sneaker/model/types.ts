@@ -1,12 +1,10 @@
 export type SneakerDto = {
-  id: number;
+  id: string;
   name: string;
   price: number;
-  gender: 'men' | 'women' | 'unisex';
+  gender: 'male' | 'female' | 'unisex';
   colors: string[];
   sizes: number[];
   categories: string[];
   images: string[];
 };
-
-

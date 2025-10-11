@@ -17,7 +17,7 @@ export const SneakersListWithPagination = () => {
   const ListEmpty = filteredSneakers.length === 0;
 
   const navigate = useNavigate();
-  const handleClick = (sneakerId: number) => {
+  const handleClick = (sneakerId: string) => {
     navigate(`${Routes.sneakers.root}/${sneakerId}`);
   };
   const { cnWrapper, cnGrid } = getClasses();

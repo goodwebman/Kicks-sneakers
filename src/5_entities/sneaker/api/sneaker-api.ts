@@ -22,7 +22,7 @@ export const sneakersApi = {
         }),
     }),
 
-  getSneakerById: (id: number) =>
+  getSneakerById: (id: string) =>
     queryOptions({
       queryKey: [sneakersApi.baseKey, id],
       queryFn: meta =>

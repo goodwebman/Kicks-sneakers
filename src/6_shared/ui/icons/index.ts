@@ -1,3 +1,4 @@
+export { default as AdminAction } from './admin-action';
 export { default as Cart } from './cart';
 export { default as Check } from './check';
 export { default as ChevronBack } from './chevron-back';

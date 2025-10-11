@@ -30,9 +30,15 @@ export const SNEAKER_COLORS: SneakerColor[] = [
   SneakerColor.CONCRETE,
   SneakerColor.BROWN,
   SneakerColor.LIGHT_BROWN,
-];
+] as const;
 
-export const AVAILABLE_SIZES = [38, 41, 42, 44, 45, 47];
+export const AVAILABLE_SIZES = [38, 41, 42, 44, 45, 47] as const;
 
-export const GENDERS = ['male', 'female', 'unisex'];
-export const CATEGORIES = ['basketball', 'casual', 'sport', 'classic', 'fashion'];
+export const GENDERS = ['male', 'female', 'unisex'] as const;
+export const CATEGORIES = [
+  'basketball',
+  'casual',
+  'sport',
+  'classic',
+  'fashion',
+] as const;

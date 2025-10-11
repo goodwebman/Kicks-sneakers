@@ -27,7 +27,7 @@ export const cartSlice = createSlice({
     },
     removeSneaker: (
       state,
-      action: PayloadAction<{ sneakerId: number; color: string; size: number }>,
+      action: PayloadAction<{ sneakerId: string; color: string; size: number }>,
     ) => {
       state.items = state.items.filter(
         i =>
@@ -44,7 +44,7 @@ export const cartSlice = createSlice({
 
     minusQuantity: (
       state,
-      action: PayloadAction<{ sneakerId: number; color: string; size: number }>,
+      action: PayloadAction<{ sneakerId: string; color: string; size: number }>,
     ) => {
       const { sneakerId, color, size } = action.payload;
 
@@ -60,7 +60,7 @@ export const cartSlice = createSlice({
     },
     plusQuantity: (
       state,
-      action: PayloadAction<{ sneakerId: number; color: string; size: number }>,
+      action: PayloadAction<{ sneakerId: string; color: string; size: number }>,
     ) => {
       const { sneakerId, color, size } = action.payload;
 

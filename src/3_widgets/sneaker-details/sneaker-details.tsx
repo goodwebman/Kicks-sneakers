@@ -9,9 +9,9 @@ import { getClasses } from './styles/get-classes';
 
 export const SneakerDetails = () => {
   const { id } = useParams<{ id: string }>();
-  const sneakerId = Number(id);
+  const sneakerId = id;
 
-  const { data } = useSuspenseQuery(sneakersApi.getSneakerById(sneakerId));
+  const { data } = useSuspenseQuery(sneakersApi.getSneakerById(sneakerId!));
 
   useScrollTop(0, [id]);
 

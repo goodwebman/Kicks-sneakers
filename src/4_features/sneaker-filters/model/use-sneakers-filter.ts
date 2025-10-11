@@ -1,12 +1,15 @@
 import { useSuspenseQuery } from '@tanstack/react-query';
 import { sneakersApi } from '../../../5_entities/sneaker/api/sneaker-api';
-import { useAppSelector } from '../../../6_shared/redux/store';
 import type { SneakerDto } from '../../../5_entities/sneaker/model/types';
+import { useAppSelector } from '../../../6_shared/redux/store';
 
 export const useFilteredSneakers = (page: number) => {
   const filters = useAppSelector(state => state.sneakerFilter);
 
-  const { data: sneakers = [] } = useSuspenseQuery(sneakersApi.getList());
+  const { data: sneakers = [] } = useSuspenseQuery({
+    ...sneakersApi.getList(),
+    select: data => data.toReversed(),
+  });
 
   const filteredData = sneakers.filter((sneaker: SneakerDto) => {
     if (filters.genders.length && !filters.genders.includes(sneaker.gender)) {

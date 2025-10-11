@@ -1,0 +1,11 @@
+@use '@shared/styles/breakpoints/breakpoints.module' as *;
+.root {
+  display: flex;
+  flex-direction: column;
+  min-width: 400px;
+  gap: 15px;
+
+  @include media-max($breakpoint-sm) {
+    min-width: 300px;
+  }
+}

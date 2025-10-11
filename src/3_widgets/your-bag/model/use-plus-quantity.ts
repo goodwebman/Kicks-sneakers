@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 
 
 interface PlusQuantityPayload {
-  sneakerId: number;
+  sneakerId: string;
   color: string;
   size: number;
 }

@@ -4,13 +4,15 @@ import { Link, useNavigate } from 'react-router-dom';
 import { cartSlice } from '@entities/cart/model/slice';
 import { Routes } from '@shared/constants/routes';
 import { useAppSelector } from '@shared/redux/store';
+import SvgAdminAction from '@shared/ui/icons/admin-action';
+import SvgOrders from '@shared/ui/icons/orders';
 import { TextButton } from '../../6_shared/ui/buttons/text-button/text-button';
 import { DrawerMenu } from '../../6_shared/ui/drawer-menu/drawer-menu';
 import SvgCart from '../../6_shared/ui/icons/cart';
 import SvgLogo from '../../6_shared/ui/icons/logo';
 import SvgUser from '../../6_shared/ui/icons/user';
 import { getClasses } from './styles/get-classes';
-import SvgOrders from '@shared/ui/icons/orders'
+import { userSlice } from '@entities/user/model/slice'
 
 export const Header: FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -25,6 +27,8 @@ export const Header: FC = () => {
     cnCart,
   } = getClasses({ cartSneakers });
   const navigate = useNavigate();
+  const user = useAppSelector(userSlice.selectors.selectUser);
+  const isAdmin = user?.permission === 'admin';
 
   return (
     <header className={cnRoot}>
@@ -50,6 +54,11 @@ export const Header: FC = () => {
       </Link>
 
       <div className={cnRightSide}>
+        {isAdmin && (
+          <Link to={Routes.admin}>
+            <SvgAdminAction width={25} height={25} />
+          </Link>
+        )}
         <Link to={Routes.orders}>
           <SvgOrders width={25} height={25} />
         </Link>

@@ -11,7 +11,7 @@ export const SneakerPreviewList = () => {
   const { cnRoot } = getClasses();
 
   const navigate = useNavigate();
-  const handleClick = (sneakerId: number) => {
+  const handleClick = (sneakerId: string) => {
     navigate(`${Routes.sneakers.root}/${sneakerId}`);
   };
 

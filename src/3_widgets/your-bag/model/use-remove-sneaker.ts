@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 
 
 interface RemoveSneakerPayload {
-  sneakerId: number;
+  sneakerId: string;
   color: string;
   size: number;
 }

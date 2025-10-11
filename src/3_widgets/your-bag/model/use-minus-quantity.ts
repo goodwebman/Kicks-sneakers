@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { minusQuantity } from '@entities/cart/model/slice'
 
 interface MinusQuantityPayload {
-  sneakerId: number;
+  sneakerId: string;
   color: string;
   size: number;
 }

@@ -12,5 +12,5 @@ export const privateRoutes: RouteObject[] = [
   {
     path: Routes.orders,
     element: <OrdersPage />
-  }
+  },
 ];

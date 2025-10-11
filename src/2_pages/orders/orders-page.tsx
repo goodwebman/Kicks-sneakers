@@ -29,7 +29,7 @@ export const OrdersPage = () => {
     ordersSelectors.selectUserOrders(state, user!.id),
   );
 
-  const handleNavigate = (sneakerId: number) => {
+  const handleNavigate = (sneakerId: string) => {
     navigate(Routes.sneakers.details(sneakerId));
   };
 
