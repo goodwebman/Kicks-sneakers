@@ -15,7 +15,7 @@ export const AuthSwitcher = () => {
         fullWidth
         onClick={() => setMode(mode === 'login' ? 'register' : 'login')}
       >
-        {mode === 'login' ? 'Нет аккаунта?' : 'Есть аккаунт?'}
+        {mode === 'login' ? 'No account?' : 'Have an account?'}
       </Button>
     </div>
   );

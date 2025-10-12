@@ -11,7 +11,7 @@ export const useDeleteSneaker = () => {
         method: 'DELETE',
       }),
     onSuccess: () => {
-      toast.success('Кроссовок удалён!', { position: 'top-center' });
+      toast.success('The sneaker has been removed!', { position: 'top-center' });
       queryClient.invalidateQueries({ queryKey: [sneakersApi.baseKey] });
     },
   });

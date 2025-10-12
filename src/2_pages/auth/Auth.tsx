@@ -13,7 +13,7 @@ export const Auth = () => {
 
   const logoutAction = () => {
     handleLogout();
-    toast('Вы успешно вышли из аккаунта', {
+    toast.success('You have successfully logged out of your account.', {
       position: 'top-center',
     });
   };
@@ -30,7 +30,7 @@ export const Auth = () => {
             permisson={user?.permission}
           />
           <Button fullWidth onClick={logoutAction} variant={'secondary'}>
-            Выйти
+            Log out
           </Button>
         </>
       )}

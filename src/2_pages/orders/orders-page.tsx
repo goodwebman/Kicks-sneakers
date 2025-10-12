@@ -34,7 +34,8 @@ export const OrdersPage = () => {
   };
 
   if (!myOrders.length) {
-    return <div className={cnEmpty}>У вас пока нет заказов 😔</div>;
+    return <div className={cnEmpty}>
+You don't have any orders yet... 😔</div>;
   }
 
   return (

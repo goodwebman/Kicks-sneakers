@@ -1,13 +1,14 @@
 import { z } from 'zod';
+
 export const orderSchema = z.object({
-  email: z.string().email('Введите корректный email'),
-  firstName: z.string().min(1, 'Введите имя'),
-  lastName: z.string().min(1, 'Введите фамилию'),
-  address: z.string().min(1, 'Введите адрес доставки'),
+  email: z.string().email('Enter a valid email'),
+  firstName: z.string().min(1, 'Enter your first name'),
+  lastName: z.string().min(1, 'Enter your last name'),
+  address: z.string().min(1, 'Enter delivery address'),
   phone: z
     .string()
-    .min(10, 'Введите корректный номер')
-    .regex(/^[0-9+() -]+$/, 'Некорректный формат номера'),
+    .min(10, 'Enter a valid phone number')
+    .regex(/^[0-9+() -]+$/, 'Invalid phone number format'),
 });
 
 export type OrderFormValues = z.infer<typeof orderSchema>;

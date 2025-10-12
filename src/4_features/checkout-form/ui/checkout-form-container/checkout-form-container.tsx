@@ -58,7 +58,7 @@ export const CheckoutFormContainer = () => {
       dispatch(clearCart());
     }
     dispatch(clearCheckout());
-    toast.success('Заказ успешно оформлен!');
+    toast.success('The order has been successfully completed!');
 
     navigate(Routes.orders);
   };

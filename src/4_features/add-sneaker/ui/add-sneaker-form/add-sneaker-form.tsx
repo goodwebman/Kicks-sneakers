@@ -47,16 +47,30 @@ export const AddSneakerForm = () => {
       await createSneakerMutation.mutateAsync(data);
       reset();
       setPreview(null);
-      toast.success('Кроссовок добавлен', { position: 'top-center' });
+      toast.success('Sneakers added', { position: 'top-center' });
     } catch (error) {
-      toast.error(`Кроссовок не добавлен, ${error}`, {
-        position: 'top-center',
-      });
+      toast.error(
+        `
+No sneakers added, ${error}`,
+        {
+          position: 'top-center',
+        },
+      );
     }
   };
 
-  const { cnRoot, cnLabel, cnError, cnCheckboxGroup, cnImageUpload, cnImageLabel, cnImageWrapper, cnImageInput, cnImageButton, cnImagePreview } =
-    getClasses();
+  const {
+    cnRoot,
+    cnLabel,
+    cnError,
+    cnCheckboxGroup,
+    cnImageUpload,
+    cnImageLabel,
+    cnImageWrapper,
+    cnImageInput,
+    cnImageButton,
+    cnImagePreview,
+  } = getClasses();
 
   return (
     <form className={cnRoot} onSubmit={handleSubmit(onSubmit)}>
@@ -89,11 +103,12 @@ export const AddSneakerForm = () => {
               value={field.value}
               onChange={field.onChange}
             />
-            {errors.gender && <p className={cnError}>{errors.gender.message}</p>}
+            {errors.gender && (
+              <p className={cnError}>{errors.gender.message}</p>
+            )}
           </div>
         )}
       />
-
 
       <Controller
         name="colors"
@@ -124,7 +139,9 @@ export const AddSneakerForm = () => {
                   />
                 ))}
               </ul>
-              {errors.colors && <p className={cnError}>{errors.colors.message}</p>}
+              {errors.colors && (
+                <p className={cnError}>{errors.colors.message}</p>
+              )}
             </div>
           );
         }}
@@ -151,7 +168,9 @@ export const AddSneakerForm = () => {
                 />
               ))}
             </div>
-            {errors.categories && <p className={cnError}>{errors.categories.message}</p>}
+            {errors.categories && (
+              <p className={cnError}>{errors.categories.message}</p>
+            )}
           </div>
         )}
       />
@@ -211,7 +230,9 @@ export const AddSneakerForm = () => {
                 />
               )}
             </div>
-            {errors.images && <p className={cnError}>{errors.images.message}</p>}
+            {errors.images && (
+              <p className={cnError}>{errors.images.message}</p>
+            )}
           </div>
         )}
       />
@@ -220,7 +241,9 @@ export const AddSneakerForm = () => {
         type="submit"
         disabled={isSubmitting || createSneakerMutation.isPending}
       >
-        {createSneakerMutation.isPending ? 'Добавление...' : 'Добавить кроссовок'}
+        {createSneakerMutation.isPending
+          ? 'Добавление...'
+          : 'Добавить кроссовок'}
       </Button>
     </form>
   );

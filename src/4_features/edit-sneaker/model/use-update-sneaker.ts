@@ -9,10 +9,9 @@ export const useUpdateSneaker = () => {
 
   return useMutation({
     mutationFn: async (data: { id: string } & SneakerCrudFormValues) => {
- 
       const payload = {
         ...data,
-        images: data.images ? [data.images] : undefined, 
+        images: data.images ? [data.images] : undefined,
       };
 
       return jsonApiInstance(`/sneakers/${data.id}`, {
@@ -23,13 +22,16 @@ export const useUpdateSneaker = () => {
     },
 
     onSuccess: () => {
-      toast.success('Кроссовок изменён!', { position: 'top-center' });
+      toast.success('The sneaker has been changed!', {
+        position: 'top-center',
+      });
       queryClient.invalidateQueries({ queryKey: [sneakersApi.baseKey] });
     },
 
-    onError: (err) => {
-      console.error('Ошибка PATCH:', err);
-      toast.error('Ошибка при изменении кроссовка!', { position: 'top-center' });
+    onError: err => {
+      toast.error(`Error while changing sneakers! ${err}`, {
+        position: 'top-center',
+      });
     },
   });
 };

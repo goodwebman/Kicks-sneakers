@@ -12,6 +12,7 @@ import {
 import { useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
 import { getClasses } from './styles/get-classes';
+
 export const RegisterForm = () => {
   const {
     handleSubmit,
@@ -31,11 +32,11 @@ export const RegisterForm = () => {
   const onSubmit = async (data: RegisterData) => {
     try {
       await handleRegister(data);
-      toast('Регистрация прошла успешно!', {
+      toast('Registration successful!', {
         position: 'top-center',
       });
     } catch {
-      toast('Ошибка регистрации', {
+      toast('Registration failed', {
         position: 'top-center',
       });
     }
@@ -51,8 +52,8 @@ export const RegisterForm = () => {
       <Input
         name="email"
         control={control}
-        title="Почта"
-        placeholder="Введите почту"
+        title="Email"
+        placeholder="Enter your email"
         error={errors.email || authError}
         isError={!!errors.email}
         isSuccess={touchedFields.email && !errors.email && !authError}
@@ -61,8 +62,8 @@ export const RegisterForm = () => {
       <Input
         name="name"
         control={control}
-        title="Имя"
-        placeholder="Введите имя"
+        title="Name"
+        placeholder="Enter your name"
         error={errors.name || authError}
         isError={!!errors.name}
         isSuccess={touchedFields.name && !errors.name && !authError}
@@ -71,8 +72,8 @@ export const RegisterForm = () => {
       <Input
         name="password"
         control={control}
-        title="Пароль"
-        placeholder="Введите пароль"
+        title="Password"
+        placeholder="Enter your password"
         security
         error={errors.password || authError}
         isError={!!errors.password || !!authError}
@@ -80,7 +81,7 @@ export const RegisterForm = () => {
       />
 
       <Button type="submit" disabled={isSubmitting || authStatus === 'pending'}>
-        {authStatus === 'pending' ? 'Регистрация...' : 'Зарегистрироваться'}
+        {authStatus === 'pending' ? 'Registering...' : 'Register'}
       </Button>
     </form>
   );

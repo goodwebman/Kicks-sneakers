@@ -78,6 +78,12 @@
       "email": "123@mail.ru1",
       "password": "123231",
       "name": "123123123"
+    },
+    {
+      "id": "af2f",
+      "email": "123@gmai.ru",
+      "password": "123123",
+      "name": "123123"
     }
   ],
   "sneakers": [

@@ -32,11 +32,11 @@ export const LoginForm = () => {
   const onSubmit = async (data: LoginData) => {
     try {
       await handleLogin(data);
-      toast('Вы успешно вошли в аккаунт', {
+      toast.success('You have successfully logged into your account.', {
         position: 'top-center',
       });
-    } catch {
-      toast('Ошибка входа в аккаунт', {
+    } catch(error) {
+      toast.error(`Account login error ${error}`, {
         position: 'top-center',
       });
     }
@@ -52,8 +52,8 @@ export const LoginForm = () => {
       <Input
         name="email"
         control={control}
-        title="Почта"
-        placeholder="Введите почту"
+        title="Email"
+        placeholder="Enter email"
         error={errors.email || authError}
         isError={!!errors.email}
         isSuccess={touchedFields.email && !errors.email && !authError}
@@ -62,8 +62,8 @@ export const LoginForm = () => {
       <Input
         name="password"
         control={control}
-        title="Пароль"
-        placeholder="Введите пароль"
+        title="Password"
+        placeholder="Enter password"
         security
         error={errors.password || authError}
         isError={!!errors.password || !!authError}
@@ -71,7 +71,7 @@ export const LoginForm = () => {
       />
 
       <Button type="submit" disabled={isSubmitting || authStatus === 'pending'}>
-        {authStatus === 'pending' ? <p>Входим...</p> : <p>Войти в аккаунт</p>}
+        {authStatus === 'pending' ? <p>Login...</p> : <p>Login to account</p>}
       </Button>
     </form>
   );
