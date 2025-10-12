@@ -1,5 +1,5 @@
 import classNames from 'classnames/bind';
-import classes from '../modal.module.scss';
+import classes from './modal.module.scss';
 
 const cn = classNames.bind(classes);
 

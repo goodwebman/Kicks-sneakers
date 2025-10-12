@@ -18,9 +18,10 @@ import {
 import { FormProvider, useForm } from 'react-hook-form';
 import toast from 'react-hot-toast';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { v4 as uuidv4 } from 'uuid';
+
 import { CheckoutForm } from '../checkout-form/checkout-form';
 import { DeliveryOptions } from '../delivery-options/delivery-options';
+import { generateId } from '@shared/lib/scripts/uuid-custom'
 
 export const CheckoutFormContainer = () => {
   const location = useLocation();
@@ -44,7 +45,7 @@ export const CheckoutFormContainer = () => {
     dispatch(updateForm(data));
 
     const newOrder: OrderType = {
-      id: uuidv4(),
+      id: generateId(),
       userId: user!.id,
       items,
       formData: { ...formData, ...data },

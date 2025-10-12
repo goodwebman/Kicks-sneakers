@@ -12,5 +12,7 @@ export const getClasses = () => {
     cnThumbs: cn('thumbs'),
     cnThumb: cn('thumb'),
     cnThumbActive: cn('thumbActive'),
+    cnImageWrapper: cn('imageWrapper'),
+    cnPlaceholder: cn('placeholder'),
   };
 };

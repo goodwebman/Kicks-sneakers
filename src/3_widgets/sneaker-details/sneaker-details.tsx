@@ -2,7 +2,7 @@ import { useScrollTop } from '@shared/hooks/use-scroll-top';
 import { useSuspenseQuery } from '@tanstack/react-query';
 import { YouMayAlsoLike } from '@widgets/you-may-also-like/you-may-also-like';
 import { useParams } from 'react-router-dom';
-import { SneakerOwnInfo } from '../../4_features/sneaker-own-info/ui/sneaker-own-info';
+import { SneakerOwnInfo } from '../../4_features/sneaker-own-info/ui/sneaker-own-info/sneaker-own-info';
 import { sneakersApi } from '../../5_entities/sneaker/api/sneaker-api';
 import { SneakerPhotoPreviewer } from '../../5_entities/sneaker/ui/sneaker-photo-previewer/sneaker-photo-previewer';
 import { getClasses } from './styles/get-classes';

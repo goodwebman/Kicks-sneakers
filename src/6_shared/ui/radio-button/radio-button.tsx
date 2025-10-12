@@ -14,7 +14,11 @@ export const RadioButton: FC<Props> = ({ label, color, ...props }) => {
       <input type="radio" className={cnInput} {...props} />
       <span
         className={cnCustom}
-        style={color ? { backgroundColor: `var(--color-${color})` } : {}}
+        style={
+          color
+            ? { backgroundColor: `var(--color-${color.replace('_', '-')})` }
+            : {}
+        }
       />
       {label && <span className={cnLabel}>{label}</span>}
     </label>

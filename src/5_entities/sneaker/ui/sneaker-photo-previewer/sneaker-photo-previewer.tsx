@@ -12,39 +12,61 @@ export const SneakerPhotoPreviewer = ({
     cnRoot,
     cnDesktopGrid,
     cnMobileSlider,
-    cnBigImage,
     cnThumbs,
     cnThumb,
     cnThumbActive,
+    cnImageWrapper,
+    cnPlaceholder,
   } = getClasses();
 
   const [activeIndex, setActiveIndex] = useState(0);
 
+  const renderImage = (src?: string, alt?: string) => {
+    if (!src) {
+      return <div className={cnPlaceholder}>Фото нет :(</div>;
+    }
+    return <img draggable={false} src={src} alt={alt} />;
+  };
+
   return (
     <div className={cnRoot}>
       <div className={cnDesktopGrid}>
-        {images.slice(0, 4).map((src, i) => (
-          <img draggable={false} key={i} src={src} alt={`Sneaker ${i}`} />
-        ))}
+        {images.length > 0 ? (
+          images.slice(0, 4).map((src, i) => (
+            <div key={i} className={cnImageWrapper}>
+              {renderImage(src, `Sneaker ${i}`)}
+            </div>
+          ))
+        ) : (
+          <div className={cnImageWrapper}>
+            {renderImage(undefined, 'No image')}
+          </div>
+        )}
       </div>
 
       <div className={cnMobileSlider}>
-        <img
-          className={cnBigImage}
-          src={images[activeIndex]}
-          alt={`Sneaker active`}
-        />
+        <div className={cnImageWrapper}>
+          {renderImage(images[activeIndex], 'Sneaker active')}
+        </div>
 
         <div className={cnThumbs}>
-          {images.map((src, i) => (
-            <div
-              key={i}
-              className={`${cnThumb} ${i === activeIndex ? cnThumbActive : ''}`}
-              onClick={() => setActiveIndex(i)}
-            >
-              <img src={src} alt={`Sneaker thumb ${i}`} />
+          {images.length > 0 ? (
+            images.map((src, i) => (
+              <div
+                key={i}
+                className={`${cnThumb} ${i === activeIndex ? cnThumbActive : ''}`}
+                onClick={() => setActiveIndex(i)}
+              >
+                <div className={cnImageWrapper}>
+                  {renderImage(src, `Sneaker thumb ${i}`)}
+                </div>
+              </div>
+            ))
+          ) : (
+            <div className={cnThumb}>
+              <div className={cnImageWrapper}>{renderImage()}</div>
             </div>
-          ))}
+          )}
         </div>
       </div>
     </div>

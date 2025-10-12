@@ -1,26 +1,44 @@
-@use './../../../../../6_shared/styles/typography/typography.module' as typo;
+@use '@shared/styles/typography/typography.module' as typo;
 
 .card {
   display: flex;
   flex-direction: column;
   gap: 16px;
   height: 100%;
-  
 }
 
 .imageWrapper {
   position: relative;
-  background-color: #fff;
+  background-color: var(--color-white);
   border-radius: 28px;
   padding: 8px;
+  width: 100%;
+  aspect-ratio: 1; // фиксированное соотношение сторон
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
 }
 
 .image {
   border-radius: 24px;
-  display: block;
   width: 100%;
-  height: auto;
+  height: 100%;
   object-fit: contain;
+  display: block;
+}
+
+.placeholder {
+  border-radius: 24px;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-gray-light, #f2f2f2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-gray, #a1a1a1);
+  font-size: 16px;
+  font-weight: 500;
 }
 
 .badge {
@@ -36,14 +54,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  text-align: center;
-  padding: 0;
 }
 
 .title {
   @include typo.h4;
   color: var(--color-dark);
   text-transform: uppercase;
+  min-height: 56px; // чтобы заголовки были одинаковой высоты
 }
 
 .button_inner {
@@ -53,14 +70,10 @@
   margin-top: auto;
 }
 
-.button {
-  width: '100%';
-}
-
 .button_wrapper {
-  margin-top: 'auto';
-  display: 'flex';
-  width: '100%';
+  margin-top: auto;
+  display: flex;
+  width: 100%;
 }
 
 .price {

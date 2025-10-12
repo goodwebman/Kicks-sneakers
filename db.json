@@ -89,7 +89,8 @@
         "blue",
         "concrete",
         "light_brown",
-        "light_gray"
+        "light_gray",
+        "light_dark"  
       ],
       "sizes": [
         40,
@@ -767,6 +768,65 @@
       ],
       "images": [
         "blob:http://localhost:5173/b7517a03-43bb-46c0-a6a8-99c95c08111d",
+        "/assets/preview1.png",
+        "/assets/preview2.png",
+        "/assets/preview3.png"
+      ]
+    },
+    {
+      "id": "jidpmv39mgnfriqg",
+      "price": 1500,
+      "name": "ADIDAS CAMPUS",
+      "gender": "unisex",
+      "colors": [
+        "light_dark",
+        "concrete",
+        "light_gray",
+        "carrot"
+      ],
+      "categories": [
+        "casual",
+        "classic",
+        "sport"
+      ],
+      "sizes": [
+        47,
+        45,
+        44,
+        42
+      ],
+      "images": [
+        "blob:http://localhost:5173/2263cd1b-e662-4a9f-bf18-76462e2a6ffe",
+        "/assets/preview1.png",
+        "/assets/preview2.png",
+        "/assets/preview3.png"
+      ]
+    },
+    {
+      "id": "7vq00a73mgnfxaqt",
+      "price": 123,
+      "name": "123123",
+      "gender": "male",
+      "colors": [
+        "blue",
+        "yellow",
+        "dark",
+        "green",
+        "light_dark",
+        "carrot",
+        "light_gray",
+        "concrete",
+        "brown",
+        "light_brown"
+      ],
+      "categories": [
+        "basketball"
+      ],
+      "sizes": [
+        38
+      ],
+      "images": [
+        "",
         "/assets/preview1.png",
         "/assets/preview2.png",
         "/assets/preview3.png"

@@ -1,12 +1,15 @@
 import cn from 'classnames';
 import { useEffect, useState, type FC } from 'react';
-import type { CartItem } from '../../../5_entities/cart/model/types';
-import type { SneakerDto } from '../../../5_entities/sneaker/model/types';
-import { Button } from '../../../6_shared/ui/buttons/button';
-import { RadioButton } from '../../../6_shared/ui/radio-button/radio-button';
+import type { CartItem } from '../../../../5_entities/cart/model/types';
+import type { SneakerDto } from '../../../../5_entities/sneaker/model/types';
+import { Button } from '../../../../6_shared/ui/buttons/button';
 
-import { useAddToCart } from '../model/use-add-to-cart';
-import { useBuyNow } from '../model/use-buy-now';
+import { RadioButton } from '../../../../6_shared/ui/radio-button/radio-button';
+
+import { useDeleteSneakerModal } from '@features/sneaker-own-info/model/use-delete-sneaker-modal';
+import { useAddToCart } from '../../model/use-add-to-cart';
+import { useBuyNow } from '../../model/use-buy-now';
+import { DeleteSneakerModal } from '../delete-sneaker-modal/delete-sneaker-modal';
 import { getClasses } from './styles/get-classes';
 
 export const SneakerOwnInfo: FC<SneakerDto> = ({
@@ -21,6 +24,7 @@ export const SneakerOwnInfo: FC<SneakerDto> = ({
 }) => {
   const [selectedColor, setSelectedColor] = useState(colors[0]);
   const [selectedSize, setSelectedSize] = useState<number | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false); // ✅ состояние модалки
 
   const {
     cnTitle,
@@ -42,6 +46,7 @@ export const SneakerOwnInfo: FC<SneakerDto> = ({
   const allSizes = Array.from({ length: 10 }, (_, i) => 38 + i);
   const { addSneakerToCart } = useAddToCart();
   const { buySneakerNow } = useBuyNow();
+  const { isOpen, open, close } = useDeleteSneakerModal();
 
   const handleAddToCart = () => {
     if (!selectedSize) return;
@@ -79,6 +84,12 @@ export const SneakerOwnInfo: FC<SneakerDto> = ({
     buySneakerNow(item);
   };
 
+  const handleDelete = () => {
+    // ⚙️ Здесь вставь логику удаления кроссовка
+    console.log('Sneaker deleted:', id);
+    setIsModalOpen(false);
+  };
+
   useEffect(() => {
     const firstAvailable = allSizes.find(s => sizes.includes(s)) ?? null;
     setSelectedSize(firstAvailable);
@@ -87,7 +98,7 @@ export const SneakerOwnInfo: FC<SneakerDto> = ({
   return (
     <div>
       <h1 className={cnTitle}>
-        {name} {categories.join(', ')}
+        {name} {categories.join(' ')}
       </h1>
       <h2 className={cnPrice}>${price}</h2>
 
@@ -125,6 +136,7 @@ export const SneakerOwnInfo: FC<SneakerDto> = ({
           );
         })}
       </div>
+
       <div className={cnActionsWrapper}>
         <Button fullWidth variant="secondary" onClick={handleAddToCart}>
           ADD TO CART
@@ -132,7 +144,19 @@ export const SneakerOwnInfo: FC<SneakerDto> = ({
         <Button fullWidth onClick={handleBuyItNow}>
           BUY IT NOW
         </Button>
+
+        {/* ✅ Кнопка удаления */}
+        <Button fullWidth onClick={() => setIsModalOpen(true)}>
+          DELETE SNEAKER
+        </Button>
       </div>
+
+      <DeleteSneakerModal
+        isOpen={isOpen}
+        onClose={close}
+        onConfirm={() => console.log('Удалено')}
+        sneakerName={name}
+      />
 
       <div className={cnSubInfo}>
         <h1 className={cnSubInfoLabel}>About the product</h1>

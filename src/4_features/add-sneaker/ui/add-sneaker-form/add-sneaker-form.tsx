@@ -94,7 +94,7 @@ export const AddSneakerForm = () => {
         )}
       />
 
-      {/* Цвета */}
+
       <Controller
         name="colors"
         control={control}
@@ -108,7 +108,6 @@ export const AddSneakerForm = () => {
             field.onChange(newValue);
           };
 
-          // ✅ передаём выбранные цвета
           const { cnColorList, getColorItem } = getClasses({
             selectedColors,
           });
@@ -131,7 +130,6 @@ export const AddSneakerForm = () => {
         }}
       />
 
-      {/* Категории */}
       <Controller
         name="categories"
         control={control}
@@ -158,7 +156,6 @@ export const AddSneakerForm = () => {
         )}
       />
 
-      {/* Размеры */}
       <Controller
         name="sizes"
         control={control}
@@ -185,7 +182,6 @@ export const AddSneakerForm = () => {
         )}
       />
 
-      {/* Изображения */}
       <Controller
         name="images"
         control={control}

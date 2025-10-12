@@ -17,6 +17,7 @@ export const SneakerCard = ({
     cnRoot,
     cnImageWrapper,
     cnImage,
+    cnPlaceholder,
     cnTitle,
     cnBadge,
     cnPrice,
@@ -24,25 +25,39 @@ export const SneakerCard = ({
     cnButtonInner,
   } = getClasses({ className });
 
+  const imageUrl = sneaker.images?.[0];
+  const hasImage = Boolean(imageUrl);
+
   return (
     <div className={cnRoot}>
       <div className={cnImageWrapper}>
         <span className={cnBadge}>New</span>
-        <img
-          draggable="false"
-          className={cnImage}
-          src={sneaker.images[0]}
-          alt={sneaker.name}
-        />
+
+        {hasImage ? (
+          <img
+            draggable="false"
+            className={cnImage}
+            src={imageUrl}
+            alt={sneaker.name}
+            onError={e => {
+              e.currentTarget.style.display = 'none';
+              const placeholder = e.currentTarget.parentElement?.querySelector(
+                `.${cnPlaceholder}`,
+              ) as HTMLElement | null;
+              if (placeholder) placeholder.style.display = 'flex';
+            }}
+          />
+        ) : (
+          <div className={cnPlaceholder}>Фото нет :(</div>
+        )}
       </div>
 
-      <h1 className={cnTitle}>
-        {sneaker.name} 
-      </h1>
-      <div style={cnButtonWrapper}>
+      <h1 className={cnTitle}>{sneaker.name}</h1>
+
+      <div className={cnButtonWrapper}>
         <Button onClick={onClick} variant="secondary" size="large" fullWidth>
           <div className={cnButtonInner}>
-            VIEW PRODUCT - <span className={cnPrice}>${sneaker.price}</span>
+            VIEW PRODUCT – <span className={cnPrice}>${sneaker.price}</span>
           </div>
         </Button>
       </div>
