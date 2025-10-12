@@ -1,11 +1,147 @@
+@use '@shared/styles/typography/typography.module' as typo;
 @use '@shared/styles/breakpoints/breakpoints.module' as *;
+@use '@shared/styles/shadows/shadows.module.scss' as shadows;
+
 .root {
   display: flex;
   flex-direction: column;
+  gap: 20px;
   min-width: 400px;
-  gap: 15px;
 
   @include media-max($breakpoint-sm) {
     min-width: 300px;
+  }
+}
+
+/* Общие подписи и ошибки */
+.label {
+  @include typo.h4;
+  color: var(--color-dark);
+}
+
+.error {
+  color: var(--color-error);
+  @include typo.h6;
+}
+
+/* Цвета */
+.color {
+  &__list {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  &__item {
+    width: 48px;
+    height: 48px;
+    border-radius: 8px;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    position: relative;
+    &:hover {
+      transform: scale(1.05);
+      @include shadows.shadow(intense-glow);
+    }
+
+    &--selected {
+      border: 2px solid var(--color-white);
+      box-shadow: 0 0 10px var(--color-white);
+    }
+
+    &--blue {
+      background-color: var(--color-blue);
+    }
+
+    &--yellow {
+      background-color: var(--color-yellow);
+    }
+
+    &--dark {
+      background-color: var(--color-dark);
+    }
+
+    &--green {
+      background-color: var(--color-green);
+    }
+
+    &--light_dark {
+      background-color: var(--color-light-dark);
+    }
+
+    &--carrot {
+      background-color: var(--color-carrot);
+    }
+
+    &--light_gray {
+      background-color: var(--color-light-gray);
+    }
+
+    &--concrete {
+      background-color: var(--color-concrete);
+    }
+
+    &--brown {
+      background-color: var(--color-brown);
+    }
+
+    &--light_brown {
+      background-color: var(--color-light-brown);
+    }
+  }
+}
+
+.checkbox {
+  &__group {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+}
+
+.image {
+  &__upload {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  &__label {
+    @include typo.h4;
+  }
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  &__input {
+    display: none;
+  }
+
+  &__button {
+    margin-top: 20px;
+    background: var(--color-dark);
+    color: var(--color-white);
+    padding: 10px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+
+    &:hover {
+      background: var(--color-dark-hover);
+    }
+  }
+
+  &__preview {
+    width: 120px;
+    height: 120px;
+    border-radius: 10px;
+    object-fit: cover;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.15);
   }
 }

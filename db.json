@@ -719,6 +719,58 @@
         "/assets/preview2.png",
         "/assets/preview3.png"
       ]
+    },
+    {
+      "id": "klpa15llmgnbb0hj",
+      "price": 520,
+      "name": "AIR ANUS SNEAKER",
+      "gender": "female",
+      "colors": [
+        "brown",
+        "concrete"
+      ],
+      "categories": [
+        "fashion",
+        "basketball"
+      ],
+      "sizes": [
+        38
+      ],
+      "images": [
+        "blob:http://localhost:5173/11987592-ea19-4f00-ace7-832554418be9",
+        "/assets/preview1.png",
+        "/assets/preview2.png",
+        "/assets/preview3.png"
+      ]
+    },
+    {
+      "id": "qp2y8z82mgnbn50u",
+      "price": 123,
+      "name": "12312",
+      "gender": "female",
+      "colors": [
+        "yellow",
+        "carrot",
+        "dark",
+        "green",
+        "concrete",
+        "brown",
+        "light_brown",
+        "blue"
+      ],
+      "categories": [
+        "basketball",
+        "casual"
+      ],
+      "sizes": [
+        42
+      ],
+      "images": [
+        "blob:http://localhost:5173/b7517a03-43bb-46c0-a6a8-99c95c08111d",
+        "/assets/preview1.png",
+        "/assets/preview2.png",
+        "/assets/preview3.png"
+      ]
     }
   ]
 }
