@@ -20,20 +20,4 @@
   gap: 16px;
 }
 
-.delete {
-  background-color: var(--color-error);
-  color: var(--color-white);
 
-  &:hover {
-    background-color: var(--color-error-hover);
-  }
-}
-
-.cancel {
-  background-color: var(--color-light-gray);
-  color: var(--color-dark);
-
-  &:hover {
-    background-color: var(--color-concrete);
-  }
-}

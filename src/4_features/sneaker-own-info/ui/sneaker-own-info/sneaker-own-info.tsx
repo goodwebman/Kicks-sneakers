@@ -6,7 +6,12 @@ import { Button } from '../../../../6_shared/ui/buttons/button';
 
 import { RadioButton } from '../../../../6_shared/ui/radio-button/radio-button';
 
+import { userSlice } from '@entities/user/model/slice';
+import { useDeleteSneaker } from '@features/delete-sneaker/use-delete-sneaker';
 import { useDeleteSneakerModal } from '@features/sneaker-own-info/model/use-delete-sneaker-modal';
+import { Routes } from '@shared/constants/routes';
+import { useAppSelector } from '@shared/redux/store';
+import { useNavigate } from 'react-router-dom';
 import { useAddToCart } from '../../model/use-add-to-cart';
 import { useBuyNow } from '../../model/use-buy-now';
 import { DeleteSneakerModal } from '../delete-sneaker-modal/delete-sneaker-modal';
@@ -24,7 +29,6 @@ export const SneakerOwnInfo: FC<SneakerDto> = ({
 }) => {
   const [selectedColor, setSelectedColor] = useState(colors[0]);
   const [selectedSize, setSelectedSize] = useState<number | null>(null);
-  const [isModalOpen, setIsModalOpen] = useState(false); // ✅ состояние модалки
 
   const {
     cnTitle,
@@ -42,11 +46,19 @@ export const SneakerOwnInfo: FC<SneakerDto> = ({
     cnSubInfoParts,
     cnSubList,
   } = getClasses();
-
+  const user = useAppSelector(userSlice.selectors.selectUser);
+  const isAdmin = user?.permission === 'admin';
   const allSizes = Array.from({ length: 10 }, (_, i) => 38 + i);
+  const navigate = useNavigate();
   const { addSneakerToCart } = useAddToCart();
   const { buySneakerNow } = useBuyNow();
+  const deleteSneaker = useDeleteSneaker();
   const { isOpen, open, close } = useDeleteSneakerModal();
+  const handleDelete = (id: string) => {
+    deleteSneaker.mutate(id);
+    close();
+    navigate(Routes.sneakers.root);
+  };
 
   const handleAddToCart = () => {
     if (!selectedSize) return;
@@ -82,12 +94,6 @@ export const SneakerOwnInfo: FC<SneakerDto> = ({
     };
 
     buySneakerNow(item);
-  };
-
-  const handleDelete = () => {
-    // ⚙️ Здесь вставь логику удаления кроссовка
-    console.log('Sneaker deleted:', id);
-    setIsModalOpen(false);
   };
 
   useEffect(() => {
@@ -145,16 +151,30 @@ export const SneakerOwnInfo: FC<SneakerDto> = ({
           BUY IT NOW
         </Button>
 
-        {/* ✅ Кнопка удаления */}
-        <Button fullWidth onClick={() => setIsModalOpen(true)}>
-          DELETE SNEAKER
-        </Button>
+        {isAdmin && (
+          <>
+            <Button variant="danger" fullWidth onClick={open}>
+              DELETE SNEAKER
+            </Button>
+            <Button
+              fullWidth
+              variant="primary"
+              onClick={() =>
+                navigate(Routes.admin, {
+                  state: { mode: 'edit', sneakerId: id },
+                })
+              }
+            >
+              EDIT SNEAKER
+            </Button>
+          </>
+        )}
       </div>
 
       <DeleteSneakerModal
         isOpen={isOpen}
         onClose={close}
-        onConfirm={() => console.log('Удалено')}
+        onConfirm={() => handleDelete(id)}
         sneakerName={name}
       />
 

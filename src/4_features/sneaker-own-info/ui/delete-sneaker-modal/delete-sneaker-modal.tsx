@@ -16,7 +16,7 @@ export const DeleteSneakerModal: FC<DeleteSneakerModalProps> = ({
   onConfirm,
   sneakerName,
 }) => {
-  const { cnRoot, cnText, cnButtons, cnDelete, cnCancel } = getClasses();
+  const { cnRoot, cnText, cnButtons } = getClasses();
 
   return (
     <Modal isOpen={isOpen} onClose={onClose} title="Подтверждение удаления">
@@ -27,10 +27,10 @@ export const DeleteSneakerModal: FC<DeleteSneakerModalProps> = ({
         </p>
 
         <div className={cnButtons}>
-          <Button className={cnDelete} variant="danger" onClick={onConfirm}>
+          <Button  variant="danger" onClick={onConfirm}>
             Удалить
           </Button>
-          <Button className={cnCancel} variant="secondary" onClick={onClose}>
+          <Button  variant="secondary" onClick={onClose}>
             Отмена
           </Button>
         </div>

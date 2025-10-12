@@ -1,5 +1,4 @@
 import type { FC } from 'react';
-import { useState } from 'react';
 import { getClasses } from './styles/get-styles';
 
 interface CheckboxProps {
@@ -19,20 +18,15 @@ export const Checkbox: FC<CheckboxProps> = ({
   style,
   label,
 }) => {
-  const [isChecked, setIsChecked] = useState(checked);
-
-  const { cnRoot, cnBox,  cnLabel } = getClasses({
+  const { cnRoot, cnBox, cnLabel } = getClasses({
     className,
-    checked: isChecked,
+    checked,
     disabled,
   });
 
   const handleClick = () => {
     if (disabled) return;
-
-    const next = !isChecked;
-    setIsChecked(next);
-    onChange?.(next);
+    onChange?.(!checked);
   };
 
   return (

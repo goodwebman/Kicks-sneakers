@@ -80,13 +80,24 @@
     background-color: var(--color-dark-hover);
   }
 }
+.danger {
+  background-color: var(--color-danger);
+  color: var(--color-white);
+  &:focus {
+    background-color: var(--color-error);
+    color: var(--color-white);
+    outline: none;
+  }
+  &:hover {
+    background-color: var(--color-danger-hover);
+  }
+}
 .button:disabled {
   cursor: not-allowed;
   opacity: 0.8;
   background-color: var(--color-grayscale-primary);
   color: var(--color-white);
   transform: none;
-  
 }
 
 /* Иконки */

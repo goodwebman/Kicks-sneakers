@@ -9,7 +9,7 @@ export const SneakerCrudSchema = z.object({
   price: z
     .number()
     .min(1, { message: 'Цена не может быть меньше 1$' })
-    .max(30000, { message: 'Цена не может быть больше 30000$' }),
+    .max(1000, { message: 'Цена не может быть больше 1000$' }),
   name: z
     .string()
     .trim()

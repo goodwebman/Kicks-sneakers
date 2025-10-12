@@ -83,23 +83,20 @@
   "sneakers": [
     {
       "id": "1",
-      "name": "Nike Air Max 90",
+      "name": "Nike Air Max",
       "gender": "male",
       "colors": [
         "blue",
         "concrete",
         "light_brown",
         "light_gray",
-        "light_dark"  
+        "light_dark"
       ],
       "sizes": [
-        40,
         41,
-        42,
-        43
+        42
       ],
       "categories": [
-        "running",
         "sport",
         "classic",
         "fashion"
@@ -524,36 +521,6 @@
       ]
     },
     {
-      "id": "15",
-      "name": "Under Armour Curry 8",
-      "gender": "male",
-      "colors": [
-        "blue",
-        "yellow",
-        "dark",
-        "green",
-        "brown"
-      ],
-      "sizes": [
-        41,
-        42,
-        43,
-        44,
-        45
-      ],
-      "categories": [
-        "sport",
-        "running"
-      ],
-      "price": 150,
-      "images": [
-        "/assets/7.png",
-        "/assets/preview1.png",
-        "/assets/preview2.png",
-        "/assets/preview3.png"
-      ]
-    },
-    {
       "id": "16",
       "name": "Fila Disruptor II",
       "gender": "female",
@@ -649,16 +616,14 @@
         "light_gray"
       ],
       "sizes": [
-        40,
         41,
         42,
-        43,
         44
       ],
       "categories": [
         "basketball"
       ],
-      "price": 250,
+      "price": 540,
       "images": [
         "/assets/9.png",
         "/assets/preview1.png",
@@ -678,155 +643,15 @@
         "light_gray"
       ],
       "sizes": [
-        36,
-        37,
         38,
-        39,
-        40,
         41
       ],
       "categories": [
         "casual"
       ],
-      "price": 120,
+      "price": 124,
       "images": [
         "/assets/2.png",
-        "/assets/preview1.png",
-        "/assets/preview2.png",
-        "/assets/preview3.png"
-      ]
-    },
-    {
-      "id": "f2d7",
-      "price": 2121,
-      "name": "AIR ANUS MAX",
-      "gender": "male",
-      "colors": [
-        "blue",
-        "carrot"
-      ],
-      "categories": [
-        "sport"
-      ],
-      "sizes": [
-        41,
-        42,
-        44,
-        45
-      ],
-      "images": [
-        "blob:http://localhost:5175/e20fd68b-8dcf-4bbb-b5b5-f6ddc1116581",
-        "/assets/preview1.png",
-        "/assets/preview2.png",
-        "/assets/preview3.png"
-      ]
-    },
-    {
-      "id": "klpa15llmgnbb0hj",
-      "price": 520,
-      "name": "AIR ANUS SNEAKER",
-      "gender": "female",
-      "colors": [
-        "brown",
-        "concrete"
-      ],
-      "categories": [
-        "fashion",
-        "basketball"
-      ],
-      "sizes": [
-        38
-      ],
-      "images": [
-        "blob:http://localhost:5173/11987592-ea19-4f00-ace7-832554418be9",
-        "/assets/preview1.png",
-        "/assets/preview2.png",
-        "/assets/preview3.png"
-      ]
-    },
-    {
-      "id": "qp2y8z82mgnbn50u",
-      "price": 123,
-      "name": "12312",
-      "gender": "female",
-      "colors": [
-        "yellow",
-        "carrot",
-        "dark",
-        "green",
-        "concrete",
-        "brown",
-        "light_brown",
-        "blue"
-      ],
-      "categories": [
-        "basketball",
-        "casual"
-      ],
-      "sizes": [
-        42
-      ],
-      "images": [
-        "blob:http://localhost:5173/b7517a03-43bb-46c0-a6a8-99c95c08111d",
-        "/assets/preview1.png",
-        "/assets/preview2.png",
-        "/assets/preview3.png"
-      ]
-    },
-    {
-      "id": "jidpmv39mgnfriqg",
-      "price": 1500,
-      "name": "ADIDAS CAMPUS",
-      "gender": "unisex",
-      "colors": [
-        "light_dark",
-        "concrete",
-        "light_gray",
-        "carrot"
-      ],
-      "categories": [
-        "casual",
-        "classic",
-        "sport"
-      ],
-      "sizes": [
-        47,
-        45,
-        44,
-        42
-      ],
-      "images": [
-        "blob:http://localhost:5173/2263cd1b-e662-4a9f-bf18-76462e2a6ffe",
-        "/assets/preview1.png",
-        "/assets/preview2.png",
-        "/assets/preview3.png"
-      ]
-    },
-    {
-      "id": "7vq00a73mgnfxaqt",
-      "price": 123,
-      "name": "123123",
-      "gender": "male",
-      "colors": [
-        "blue",
-        "yellow",
-        "dark",
-        "green",
-        "light_dark",
-        "carrot",
-        "light_gray",
-        "concrete",
-        "brown",
-        "light_brown"
-      ],
-      "categories": [
-        "basketball"
-      ],
-      "sizes": [
-        38
-      ],
-      "images": [
-        "",
         "/assets/preview1.png",
         "/assets/preview2.png",
         "/assets/preview3.png"
