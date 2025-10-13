@@ -1,5 +1,6 @@
-:root {
+[data-theme='light'] {
   --color-white: #ffffff;
+  --color-white-2: #dddfd9;
   --color-dark: #232321;
   --color-dark-hover: #0e0e0d;
   --color-blue: #4a69e2;
@@ -12,6 +13,7 @@
   --color-skeleton-base: #e0e0e0;
   --color-skeleton-highlight: #f0f0f0;
   --color-green: #234d41;
+  --color-lime: rgb(88, 167, 88);
   --color-light-dark: #353336;
   --color-carrot: #f08155;
   --color-light-gray: #c9ccc6;
@@ -20,4 +22,6 @@
   --color-light-brown: #bb8056;
   --color-success: green;
   --color-error: red;
+  --color-danger: rgb(194, 46, 46);
+  --color-danger-hover: rgb(139, 36, 36);
 }

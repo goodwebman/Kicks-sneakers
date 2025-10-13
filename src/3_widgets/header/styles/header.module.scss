@@ -13,6 +13,14 @@
   border-radius: 32px;
   position: relative;
 }
+.allSneakers {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.icons {
+  color: var(--color-dark)
+}
 
 .right_side {
   display: flex;

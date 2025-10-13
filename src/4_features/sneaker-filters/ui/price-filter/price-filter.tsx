@@ -1,6 +1,6 @@
 import Slider from 'rc-slider';
 import 'rc-slider/assets/index.css';
-import React from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import {
   useAppDispatch,
   useAppSelector,
@@ -10,31 +10,51 @@ import { FILTER_LABELS } from '../../model/constants';
 import { sneakerFiltersSlice } from '../../model/slice';
 import { getClasses } from './styles/get-classes';
 
+const DEBOUNCE_DELAY = 200;
+
 const PriceFilter: React.FC = () => {
   const dispatch = useAppDispatch();
   const priceRange = useAppSelector(
-    sneakerFiltersSlice.selectors.selectPriceRange,
+    sneakerFiltersSlice.selectors.selectPriceRange
   );
 
   const min = 0;
   const max = 1000;
-  const value: [number, number] = [
+
+ 
+  const [localValue, setLocalValue] = useState<[number, number]>([
     priceRange.from ?? min,
     priceRange.to ?? max,
-  ];
+  ]);
 
-  const handleChange = (newValue: number | number[]) => {
+
+  useEffect(() => {
+    setLocalValue([priceRange.from ?? min, priceRange.to ?? max]);
+  }, [priceRange.from, priceRange.to]);
+
+
+  const handleChange = useCallback((newValue: number | number[]) => {
     if (Array.isArray(newValue) && newValue.length === 2) {
+      setLocalValue([newValue[0], newValue[1]]);
+    }
+  }, []);
+
+
+  useEffect(() => {
+    const handler = setTimeout(() => {
       dispatch(
         sneakerFiltersSlice.actions.setPriceRange({
-          from: newValue[0],
-          to: newValue[1],
-        }),
+          from: localValue[0],
+          to: localValue[1],
+        })
       );
-    }
-  };
+    }, DEBOUNCE_DELAY);
 
- const { cnContainer, cnValues, cnSlider} = getClasses();
+    return () => clearTimeout(handler);
+  }, [localValue, dispatch]);
+
+  const { cnContainer, cnValues, cnSlider } = getClasses();
+
   return (
     <FilterSection label={FILTER_LABELS.PRICE}>
       <div className={cnContainer}>
@@ -42,13 +62,13 @@ const PriceFilter: React.FC = () => {
           range
           min={min}
           max={max}
-          value={value}
+          value={localValue}
           onChange={handleChange}
           className={cnSlider}
         />
         <div className={cnValues}>
-          <span>${value[0]}</span>
-          <span>${value[1]}</span>
+          <span>${localValue[0]}</span>
+          <span>${localValue[1]}</span>
         </div>
       </div>
     </FilterSection>

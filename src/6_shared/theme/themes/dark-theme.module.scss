@@ -1,15 +1,15 @@
-:root {
-  --color-white: #ffffff;
-  --color-white-2: #dddfd9;
-  --color-dark: #232321;
-  --color-dark-hover: #0e0e0d;
+[data-theme='dark'] {
+  --color-white: #232321;
+  --color-white-2: rgb(34, 36, 30);
+  --color-dark: #ffffff;
+  --color-dark-hover: rgb(228, 228, 202);
   --color-blue: #4a69e2;
   --color-blue-hover: #3a55c4;
   --color-yellow: #ffa52f;
   --color-grayscale-primary: #70706e;
   --color-grayscale-secondary: #e7e7e3;
   --color-grayscale-bg: #d2d1d3;
-  --background: #e7e7e3;
+  --background: #272724;
   --color-skeleton-base: #e0e0e0;
   --color-skeleton-highlight: #f0f0f0;
   --color-green: #234d41;

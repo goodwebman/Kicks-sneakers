@@ -8,6 +8,7 @@ type Args = {
   className?: string;
   size?: ButtonSize;
   disabled?: boolean;
+  iconOnly?: boolean;
 };
 
 export const getClasses = ({
@@ -17,9 +18,11 @@ export const getClasses = ({
 }: Args = {}) => {
   const cnRoot = cn('button', size, { disabled }, className);
   const cnIcon = cn('icon');
+  const cnIconOnly = cn('iconOnly', { disabled }, className);
 
   return {
     cnRoot,
     cnIcon,
+    cnIconOnly,
   };
 };

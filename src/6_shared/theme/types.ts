@@ -10,5 +10,7 @@ export type ThemeType = {
 
 export type ThemeContextType = {
   theme: ThemeType;
+  currentTheme: ThemeNameEnum;
   selectTheme: (value: ThemeNameEnum) => void;
+  toggleTheme: () => void;
 };

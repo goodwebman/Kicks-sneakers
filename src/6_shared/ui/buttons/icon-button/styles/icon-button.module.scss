@@ -3,15 +3,13 @@
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  background-color: var(--color-dark);
+  background-color: var(--color-white);
   transition:
     background-color 0.2s ease,
     transform 0.1s ease;
-
   font-family: var(--font-family-open-sans);
   font-weight: 600;
 
@@ -23,11 +21,6 @@
     transform: scale(0.97);
   }
 
-  &:focus {
-    background-color: var(--color-dark);
-    color: var(--color-white);
-    outline: none;
-  }
   &.disabled {
     cursor: not-allowed;
     opacity: 0.5;
@@ -36,7 +29,7 @@
 }
 
 .small {
-  padding: 12px;
+  padding: 0;
 }
 
 .medium {
@@ -51,4 +44,32 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
+}
+
+/* 🆕 стиль для варианта, где только иконка */
+.iconOnly {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+  color: inherit;
+  transition: transform 0.15s ease, opacity 0.15s ease;
+
+  &:hover {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+
+  &.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
 }

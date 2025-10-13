@@ -12,6 +12,7 @@ export const getClasses = ({ className, cartSneakers = 0 }: Args = {}) => {
   const cnRoot = cn('header', className);
   const cnAllSneakers = cn('allSneakers');
   const cnBurger = cn('burger');
+  const cnIcons = cn('icons')
   const cnBurgerOpen = cn('burger', 'open');
   const cnLogo = cn('logo');
   const cnRightSide = cn('right_side');
@@ -29,5 +30,6 @@ export const getClasses = ({ className, cartSneakers = 0 }: Args = {}) => {
     cnMenu,
     cnMenuOpen,
     cnCart,
+    cnIcons
   };
 };

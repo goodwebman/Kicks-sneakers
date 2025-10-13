@@ -1,8 +1,10 @@
 import { createContext } from 'react';
-import { ThemeNameEnum, type ThemeContextType } from '../types';
 import { lightTheme } from '../index';
+import { ThemeNameEnum } from '../types';
 
-export const ThemeContext = createContext<ThemeContextType>({
+export const ThemeContext = createContext({
   theme: lightTheme,
+  currentTheme: ThemeNameEnum.LIGHT,
   selectTheme: (_value: ThemeNameEnum) => {},
+  toggleTheme: () => {},
 });
